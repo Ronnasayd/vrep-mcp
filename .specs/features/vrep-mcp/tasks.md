@@ -108,16 +108,18 @@ T8 → T9 → T10
 
 **Done when**:
 
-- [ ] `list_namespaces()` returns the counts in CAT-01 exactly
-- [ ] `get("sim.serialRead")` carries `lua` params and `lua_raw` signature
-- [ ] Unknown name raises `VrepError` with the CAT-09 message
-- [ ] A missing or corrupt catalog file (via `VREP_DATA_DIR` tmp dir) raises the OPS-04 message
-- [ ] `catalog_hash()` changes when one file's bytes change
-- [ ] Gate check passes: `uv run pytest -q -m "not model and not sim"`
-- [ ] Test count: ≥ 6 tests in `tests/test_catalog.py` pass
+- [x] `list_namespaces()` returns the counts in CAT-01 exactly
+- [x] `get("sim.serialRead")` carries `lua` params and `lua_raw` signature
+- [x] Unknown name raises `VrepError` with the CAT-09 message
+- [x] A missing or corrupt catalog file (via `VREP_DATA_DIR` tmp dir) raises the OPS-04 message
+- [x] `catalog_hash()` changes when one file's bytes change
+- [x] Gate check passes: `uv run pytest -q -m "not model and not sim"`
+- [x] Test count: ≥ 6 tests in `tests/test_catalog.py` pass
 
 **Tests**: unit
 **Gate**: quick
+
+**Status**: done
 
 **Commit**: `feat(catalog): load processed catalog with lua and doc fallbacks`
 
