@@ -172,14 +172,16 @@ T8 → T9 → T10
 
 **Done when**:
 
-- [ ] Each of the 4 error messages matches the spec text exactly
-- [ ] `int` accepted for `number`; `bool` rejected for `integer` and `number`; untyped params accept any JSON
-- [ ] `{"objectHandle":5,"targetPosition":1.5}` → `[5, 1.5]`; empty arguments for a no-param function → `[]`
-- [ ] Gate check passes: `uv run pytest -q -m "not model and not sim"`
-- [ ] Test count: ≥ 17 tests in `tests/test_catalog.py` pass
+- [x] Each of the 4 error messages matches the spec text exactly
+- [x] `int` accepted for `number`; `bool` rejected for `integer` and `number`; untyped params accept any JSON
+- [x] `{"objectHandle":5,"targetPosition":1.5}` → `[5, 1.5]`; empty arguments for a no-param function → `[]`
+- [x] Gate check passes: `uv run pytest -q -m "not model and not sim"`
+- [x] Test count: ≥ 17 tests in `tests/test_catalog.py` pass
 
 **Tests**: unit
 **Gate**: quick
+
+**Status**: done
 
 **Commit**: `feat(catalog): validate and map named arguments to positional`
 

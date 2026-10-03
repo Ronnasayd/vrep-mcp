@@ -199,24 +199,59 @@ def schema(name: str) -> dict[str, Any]:
     }
 
 
-def build_args(name: str, arguments: dict[str, Any]) -> list[Any]:
-    """Named args -> positional list (ZMQ API is positional). Trailing optionals may be omitted."""
+# bool is a subclass of int: listed types exclude it explicitly in _json_type
+_PY_TYPES = {
+    "integer": int,
+    "number": (int, float),
+    "string": str,
+    "boolean": bool,
+    "array": list,
+    "object": dict,
+}
+
+
+def _json_type(value: Any) -> str:
+    if value is None:
+        return "null"
+    if isinstance(value, bool):
+        return "boolean"
+    return next(
+        (t for t, py in _PY_TYPES.items() if t != "number" and isinstance(value, py)),
+        type(value).__name__,
+    )
+
+
+def _type_ok(expected: str, value: Any) -> bool:
+    if isinstance(value, bool):
+        return expected == "boolean"
+    return value is not None and isinstance(value, _PY_TYPES[expected])
+
+
+def to_positional(name: str, arguments: dict[str, Any]) -> list[Any]:
+    """Named args -> positional list (ZMQ API is positional), truncated after the last given one."""
     s = schema(name)
-    props = s["inputSchema"]["properties"]
-    unknown = set(arguments) - set(props)
-    if unknown:
-        raise ValueError(
-            f"Unknown argument(s) {sorted(unknown)}; expected {list(props)}"
-        )
-    missing = [r for r in s["inputSchema"]["required"] if r not in arguments]
+    props, required = s["inputSchema"]["properties"], s["inputSchema"]["required"]
+    missing = [r for r in required if r not in arguments]
     if missing:
-        raise ValueError(f"Missing required argument(s): {missing}")
+        raise VrepError(f"Missing required argument(s): {missing}")
+    unknown = sorted(set(arguments) - set(props))
+    if unknown:
+        raise VrepError(f"Unknown argument(s) {unknown}; expected {list(props)}")
     last = max((i for i, p in enumerate(props) if p in arguments), default=-1)
     gaps = [p for i, p in enumerate(props) if i < last and p not in arguments]
     if gaps:
-        raise ValueError(
+        raise VrepError(
             f"Optional argument(s) {gaps} must be given because a later one is set"
         )
+    for p, prop in props.items():
+        if (
+            p in arguments
+            and "type" in prop
+            and not _type_ok(prop["type"], arguments[p])
+        ):
+            raise VrepError(
+                f"Argument '{p}' expected {prop['type']}, got {_json_type(arguments[p])}"
+            )
     return [arguments[p] for i, p in enumerate(props) if i <= last]
 
 
@@ -255,4 +290,4 @@ def call(
     obj = api(e["namespace"])
     if e["kind"] == "constant":
         return jsonable(getattr(obj, e["method"]))
-    return jsonable(getattr(obj, e["method"])(*build_args(name, arguments or {})))
+    return jsonable(getattr(obj, e["method"])(*to_positional(name, arguments or {})))

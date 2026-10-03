@@ -131,3 +131,111 @@ def test_schema_constant_returns_cat08_shape():
         "namespace": "sim",
         "type": "int",
     }
+
+
+def test_to_positional_maps_named_arguments_in_schema_order():
+    assert catalog.to_positional(
+        "sim.setJointTargetPosition", {"targetPosition": 1.5, "objectHandle": 5}
+    ) == [5, 1.5]
+
+
+def test_to_positional_no_param_function_with_empty_arguments_returns_empty_list():
+    assert catalog.to_positional("sim.getSimulationState", {}) == []
+
+
+def test_to_positional_stops_after_last_given_optional():
+    args = {"objectHandle": 5, "targetPosition": 1.5, "motionParams": [1.0]}
+    assert catalog.to_positional("sim.setJointTargetPosition", args) == [5, 1.5, [1.0]]
+
+
+@pytest.mark.parametrize(
+    "name, arguments, message",
+    [
+        (
+            "sim.setJointTargetPosition",
+            {"objectHandle": 1},
+            "Missing required argument(s): ['targetPosition']",
+        ),
+        (
+            "sim.setJointTargetPosition",
+            {"objectHandle": 1, "targetPosition": 0, "x": 1},
+            "Unknown argument(s) ['x']; expected ['objectHandle', 'targetPosition', 'motionParams']",
+        ),
+        (
+            "sim.getObjectPosition",
+            {"relativeToObjectHandle": 1, "objectHandle": 2, "extra": 3},
+            "Unknown argument(s) ['extra']; expected ['objectHandle', 'relativeToObjectHandle']",
+        ),
+        (
+            "sim.packTable",
+            {"packingScheme": 1},
+            "Missing required argument(s): ['aTable']",
+        ),
+        (
+            "sim.setJointTargetPosition",
+            {"objectHandle": "a", "targetPosition": 0},
+            "Argument 'objectHandle' expected integer, got string",
+        ),
+    ],
+)
+def test_to_positional_raises_exact_spec_messages(name, arguments, message):
+    with pytest.raises(catalog.VrepError) as exc:
+        catalog.to_positional(name, arguments)
+    assert str(exc.value) == message
+
+
+def test_to_positional_gap_before_later_argument_raises_cat06_message():
+    with pytest.raises(catalog.VrepError) as exc:
+        catalog.to_positional(
+            "sim.serialRead",
+            {
+                "portHandle": 1,
+                "dataLengthToRead": 2,
+                "blockingOperation": True,
+                "timeout": 1.0,
+            },
+        )
+    assert (
+        str(exc.value)
+        == "Optional argument(s) ['closingString'] must be given because a later one is set"
+    )
+
+
+def test_to_positional_accepts_int_for_number():
+    assert catalog.to_positional(
+        "sim.setJointTargetPosition", {"objectHandle": 1, "targetPosition": 2}
+    ) == [1, 2]
+
+
+@pytest.mark.parametrize(
+    "arguments, expected",
+    [
+        (
+            {"objectHandle": True, "targetPosition": 1.0},
+            "Argument 'objectHandle' expected integer, got boolean",
+        ),
+        (
+            {"objectHandle": 1, "targetPosition": True},
+            "Argument 'targetPosition' expected number, got boolean",
+        ),
+    ],
+)
+def test_to_positional_rejects_bool_for_integer_and_number(arguments, expected):
+    with pytest.raises(catalog.VrepError) as exc:
+        catalog.to_positional("sim.setJointTargetPosition", arguments)
+    assert str(exc.value) == expected
+
+
+@pytest.mark.parametrize("value", [b"x", 1, [1], {"a": 1}, None])
+def test_to_positional_accepts_any_json_for_untyped_param(value):
+    assert catalog.to_positional(
+        "sim.serialSend", {"portHandle": 1, "data": value}
+    ) == [1, value]
+
+
+def test_to_positional_rejects_null_for_typed_param():
+    with pytest.raises(catalog.VrepError) as exc:
+        catalog.to_positional(
+            "sim.setJointTargetPosition", {"objectHandle": None, "targetPosition": 1.0}
+        )
+    assert str(exc.value) == "Argument 'objectHandle' expected integer, got null"
