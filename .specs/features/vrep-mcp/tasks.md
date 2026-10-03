@@ -325,13 +325,15 @@ T8 → T9 → T10
 
 **Done when**:
 
-- [ ] Subprocess session lists the 4 tools and returns the `sim.getObject` schema
-- [ ] Session also succeeds with `VERBOSE=2` in the environment (client stdout printing suppressed)
-- [ ] Gate check passes: `uv run pytest -q -m "not sim"`
-- [ ] Test count: 2 tests in `tests/test_stdio.py` pass
+- [x] Subprocess session lists the 4 tools and returns the `sim.getObject` schema
+- [x] Session also succeeds with `VERBOSE=2` in the environment (client stdout printing suppressed)
+- [x] Gate check passes: `uv run pytest -q -m "not sim"`
+- [x] Test count: 2 tests in `tests/test_stdio.py` pass
 
 **Tests**: e2e
 **Gate**: full
+
+**Status**: done
 
 **Commit**: `test(server): add stdio subprocess smoke test`
 
