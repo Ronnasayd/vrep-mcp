@@ -132,7 +132,9 @@ def list_namespaces() -> list[dict[str, Any]]:
 
 
 def _is_optional(e: dict[str, Any], pname: str) -> bool:
-    return bool(re.search(rf"\b{re.escape(pname)}\s*=", e["signature"]))
+    # invariant: only the argument list counts; the return variable before "(" shares names with params
+    args = e["signature"].partition("(")[2]
+    return bool(re.search(rf"\b{re.escape(pname)}\s*=", args))
 
 
 def schema(name: str) -> dict[str, Any]:

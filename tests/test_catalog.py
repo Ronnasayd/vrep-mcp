@@ -280,3 +280,10 @@ def test_schema_param_named_id_is_required_despite_defaulted_id_suffixed_params(
     s = _input_schema("simUI.addTreeItem")
 
     assert s["required"] == ["handle", "id", "item_id", "text"]
+
+
+def test_return_variable_does_not_make_param_optional():
+    # sim.moduleEntry: `int handle = sim.moduleEntry(int handle, ...)` — handle is required (CAT-02, CALL-04)
+    assert "handle" in catalog.schema("sim.moduleEntry")["inputSchema"]["required"]
+    with pytest.raises(catalog.VrepError, match="Missing required argument"):
+        catalog.to_positional("sim.moduleEntry", {})
