@@ -50,9 +50,10 @@ def test_entries_corrupt_json_raises_ops04_message(data_dir):
         catalog.entries()
 
 
-def test_catalog_hash_changes_when_one_file_changes(data_dir):
+@pytest.mark.parametrize("filename", catalog._FILES)
+def test_catalog_hash_changes_when_any_one_file_changes(data_dir, filename):
     before = catalog.catalog_hash()
-    (data_dir / "simVision.json").write_text(json.dumps([]))
+    (data_dir / filename).write_text(json.dumps([]))
     assert catalog.catalog_hash() != before
 
 
@@ -255,3 +256,10 @@ def test_schema_maps_doc_types_to_json_types_and_keeps_x_vrep_type(
 
     assert prop["x-vrep-type"] == vrep_type
     assert prop["type"] == json_type
+
+
+def test_schema_property_descriptions_are_stripped_of_surrounding_whitespace():
+    props = _input_schema("sim.getScaledImage")["properties"]
+
+    assert props["desiredResolutionOut"]["description"].endswith("bit-coded:")
+    assert all(p["description"] == p["description"].strip() for p in props.values())

@@ -155,16 +155,17 @@ def test_second_search_with_fresh_state_loads_cache_and_embeds_only_query(fake):
     assert fake.calls == [["joint"]]
 
 
-def test_changed_catalog_writes_a_new_cache_file(fake, data_dir, tmp_path):
+@pytest.mark.parametrize("filename", catalog._FILES)
+def test_changed_catalog_writes_a_new_cache_file(fake, data_dir, tmp_path, filename):
     index.search("handle")
-    (data_dir / "simVision.json").write_text("[]")
+    (data_dir / filename).write_text("[]")
     catalog._load.cache_clear()
     fake.calls.clear()
 
     index.search("handle")
 
     assert len(list((tmp_path / "cache").glob("index-*.npy"))) == 2
-    assert len(fake.calls[0]) == 975 - 46
+    assert 0 < len(fake.calls[0]) < 975
 
 
 @pytest.mark.parametrize(
