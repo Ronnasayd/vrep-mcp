@@ -202,16 +202,18 @@ T8 → T9 → T10
 
 **Done when**:
 
-- [ ] With a fake embedder: results sorted desc, ≤ `max_results`, fields per SRCH-01, description ≤ 200 chars
-- [ ] Filters return only the matching namespace / kind
-- [ ] First search writes the cache file; a second search with a fresh module state loads it and calls the embedder only for the query
-- [ ] SRCH-08..11 messages match exactly
-- [ ] Importing `vrep_mcp.index` does not instantiate the embedder
-- [ ] Gate check passes: `uv run pytest -q -m "not model and not sim"`
-- [ ] Test count: ≥ 9 tests in `tests/test_index.py` pass
+- [x] With a fake embedder: results sorted desc, ≤ `max_results`, fields per SRCH-01, description ≤ 200 chars
+- [x] Filters return only the matching namespace / kind
+- [x] First search writes the cache file; a second search with a fresh module state loads it and calls the embedder only for the query
+- [x] SRCH-08..11 messages match exactly
+- [x] Importing `vrep_mcp.index` does not instantiate the embedder
+- [x] Gate check passes: `uv run pytest -q -m "not model and not sim"`
+- [x] Test count: ≥ 9 tests in `tests/test_index.py` pass
 
 **Tests**: unit
 **Gate**: quick
+
+**Status**: done
 
 **Commit**: `feat(index): add embedding search with on-disk cache`
 

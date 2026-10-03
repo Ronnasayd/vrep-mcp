@@ -132,36 +132,6 @@ def list_namespaces() -> list[dict[str, Any]]:
     ]
 
 
-def _words(s: str) -> set[str]:
-    return {w.lower() for w in re.findall(r"[A-Za-z][a-z0-9]*|[A-Z]+(?![a-z])", s)}
-
-
-def search(
-    query: str, max_results: int = 10, namespace: str | None = None
-) -> list[dict[str, Any]]:
-    q = _words(query) | {query.lower()}
-    scored = []
-    for name, e in entries().items():
-        if namespace and e["namespace"] != namespace:
-            continue
-        nl, desc = name.lower(), e.get("description", "").lower()
-        score = sum(3 * (w in nl) + (w in desc) for w in q if w) + 5 * (
-            query.lower() == nl
-        )
-        if score:
-            scored.append((score, name, e))
-    scored.sort(key=lambda t: (-t[0], t[1]))
-    return [
-        {
-            "name": n,
-            "kind": e["kind"],
-            "score": s,
-            "description": e.get("description", "")[:200].strip(),
-        }
-        for s, n, e in scored[:max_results]
-    ]
-
-
 def _is_optional(e: dict[str, Any], pname: str) -> bool:
     return bool(re.search(rf"\b{re.escape(pname)}\s*=", e["signature"]))
 
