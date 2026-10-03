@@ -46,6 +46,9 @@ class FakeNamespace:
     def setJointTargetPosition(self, handle, position, params=None):
         return self.client.run("setJointTargetPosition", handle, position)
 
+    def inputDialog(self):
+        return self.client.run("inputDialog")
+
     def slow(self):
         return self.client.run("slow")
 
@@ -111,6 +114,12 @@ def test_call_builds_client_with_env_host_port_verbose_zero_and_timeouts(
     assert client.socket.options[zmq.RCVTIMEO] == 2500
     assert client.socket.options[zmq.SNDTIMEO] == 2500
     assert client.socket.options[zmq.LINGER] == 0
+
+
+def test_call_requires_the_namespace_of_the_called_entry(fake_api):
+    bridge.call("simUI.inputDialog")
+
+    assert fake_api.instances[0].required == "simUI"
 
 
 def test_call_reuses_one_client_across_calls(fake_api):
