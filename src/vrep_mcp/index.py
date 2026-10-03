@@ -2,7 +2,9 @@
 
 from __future__ import annotations
 
+import hashlib
 import os
+import re
 from functools import lru_cache
 from pathlib import Path
 from typing import Any
@@ -16,6 +18,9 @@ KINDS = ("function", "constant")
 MIN_RESULTS, MAX_RESULTS = 1, 50
 DESCRIPTION_LIMIT = 200
 HASH_PREFIX_LEN = 16
+# invariant: bump when the indexed text format changes so stale caches are not reused
+TEXT_FORMAT_VERSION = "camel-split-v1"
+_CAMEL_BOUNDARY = re.compile(r"(?<=[a-z])(?=[A-Z])")
 
 
 @lru_cache(maxsize=1)
@@ -30,7 +35,8 @@ def _cache_path(catalog_hash: str) -> Path:
     cache_dir = Path(
         os.environ.get("VREP_CACHE_DIR", Path.home() / ".cache" / "vrep-mcp")
     )
-    return cache_dir / f"index-{catalog_hash[:HASH_PREFIX_LEN]}.npy"
+    key = hashlib.sha256(f"{catalog_hash}:{TEXT_FORMAT_VERSION}".encode()).hexdigest()
+    return cache_dir / f"index-{key[:HASH_PREFIX_LEN]}.npy"
 
 
 def _embed(texts: list[str]) -> np.ndarray:
@@ -40,7 +46,13 @@ def _embed(texts: list[str]) -> np.ndarray:
 
 def _build(path: Path) -> np.ndarray:
     entries = catalog.entries()
-    vectors = _embed([f"{n}: {entries[n]['description']}" for n in sorted(entries)])
+    # why: split names rank multilingual queries higher (SRCH-05 was 7th with raw names)
+    vectors = _embed(
+        [
+            f"{_CAMEL_BOUNDARY.sub(' ', n)}: {entries[n]['description']}"
+            for n in sorted(entries)
+        ]
+    )
     path.parent.mkdir(parents=True, exist_ok=True)
     # hazard: write-then-rename so a concurrent process never loads a half-written file
     tmp = path.with_suffix(".tmp.npy")

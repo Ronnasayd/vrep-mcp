@@ -62,7 +62,9 @@ def test_search_returns_sorted_limited_results_with_srch01_fields(fake):
 def test_search_aligns_cache_rows_with_entry_names(fake):
     entry = catalog.get("sim.setJointTargetPosition")
 
-    results = index.search(f"{entry['name']}: {entry['description']}", max_results=1)
+    results = index.search(
+        f"sim.set Joint Target Position: {entry['description']}", max_results=1
+    )
 
     assert results[0]["name"] == "sim.setJointTargetPosition"
     assert results[0]["score"] == 100.0
@@ -72,7 +74,9 @@ def test_search_truncates_descriptions_longer_than_200_chars(fake):
     entry = catalog.get("sim.setJointTargetPosition")
     assert len(entry["description"]) > 200
 
-    results = index.search(f"{entry['name']}: {entry['description']}", max_results=1)
+    results = index.search(
+        f"sim.set Joint Target Position: {entry['description']}", max_results=1
+    )
 
     assert results[0]["description"] == entry["description"][:200]
 
@@ -95,12 +99,29 @@ def test_search_kind_filter_returns_only_that_kind(fake, kind):
 def test_first_search_embeds_all_entries_and_writes_cache_file(fake, tmp_path):
     index.search("handle")
 
-    path = tmp_path / "cache" / f"index-{catalog.catalog_hash()[:16]}.npy"
-    assert path.exists()
-    assert np.load(path).shape == (975, DIM)
+    paths = list((tmp_path / "cache").glob("index-????????????????.npy"))
+    assert len(paths) == 1
+    assert np.load(paths[0]).shape == (975, DIM)
     assert len(fake.calls[0]) == 975
-    assert fake.calls[0][0].startswith("sim.")
     assert ": " in fake.calls[0][0]
+
+
+def test_indexed_text_splits_camel_case_names_before_the_description(fake):
+    index.search("handle")
+
+    entry = catalog.get("sim.setJointTargetPosition")
+    assert f"sim.set Joint Target Position: {entry['description']}" in fake.calls[0]
+
+
+def test_cache_written_before_text_format_change_is_not_reused(fake, tmp_path):
+    cache = tmp_path / "cache"
+    cache.mkdir()
+    old_name = f"index-{catalog.catalog_hash()[:16]}.npy"
+    np.save(cache / old_name, np.zeros((975, DIM), dtype=np.float32))
+
+    index.search("handle")
+
+    assert len(fake.calls[0]) == 975
 
 
 def test_second_search_with_fresh_state_loads_cache_and_embeds_only_query(fake):
