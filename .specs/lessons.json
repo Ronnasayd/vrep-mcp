@@ -1,0 +1,137 @@
+{
+  "schema": 1,
+  "promote_threshold": 2,
+  "window_days": 45,
+  "quarantine_threshold": 2,
+  "next_id": 9,
+  "lessons": [
+    {
+      "id": "L-001",
+      "key": "surviving_mutant::assert the exact derived cache filename and that bumping the format version changes it a seeded stale file with an unrelated name passes vacuously",
+      "text": "Assert the exact derived cache filename and that bumping the format version changes it; a seeded stale file with an unrelated name passes vacuously",
+      "signal": "surviving_mutant",
+      "scope": "cache",
+      "status": "candidate",
+      "features": ["vrep-mcp"],
+      "recurrence": 1,
+      "harmful": 0,
+      "evidence": [
+        "src/vrep_mcp/index.py:38 mutant #30 (cache key drops format version) (cache)"
+      ],
+      "created": "2026-10-03T00:21:07Z",
+      "last_seen": "2026-10-03T00:21:07Z"
+    },
+    {
+      "id": "L-002",
+      "key": "surviving_mutant::assert the preferred source value python signature as well as the fallback value so inverting the source choice is caught",
+      "text": "Assert the preferred-source value (python signature) as well as the fallback value, so inverting the source choice is caught",
+      "signal": "surviving_mutant",
+      "scope": "catalog",
+      "status": "candidate",
+      "features": ["vrep-mcp"],
+      "recurrence": 1,
+      "harmful": 0,
+      "evidence": [
+        "src/vrep_mcp/catalog.py:72 mutant #19 (lua fallback always) (catalog)"
+      ],
+      "created": "2026-10-03T00:21:07Z",
+      "last_seen": "2026-10-03T00:21:07Z"
+    },
+    {
+      "id": "L-003",
+      "key": "surviving_mutant::when a hash key covers n input files change each file in turn or assert the exact digest so dropping one file from the loop is caught",
+      "text": "When a hash/key covers N input files, change each file in turn (or assert the exact digest) so dropping one file from the loop is caught",
+      "signal": "surviving_mutant",
+      "scope": "catalog",
+      "status": "candidate",
+      "features": ["vrep-mcp"],
+      "recurrence": 1,
+      "harmful": 0,
+      "evidence": [
+        "src/vrep_mcp/catalog.py:109 mutant M19 (hash skips constants.json) (catalog)"
+      ],
+      "created": "2026-10-03T00:27:18Z",
+      "last_seen": "2026-10-03T00:27:18Z"
+    },
+    {
+      "id": "L-004",
+      "key": "surviving_mutant::assert a normalization step strip against a fixture that actually carries the whitespace not a value that is already clean",
+      "text": "Assert a normalization step (strip) against a fixture that actually carries the whitespace, not a value that is already clean",
+      "signal": "surviving_mutant",
+      "scope": "catalog",
+      "status": "candidate",
+      "features": ["vrep-mcp"],
+      "recurrence": 1,
+      "harmful": 0,
+      "evidence": [
+        "src/vrep_mcp/catalog.py:89 mutant M32 (param docs not stripped) (catalog)"
+      ],
+      "created": "2026-10-03T00:27:18Z",
+      "last_seen": "2026-10-03T00:27:18Z"
+    },
+    {
+      "id": "L-005",
+      "key": "surviving_mutant::assert every socket option the bridge sets send and receive timeouts not only the one the ac names",
+      "text": "Assert every socket option the bridge sets (send and receive timeouts), not only the one the AC names",
+      "signal": "surviving_mutant",
+      "scope": "bridge",
+      "status": "candidate",
+      "features": ["vrep-mcp"],
+      "recurrence": 1,
+      "harmful": 0,
+      "evidence": [
+        "src/vrep_mcp/bridge.py:58 mutant M25 (SNDTIMEO dropped) (bridge)"
+      ],
+      "created": "2026-10-03T00:27:18Z",
+      "last_seen": "2026-10-03T00:27:18Z"
+    },
+    {
+      "id": "L-006",
+      "key": "surviving_mutant::call the tool without optional args and assert the spec stated default value not only explicit values",
+      "text": "Call the tool without optional args and assert the spec-stated default value, not only explicit values",
+      "signal": "surviving_mutant",
+      "scope": "search",
+      "status": "candidate",
+      "features": ["vrep-mcp"],
+      "recurrence": 1,
+      "harmful": 0,
+      "evidence": [
+        "src/vrep_mcp/index.py:99 mutant F03 (default max_results 10 changed to 5) (search)"
+      ],
+      "created": "2026-10-03T00:34:49Z",
+      "last_seen": "2026-10-03T00:34:49Z"
+    },
+    {
+      "id": "L-007",
+      "key": "surviving_mutant::parametrize routing dispatch tests over every namespace or branch value not only the default one",
+      "text": "Parametrize routing/dispatch tests over every namespace or branch value, not only the default one",
+      "signal": "surviving_mutant",
+      "scope": "bridge",
+      "status": "candidate",
+      "features": ["vrep-mcp"],
+      "recurrence": 1,
+      "harmful": 0,
+      "evidence": [
+        "src/vrep_mcp/bridge.py:76 mutant F18 (require namespace hardcoded to sim) (bridge)"
+      ],
+      "created": "2026-10-03T00:34:49Z",
+      "last_seen": "2026-10-03T00:34:49Z"
+    },
+    {
+      "id": "L-008",
+      "key": "surviving_mutant::test a spec edge case with a real fixture that exercises it all optional params empty arguments not a trivially empty one",
+      "text": "Test a spec edge case with a real fixture that exercises it (all-optional params, empty arguments), not a trivially empty one",
+      "signal": "surviving_mutant",
+      "scope": "catalog",
+      "status": "candidate",
+      "features": ["vrep-mcp"],
+      "recurrence": 1,
+      "harmful": 0,
+      "evidence": [
+        "src/vrep_mcp/catalog.py:209 mutant F19 (no-arg default index -1 changed to 0) (catalog)"
+      ],
+      "created": "2026-10-03T00:34:49Z",
+      "last_seen": "2026-10-03T00:34:49Z"
+    }
+  ]
+}

@@ -1,0 +1,173 @@
+{
+  "vrep-mcp": {
+    "tasks": [
+      {
+        "id": "1",
+        "title": "Configure dependencies and test markers",
+        "description": "Add `fastembed` and `numpy` (pinned ranges) to `pyproject.toml`, register pytest markers `model` and `sim`, regenerate `uv.lock`.",
+        "status": "done",
+        "priority": "high",
+        "dependencies": [],
+        "details": "Where: `pyproject.toml`\nRequirement: OPS-01\nReuses: `../mcp-manager/pyproject.toml` dependency style\nDone when:\n- [ ] `uv sync --locked` succeeds with the new `uv.lock` committed\n- [ ] `uv run pytest --markers` lists `model` and `sim`\n- [ ] Gate check passes: `uv sync --locked && uv run python -m compileall -q src && uv run pytest -q -m \"not model and not sim\"`\nGate: build\nCommit: `build(deps): add fastembed, numpy and pytest markers`\nSpec: .specs/features/vrep-mcp/spec.md",
+        "testStrategy": "none",
+        "subtasks": [],
+        "metadata": {
+          "wave": 1,
+          "onCriticalPath": true
+        },
+        "updatedAt": "2026-10-03T00:01:18.191Z"
+      },
+      {
+        "id": "2",
+        "title": "Catalog loading with fallbacks and hash",
+        "description": "`VrepError`, `Entry` normalization (`entries`, `get`, `list_namespaces`, `catalog_hash`) with Lua fallback for missing `python_raw`, aligned-only `param_docs`, and the OPS-04 error.",
+        "status": "done",
+        "priority": "high",
+        "dependencies": ["1"],
+        "details": "Where: `src/vrep_mcp/catalog.py`\nRequirement: CAT-01, CAT-07 (entry part), CAT-09, CALL-08, OPS-04\nReuses: draft `entries`, `list_namespaces`\nDone when:\n- [ ] `list_namespaces()` returns the counts in CAT-01 exactly\n- [ ] `get(\"sim.serialRead\")` carries `lua` params and `lua_raw` signature\n- [ ] Unknown name raises `VrepError` with the CAT-09 message\n- [ ] A missing or corrupt catalog file (via `VREP_DATA_DIR` tmp dir) raises the OPS-04 message\n- [ ] `catalog_hash()` changes when one file's bytes change\n- [ ] Gate check passes: `uv run pytest -q -m \"not model and not sim\"`\n- [ ] Test count: ≥ 6 tests in `tests/test_catalog.py` pass\nGate: quick\nCommit: `feat(catalog): load processed catalog with lua and doc fallbacks`\nSpec: .specs/features/vrep-mcp/spec.md",
+        "testStrategy": "unit",
+        "subtasks": [],
+        "metadata": {
+          "wave": 2,
+          "onCriticalPath": true
+        },
+        "updatedAt": "2026-10-03T00:01:20.378Z"
+      },
+      {
+        "id": "3",
+        "title": "Schema builder",
+        "description": "`schema(name)` returning the CAT-02 shape for functions and the CAT-08 shape for constants, with type mapping, `x-vrep-type`, required set, and aligned descriptions.",
+        "status": "done",
+        "priority": "high",
+        "dependencies": ["2"],
+        "details": "Where: `src/vrep_mcp/catalog.py` (modify)\nRequirement: CAT-02, CAT-03, CAT-04, CAT-05, CAT-06, CAT-07, CAT-08\nReuses: draft `schema`, `_is_optional`\nDone when:\n- [ ] `sim.setJointTargetPosition` required = `[\"objectHandle\",\"targetPosition\"]`, `targetPosition.type == \"number\"`\n- [ ] A `buffer`/`any`-typed param has no `type` key and keeps `x-vrep-type`\n- [ ] A function with misaligned definitions has no property `description`; an aligned one has them\n- [ ] `sim.serialRead` required excludes `closingString` and `timeout` (Lua fallback)\n- [ ] `sim.handle_world` returns `{kind:\"constant\", namespace:\"sim\", type:\"int\"}`\n- [ ] Gate check passes: `uv run pytest -q -m \"not model and not sim\"`\n- [ ] Test count: ≥ 11 tests in `tests/test_catalog.py` pass\nGate: quick\nCommit: `feat(catalog): build JSON input schemas from catalog entries`\nSpec: .specs/features/vrep-mcp/spec.md",
+        "testStrategy": "unit",
+        "subtasks": [],
+        "metadata": {
+          "wave": 3,
+          "onCriticalPath": true
+        },
+        "updatedAt": "2026-10-03T14:00:10.076Z"
+      },
+      {
+        "id": "4",
+        "title": "Argument validation and positional mapping",
+        "description": "`to_positional(name, arguments)` enforcing CALL-04..07 and mapping named args to the positional list truncated after the last given argument.",
+        "status": "done",
+        "priority": "high",
+        "dependencies": ["3"],
+        "details": "Where: `src/vrep_mcp/catalog.py` (modify)\nRequirement: CALL-01 (mapping), CALL-04, CALL-05, CALL-06, CALL-07\nReuses: draft `build_args`; type check idea from `../mcp-manager/src/tools/call_tool.py`\nDone when:\n- [ ] Each of the 4 error messages matches the spec text exactly\n- [ ] `int` accepted for `number`; `bool` rejected for `integer` and `number`; untyped params accept any JSON\n- [ ] `{\"objectHandle\":5,\"targetPosition\":1.5}` → `[5, 1.5]`; empty arguments for a no-param function → `[]`\n- [ ] Gate check passes: `uv run pytest -q -m \"not model and not sim\"`\n- [ ] Test count: ≥ 17 tests in `tests/test_catalog.py` pass\nGate: quick\nCommit: `feat(catalog): validate and map named arguments to positional`\nSpec: .specs/features/vrep-mcp/spec.md",
+        "testStrategy": "unit",
+        "subtasks": [],
+        "metadata": {
+          "wave": 4,
+          "onCriticalPath": true
+        },
+        "updatedAt": "2026-10-03T00:01:21.801Z"
+      },
+      {
+        "id": "5",
+        "title": "Embedding search with hash-keyed cache",
+        "description": "`index.search` with input validation, namespace/kind filters, cosine score ×100, and lazy `.npy` cache at `VREP_CACHE_DIR/index-<hash16>.npy`.",
+        "status": "done",
+        "priority": "high",
+        "dependencies": ["4"],
+        "details": "Where: `src/vrep_mcp/index.py`\nRequirement: SRCH-01, SRCH-02, SRCH-03, SRCH-06, SRCH-07, SRCH-08, SRCH-09, SRCH-10, SRCH-11, OPS-03 (model lazy)\nReuses: mcp-manager model id + `\"<name>: <description>\"` text format\nDone when:\n- [ ] With a fake embedder: results sorted desc, ≤ `max_results`, fields per SRCH-01, description ≤ 200 chars\n- [ ] Filters return only the matching namespace / kind\n- [ ] First search writes the cache file; a second search with a fresh module state loads it and calls the embedder only for the query\n- [ ] SRCH-08..11 messages match exactly\n- [ ] Importing `vrep_mcp.index` does not instantiate the embedder\n- [ ] Gate check passes: `uv run pytest -q -m \"not model and not sim\"`\n- [ ] Test count: ≥ 9 tests in `tests/test_index.py` pass\nGate: quick\nCommit: `feat(index): add embedding search with on-disk cache`\nSpec: .specs/features/vrep-mcp/spec.md",
+        "testStrategy": "unit",
+        "subtasks": [],
+        "metadata": {
+          "wave": 5,
+          "onCriticalPath": true
+        },
+        "updatedAt": "2026-10-03T14:00:06.939Z"
+      },
+      {
+        "id": "6",
+        "title": "ZMQ bridge with timeout, reset, and lock",
+        "description": "`bridge.call` holding a module lock, lazy `RemoteAPIClient(host, port, verbose=0)` with `RCVTIMEO`/`LINGER`, reset on timeout, error wrapping, and `jsonable`.",
+        "status": "done",
+        "priority": "high",
+        "dependencies": ["5"],
+        "details": "Where: `src/vrep_mcp/bridge.py`\nRequirement: CALL-01, CALL-02, CALL-03, CALL-08, CALL-09, CALL-10, CALL-11, CALL-12, OPS-03 (lazy connect)\nReuses: draft `_api`, `call`, `jsonable` from `catalog.py` (moved out)\nDone when:\n- [ ] Fake API: positional invocation, tuple→list, bytes→base64, `None`→`null`, constant read ignores `arguments`\n- [ ] Fake client raising `zmq.Again` → CALL-09 message; next call builds a new client (CALL-10)\n- [ ] Fake API raising `Exception(\"boom\")` → `CoppeliaSim error in <name>: boom`; missing attribute → the \"not available\" message\n- [ ] Two threads calling concurrently never overlap inside the API (CALL-12)\n- [ ] Invalid arguments raise before the client factory is called\n- [ ] Draft ZMQ code removed from `catalog.py`\n- [ ] Gate check passes: `uv run pytest -q -m \"not model and not sim\"`\n- [ ] Test count: ≥ 9 tests in `tests/test_bridge.py` pass\nGate: quick\nCommit: `feat(bridge): add ZMQ bridge with timeout, reconnect and lock`\nSpec: .specs/features/vrep-mcp/spec.md",
+        "testStrategy": "unit",
+        "subtasks": [],
+        "metadata": {
+          "wave": 6,
+          "onCriticalPath": true
+        },
+        "updatedAt": "2026-10-03T00:11:02.147Z"
+      },
+      {
+        "id": "7",
+        "title": "FastMCP server with the 4 tools",
+        "description": "`server.py` exposing `list_namespaces`, `search_functions(query, max_results, namespace, kind)`, `get_function_schema`, `call_function`, mapping `VrepError` to `ToolError`, and logging to stderr.",
+        "status": "done",
+        "priority": "high",
+        "dependencies": ["6"],
+        "details": "Where: `src/vrep_mcp/server.py` (modify)\nRequirement: OPS-01, OPS-02, CAT-01, CAT-02, CAT-09, SRCH-01, CALL-04, CALL-09\nReuses: draft `server.py`\nDone when:\n- [ ] In-memory `fastmcp.Client` lists exactly the 4 tool names\n- [ ] One happy path and one error path per tool return the spec payload / message (fake embedder and fake API injected)\n- [ ] Gate check passes: `uv run pytest -q -m \"not sim\"`\n- [ ] Test count: ≥ 8 tests in `tests/test_server.py` pass\nGate: full\nCommit: `feat(server): expose catalog, search and call as 4 MCP tools`\nSpec: .specs/features/vrep-mcp/spec.md",
+        "testStrategy": "integration",
+        "subtasks": [],
+        "metadata": {
+          "wave": 7,
+          "onCriticalPath": true
+        },
+        "updatedAt": "2026-10-03T00:11:02.700Z"
+      },
+      {
+        "id": "8",
+        "title": "Real-model search quality check",
+        "description": "Marker-`model` tests asserting SRCH-04 and SRCH-05 against the real multilingual model.",
+        "status": "done",
+        "priority": "high",
+        "dependencies": ["7"],
+        "details": "Where: `tests/test_search_quality.py`\nRequirement: SRCH-04, SRCH-05\nReuses: `index.search`\nDone when:\n- [ ] `uv run pytest -q -m model` passes (downloads the model once)\n- [ ] Both queries rank `sim.setJointTargetPosition` in the top 5\n- [ ] Gate check passes: `uv run pytest -q -m \"not sim\"`\n- [ ] Test count: 2 tests in `tests/test_search_quality.py` pass\nGate: full\nCommit: `test(index): check multilingual search quality with real model`\nSpec: .specs/features/vrep-mcp/spec.md",
+        "testStrategy": "integration",
+        "subtasks": [],
+        "metadata": {
+          "wave": 8,
+          "onCriticalPath": true
+        },
+        "updatedAt": "2026-10-03T00:16:45.301Z"
+      },
+      {
+        "id": "9",
+        "title": "stdio process smoke test",
+        "description": "Spawn `uv run vrep-mcp` through `fastmcp.Client` stdio transport, list tools, call `get_function_schema`, assert the session works (stdout stays pure JSON-RPC).",
+        "status": "done",
+        "priority": "high",
+        "dependencies": ["8"],
+        "details": "Where: `tests/test_stdio.py`\nRequirement: OPS-01, OPS-02\nReuses: `[project.scripts] vrep-mcp`\nDone when:\n- [ ] Subprocess session lists the 4 tools and returns the `sim.getObject` schema\n- [ ] Session also succeeds with `VERBOSE=2` in the environment (client stdout printing suppressed)\n- [ ] Gate check passes: `uv run pytest -q -m \"not sim\"`\n- [ ] Test count: 2 tests in `tests/test_stdio.py` pass\nGate: full\nCommit: `test(server): add stdio subprocess smoke test`\nSpec: .specs/features/vrep-mcp/spec.md",
+        "testStrategy": "e2e",
+        "subtasks": [],
+        "metadata": {
+          "wave": 9,
+          "onCriticalPath": true
+        },
+        "updatedAt": "2026-10-03T00:16:41.614Z"
+      },
+      {
+        "id": "10",
+        "title": "Live CoppeliaSim e2e",
+        "description": "Marker-`sim` tests (skipped when `localhost:23000` is unreachable) calling `sim.getSimulationState`, `sim.getObject` on `/Floor`, and reading `sim.handle_world` through `call_function`.",
+        "status": "done",
+        "priority": "high",
+        "dependencies": ["9"],
+        "details": "Where: `tests/test_sim_e2e.py`\nRequirement: CALL-01, CALL-02, CALL-03\nReuses: `bridge.call`\nDone when:\n- [ ] With CoppeliaSim running (default scene): 3 tests pass via `uv run pytest -q -m sim`\n- [ ] Without CoppeliaSim: the 3 tests report as skipped, not failed\n- [ ] Gate check passes: `uv run pytest -q -m \"not model and not sim\"`\n- [ ] Test count: 3 tests in `tests/test_sim_e2e.py` (pass or skip)\nGate: full\nCommit: `test(bridge): add live CoppeliaSim e2e checks`\nSpec: .specs/features/vrep-mcp/spec.md",
+        "testStrategy": "e2e",
+        "subtasks": [],
+        "metadata": {
+          "wave": 10,
+          "onCriticalPath": true
+        },
+        "updatedAt": "2026-10-03T00:16:42.171Z"
+      }
+    ],
+    "metadata": {
+      "version": "1.0.0",
+      "lastModified": "2026-10-03T14:00:10.076Z",
+      "taskCount": 10,
+      "completedCount": 10,
+      "tags": ["vrep-mcp"]
+    }
+  }
+}
