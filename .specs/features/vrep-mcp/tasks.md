@@ -354,13 +354,15 @@ T8 → T9 → T10
 
 **Done when**:
 
-- [ ] With CoppeliaSim running (default scene): 3 tests pass via `uv run pytest -q -m sim`
-- [ ] Without CoppeliaSim: the 3 tests report as skipped, not failed
-- [ ] Gate check passes: `uv run pytest -q -m "not model and not sim"`
-- [ ] Test count: 3 tests in `tests/test_sim_e2e.py` (pass or skip)
+- [x] With CoppeliaSim running (default scene): 3 tests pass via `uv run pytest -q -m sim`
+- [x] Without CoppeliaSim: the 3 tests report as skipped, not failed
+- [x] Gate check passes: `uv run pytest -q -m "not model and not sim"`
+- [x] Test count: 3 tests in `tests/test_sim_e2e.py` (pass or skip)
 
 **Tests**: e2e
 **Gate**: full
+
+**Status**: done
 
 **Commit**: `test(bridge): add live CoppeliaSim e2e checks`
 
