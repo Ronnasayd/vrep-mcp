@@ -234,17 +234,19 @@ T8 → T9 → T10
 
 **Done when**:
 
-- [ ] Fake API: positional invocation, tuple→list, bytes→base64, `None`→`null`, constant read ignores `arguments`
-- [ ] Fake client raising `zmq.Again` → CALL-09 message; next call builds a new client (CALL-10)
-- [ ] Fake API raising `Exception("boom")` → `CoppeliaSim error in <name>: boom`; missing attribute → the "not available" message
-- [ ] Two threads calling concurrently never overlap inside the API (CALL-12)
-- [ ] Invalid arguments raise before the client factory is called
-- [ ] Draft ZMQ code removed from `catalog.py`
-- [ ] Gate check passes: `uv run pytest -q -m "not model and not sim"`
-- [ ] Test count: ≥ 9 tests in `tests/test_bridge.py` pass
+- [x] Fake API: positional invocation, tuple→list, bytes→base64, `None`→`null`, constant read ignores `arguments`
+- [x] Fake client raising `zmq.Again` → CALL-09 message; next call builds a new client (CALL-10)
+- [x] Fake API raising `Exception("boom")` → `CoppeliaSim error in <name>: boom`; missing attribute → the "not available" message
+- [x] Two threads calling concurrently never overlap inside the API (CALL-12)
+- [x] Invalid arguments raise before the client factory is called
+- [x] Draft ZMQ code removed from `catalog.py`
+- [x] Gate check passes: `uv run pytest -q -m "not model and not sim"`
+- [x] Test count: ≥ 9 tests in `tests/test_bridge.py` pass
 
 **Tests**: unit
 **Gate**: quick
+
+**Status**: done
 
 **Commit**: `feat(bridge): add ZMQ bridge with timeout, reconnect and lock`
 

@@ -2,14 +2,13 @@
 
 from __future__ import annotations
 
-import base64
 import hashlib
 import json
 import os
 import re
 from functools import lru_cache
 from pathlib import Path
-from typing import Any, Callable
+from typing import Any
 
 NAMESPACES = ("sim", "simUI", "simROS2", "simVision")
 _FILES = tuple(f"{ns}.json" for ns in NAMESPACES) + ("constants.json",)
@@ -223,41 +222,3 @@ def to_positional(name: str, arguments: dict[str, Any]) -> list[Any]:
                 f"Argument '{p}' expected {prop['type']}, got {_json_type(arguments[p])}"
             )
     return [arguments[p] for i, p in enumerate(props) if i <= last]
-
-
-def jsonable(v: Any) -> Any:
-    return json.loads(
-        json.dumps(
-            v,
-            default=lambda o: (
-                base64.b64encode(o).decode()
-                if isinstance(o, (bytes, bytearray))
-                else repr(o)
-            ),
-        )
-    )
-
-
-_client = None
-
-
-def _api(ns: str) -> Any:
-    global _client
-    if _client is None:
-        from coppeliasim_zmqremoteapi_client import RemoteAPIClient
-
-        _client = RemoteAPIClient(
-            os.environ.get("VREP_HOST", "localhost"),
-            int(os.environ.get("VREP_PORT", "23000")),
-        )
-    return _client.require(ns)
-
-
-def call(
-    name: str, arguments: dict[str, Any] | None = None, api: Callable[[str], Any] = _api
-) -> Any:
-    e = get(name)
-    obj = api(e["namespace"])
-    if e["kind"] == "constant":
-        return jsonable(getattr(obj, e["method"]))
-    return jsonable(getattr(obj, e["method"])(*to_positional(name, arguments or {})))
