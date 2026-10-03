@@ -33,7 +33,7 @@ def fresh_connection():
     bridge._reset()
 
 
-def test_get_simulation_state_returns_an_integer_state():
+def test_get_simulation_state_returns_minus_one_state():
     state = bridge.call("sim.getSimulationState")
 
     assert isinstance(state, int)
@@ -46,7 +46,7 @@ def test_get_object_resolves_floor_in_the_default_scene_to_a_handle():
     assert handle >= 0
 
 
-def test_reading_handle_world_constant_returns_an_integer():
+def test_reading_handle_world_constant_returns_minus_one():
     value = bridge.call("sim.handle_world", {"ignored": 1})
 
-    assert isinstance(value, int)
+    assert value == -1  # observed on a live CoppeliaSim: sim.handle_world is -1
