@@ -67,3 +67,67 @@ def test_catalog_hash_changes_when_one_file_changes(data_dir):
 
 def test_catalog_hash_is_stable_for_identical_bytes(data_dir):
     assert catalog.catalog_hash() == catalog.catalog_hash()
+
+
+def _input_schema(name):
+    return catalog.schema(name)["inputSchema"]
+
+
+def test_schema_function_has_cat02_shape_and_parameter_order():
+    s = catalog.schema("sim.setJointTargetPosition")
+    assert {
+        "name",
+        "kind",
+        "namespace",
+        "signature",
+        "description",
+        "url",
+        "returns",
+        "inputSchema",
+    } <= set(s)
+    assert (s["kind"], s["namespace"]) == ("function", "sim")
+    assert list(s["inputSchema"]["properties"]) == [
+        "objectHandle",
+        "targetPosition",
+        "motionParams",
+    ]
+
+
+def test_schema_required_excludes_defaulted_params_and_maps_types():
+    s = _input_schema("sim.setJointTargetPosition")
+    assert s["required"] == ["objectHandle", "targetPosition"]
+    assert s["properties"]["targetPosition"] == {
+        "x-vrep-type": "float",
+        "type": "number",
+    }
+    assert s["properties"]["motionParams"]["type"] == "array"
+
+
+def test_schema_unmapped_doc_type_has_no_type_key_but_keeps_x_vrep_type():
+    prop = _input_schema("sim.serialSend")["properties"]["data"]
+    assert "type" not in prop
+    assert prop["x-vrep-type"] == "buffer"
+
+
+def test_schema_misaligned_param_docs_omit_property_descriptions():
+    props = _input_schema("sim.setJointTargetPosition")["properties"]
+    assert all("description" not in p for p in props.values())
+
+
+def test_schema_aligned_param_docs_set_property_descriptions():
+    props = _input_schema("sim.setExplicitHandling")["properties"]
+    assert props["objectHandle"]["description"] == "handle of a scene object."
+
+
+def test_schema_lua_fallback_required_excludes_defaulted_params():
+    required = _input_schema("sim.serialRead")["required"]
+    assert required == ["portHandle", "dataLengthToRead", "blockingOperation"]
+
+
+def test_schema_constant_returns_cat08_shape():
+    assert catalog.schema("sim.handle_world") == {
+        "name": "sim.handle_world",
+        "kind": "constant",
+        "namespace": "sim",
+        "type": "int",
+    }

@@ -169,20 +169,24 @@ def _is_optional(e: dict[str, Any], pname: str) -> bool:
 def schema(name: str) -> dict[str, Any]:
     e = get(name)
     if e["kind"] == "constant":
-        return {"name": name, "kind": "constant", "type": e["type"]}
-    params = e["params"]
-    props = {
-        p["param_name"]: {
-            "type": _JSON_TYPES.get(p["param_type"], "string"),
-            "x-vrep-type": p["param_type"],
+        return {
+            "name": name,
+            "kind": "constant",
+            "namespace": e["namespace"],
+            "type": e["type"],
         }
-        for p in params
-    }
-    for p, d in zip(params, e["param_docs"]):
-        props[p["param_name"]]["description"] = d
+    props = {}
+    for i, p in enumerate(e["params"]):
+        prop = {"x-vrep-type": p["param_type"]}
+        if p["param_type"] in _JSON_TYPES:
+            prop["type"] = _JSON_TYPES[p["param_type"]]
+        if e["param_docs"]:
+            prop["description"] = e["param_docs"][i]
+        props[p["param_name"]] = prop
     return {
         "name": name,
         "kind": "function",
+        "namespace": e["namespace"],
         "signature": e["signature"],
         "description": e["description"],
         "url": e["url"],
@@ -190,9 +194,7 @@ def schema(name: str) -> dict[str, Any]:
         "inputSchema": {
             "type": "object",
             "properties": props,
-            "required": [
-                p["param_name"] for p in params if not _is_optional(e, p["param_name"])
-            ],
+            "required": [n for n in props if not _is_optional(e, n)],
         },
     }
 

@@ -140,16 +140,18 @@ T8 → T9 → T10
 
 **Done when**:
 
-- [ ] `sim.setJointTargetPosition` required = `["objectHandle","targetPosition"]`, `targetPosition.type == "number"`
-- [ ] A `buffer`/`any`-typed param has no `type` key and keeps `x-vrep-type`
-- [ ] A function with misaligned definitions has no property `description`; an aligned one has them
-- [ ] `sim.serialRead` required excludes `closingString` and `timeout` (Lua fallback)
-- [ ] `sim.handle_world` returns `{kind:"constant", namespace:"sim", type:"int"}`
-- [ ] Gate check passes: `uv run pytest -q -m "not model and not sim"`
-- [ ] Test count: ≥ 11 tests in `tests/test_catalog.py` pass
+- [x] `sim.setJointTargetPosition` required = `["objectHandle","targetPosition"]`, `targetPosition.type == "number"`
+- [x] A `buffer`/`any`-typed param has no `type` key and keeps `x-vrep-type`
+- [x] A function with misaligned definitions has no property `description`; an aligned one has them
+- [x] `sim.serialRead` required excludes `closingString` and `timeout` (Lua fallback)
+- [x] `sim.handle_world` returns `{kind:"constant", namespace:"sim", type:"int"}`
+- [x] Gate check passes: `uv run pytest -q -m "not model and not sim"`
+- [x] Test count: ≥ 11 tests in `tests/test_catalog.py` pass
 
 **Tests**: unit
 **Gate**: quick
+
+**Status**: done
 
 **Commit**: `feat(catalog): build JSON input schemas from catalog entries`
 
