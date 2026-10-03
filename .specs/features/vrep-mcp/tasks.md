@@ -267,13 +267,15 @@ T8 → T9 → T10
 
 **Done when**:
 
-- [ ] In-memory `fastmcp.Client` lists exactly the 4 tool names
-- [ ] One happy path and one error path per tool return the spec payload / message (fake embedder and fake API injected)
-- [ ] Gate check passes: `uv run pytest -q -m "not sim"`
-- [ ] Test count: ≥ 8 tests in `tests/test_server.py` pass
+- [x] In-memory `fastmcp.Client` lists exactly the 4 tool names
+- [x] One happy path and one error path per tool return the spec payload / message (fake embedder and fake API injected)
+- [x] Gate check passes: `uv run pytest -q -m "not sim"`
+- [x] Test count: ≥ 8 tests in `tests/test_server.py` pass
 
 **Tests**: integration
 **Gate**: full
+
+**Status**: done
 
 **Commit**: `feat(server): expose catalog, search and call as 4 MCP tools`
 
