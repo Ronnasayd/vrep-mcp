@@ -1,3 +1,4 @@
+import hashlib
 import importlib
 import re
 import zlib
@@ -113,14 +114,34 @@ def test_indexed_text_splits_camel_case_names_before_the_description(fake):
     assert f"sim.set Joint Target Position: {entry['description']}" in fake.calls[0]
 
 
-def test_cache_written_before_text_format_change_is_not_reused(fake, tmp_path):
-    cache = tmp_path / "cache"
-    cache.mkdir()
-    old_name = f"index-{catalog.catalog_hash()[:16]}.npy"
-    np.save(cache / old_name, np.zeros((975, DIM), dtype=np.float32))
+def _expected_cache_name(version):
+    key = hashlib.sha256(f"{catalog.catalog_hash()}:{version}".encode()).hexdigest()
+    return f"index-{key[:16]}.npy"
+
+
+def test_first_search_writes_cache_named_from_catalog_hash_and_format_version(
+    fake, tmp_path
+):
+    index.search("handle")
+
+    written = [p.name for p in (tmp_path / "cache").iterdir()]
+    assert written == [_expected_cache_name(index.TEXT_FORMAT_VERSION)]
+
+
+def test_bumping_text_format_version_changes_cache_name_and_forces_re_embed(
+    fake, tmp_path, monkeypatch
+):
+    index.search("handle")
+    index._vectors_for.cache_clear()
+    fake.calls.clear()
+    monkeypatch.setattr(index, "TEXT_FORMAT_VERSION", "next-format")
 
     index.search("handle")
 
+    names = sorted(p.name for p in (tmp_path / "cache").iterdir())
+    assert names == sorted(
+        [_expected_cache_name("camel-split-v1"), _expected_cache_name("next-format")]
+    )
     assert len(fake.calls[0]) == 975
 
 
