@@ -109,6 +109,7 @@ def test_call_builds_client_with_env_host_port_verbose_zero_and_timeouts(
     client = fake_api.instances[0]
     assert client.args == ("10.0.0.7", 24000, 0)
     assert client.socket.options[zmq.RCVTIMEO] == 2500
+    assert client.socket.options[zmq.SNDTIMEO] == 2500
     assert client.socket.options[zmq.LINGER] == 0
 
 
