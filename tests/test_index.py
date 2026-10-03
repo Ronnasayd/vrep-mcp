@@ -60,6 +60,10 @@ def test_search_returns_sorted_limited_results_with_srch01_fields(fake):
     assert all(0 <= r["score"] <= 100 for r in results)
 
 
+def test_search_returns_ten_results_by_default(fake):
+    assert len(index.search("handle")) == 10
+
+
 def test_search_aligns_cache_rows_with_entry_names(fake):
     entry = catalog.get("sim.setJointTargetPosition")
 

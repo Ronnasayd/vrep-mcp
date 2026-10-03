@@ -119,6 +119,10 @@ def test_search_functions_returns_srch01_items_filtered_by_kind(wired):
     assert set(result[0]) == {"name", "kind", "namespace", "description", "score"}
 
 
+def test_search_functions_returns_ten_results_by_default(wired):
+    assert len(call(wired, "search_functions", {"query": "handle"})) == 10
+
+
 def test_search_functions_empty_query_returns_srch08_error(wired):
     assert error_of(wired, "search_functions", {"query": " "}) == (
         "query must not be empty"
