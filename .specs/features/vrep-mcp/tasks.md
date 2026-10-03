@@ -296,13 +296,15 @@ T8 → T9 → T10
 
 **Done when**:
 
-- [ ] `uv run pytest -q -m model` passes (downloads the model once)
-- [ ] Both queries rank `sim.setJointTargetPosition` in the top 5
-- [ ] Gate check passes: `uv run pytest -q -m "not sim"`
-- [ ] Test count: 2 tests in `tests/test_search_quality.py` pass
+- [x] `uv run pytest -q -m model` passes (downloads the model once)
+- [x] Both queries rank `sim.setJointTargetPosition` in the top 5
+- [x] Gate check passes: `uv run pytest -q -m "not sim"`
+- [x] Test count: 2 tests in `tests/test_search_quality.py` pass
 
 **Tests**: integration
 **Gate**: full
+
+**Status**: done
 
 **Commit**: `test(index): check multilingual search quality with real model`
 
