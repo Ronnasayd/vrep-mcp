@@ -263,3 +263,20 @@ def test_schema_property_descriptions_are_stripped_of_surrounding_whitespace():
 
     assert props["desiredResolutionOut"]["description"].endswith("bit-coded:")
     assert all(p["description"] == p["description"].strip() for p in props.values())
+
+
+def test_to_positional_all_optional_function_with_empty_arguments_returns_empty_list():
+    assert catalog.to_positional("sim.stopSimulation", {}) == []
+
+
+def test_schema_returns_and_url_come_from_the_catalog_entry():
+    s = catalog.schema("sim.getObject")
+
+    assert s["returns"] == [{"return_type": "int", "return_name": "objectHandle"}]
+    assert s["url"] == "https://manual.coppeliarobotics.com/en/sim/simGetObject.htm"
+
+
+def test_schema_param_named_id_is_required_despite_defaulted_id_suffixed_params():
+    s = _input_schema("simUI.addTreeItem")
+
+    assert s["required"] == ["handle", "id", "item_id", "text"]
