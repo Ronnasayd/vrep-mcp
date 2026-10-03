@@ -1,0 +1,1031 @@
+[
+  {
+    "prefix": "simVision",
+    "method": "createVelodyneHDL64E",
+    "description": "Creates a handle for generating data similar to a Velodyne HDL64E. See also",
+    "python": {
+      "params": [
+        { "param_type": "list", "param_name": "visionSensorHandles" },
+        { "param_type": "float", "param_name": "frequency" },
+        { "param_type": "int", "param_name": "options" },
+        { "param_type": "int", "param_name": "pointSize" },
+        { "param_type": "list", "param_name": "coloring_closeFarDist" },
+        { "param_type": "float", "param_name": "displayScalingFactor" },
+        { "param_type": "int", "param_name": "pointCloudHandle" }
+      ],
+      "returns": [{ "return_type": "int", "return_name": "handle" }]
+    },
+    "python_raw": "int handle=simVision.createVelodyneHDL64E(list visionSensorHandles,float frequency,int options=0,int pointSize=2,list coloring_closeFarDist=[1,5],float displayScalingFactor=1,int pointCloudHandle=-1)",
+    "lua": {
+      "params": [
+        { "param_type": "int[4]", "param_name": "visionSensorHandles" },
+        { "param_type": "float", "param_name": "frequency" },
+        { "param_type": "int", "param_name": "options" },
+        { "param_type": "int", "param_name": "pointSize" },
+        { "param_type": "float[2]", "param_name": "coloring_closeFarDist" },
+        { "param_type": "float", "param_name": "displayScalingFactor" },
+        { "param_type": "int", "param_name": "pointCloudHandle" }
+      ],
+      "returns": [{ "return_type": "int", "return_name": "handle" }]
+    },
+    "lua_raw": "int handle=simVision.createVelodyneHDL64E(int[4] visionSensorHandles,float frequency,int options=0,int pointSize=2,float[2] coloring_closeFarDist={1,5},float displayScalingFactor=1,int pointCloudHandle=-1)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simVision.htm?#simVision.createVelodyneHDL64E"
+  },
+  {
+    "prefix": "simVision",
+    "method": "createVelodyneVPL16",
+    "description": "Creates a handle for generating data similar to a Velodyne VPL16. See also",
+    "python": {
+      "params": [
+        { "param_type": "list", "param_name": "visionSensorHandles" },
+        { "param_type": "float", "param_name": "frequency" },
+        { "param_type": "int", "param_name": "options" },
+        { "param_type": "int", "param_name": "pointSize" },
+        { "param_type": "list", "param_name": "coloring_closeFarDist" },
+        { "param_type": "float", "param_name": "displayScalingFactor" },
+        { "param_type": "int", "param_name": "pointCloudHandle" }
+      ],
+      "returns": [{ "return_type": "int", "return_name": "handle" }]
+    },
+    "python_raw": "int handle=simVision.createVelodyneVPL16(list visionSensorHandles,float frequency,int options=0,int pointSize=2,list coloring_closeFarDist=[1,5],float displayScalingFactor=1,int pointCloudHandle=-1)",
+    "lua": {
+      "params": [
+        { "param_type": "int[4]", "param_name": "visionSensorHandles" },
+        { "param_type": "float", "param_name": "frequency" },
+        { "param_type": "int", "param_name": "options" },
+        { "param_type": "int", "param_name": "pointSize" },
+        { "param_type": "float[2]", "param_name": "coloring_closeFarDist" },
+        { "param_type": "float", "param_name": "displayScalingFactor" },
+        { "param_type": "int", "param_name": "pointCloudHandle" }
+      ],
+      "returns": [{ "return_type": "int", "return_name": "handle" }]
+    },
+    "lua_raw": "int handle=simVision.createVelodyneVPL16(int[4] visionSensorHandles,float frequency,int options=0,int pointSize=2,float[2] coloring_closeFarDist={1,5},float displayScalingFactor=1,int pointCloudHandle=-1)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simVision.htm?#simVision.createVelodyneVPL16"
+  },
+  {
+    "prefix": "simVision",
+    "method": "destroyVelodyneHDL64E",
+    "description": "Deletes a Velodyne HDL64E handle previously created with",
+    "python": {
+      "params": [{ "param_type": "int", "param_name": "velodyneHandle" }],
+      "returns": []
+    },
+    "python_raw": "simVision.destroyVelodyneHDL64E(int velodyneHandle)",
+    "lua": {
+      "params": [{ "param_type": "int", "param_name": "velodyneHandle" }],
+      "returns": []
+    },
+    "lua_raw": "simVision.destroyVelodyneHDL64E(int velodyneHandle)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simVision.htm?#simVision.destroyVelodyneHDL64E"
+  },
+  {
+    "prefix": "simVision",
+    "method": "destroyVelodyneVPL16",
+    "description": "Deletes a Velodyne VPL16 handle previously created with",
+    "python": {
+      "params": [{ "param_type": "int", "param_name": "velodyneHandle" }],
+      "returns": []
+    },
+    "python_raw": "simVision.destroyVelodyneVPL16(int velodyneHandle)",
+    "lua": {
+      "params": [{ "param_type": "int", "param_name": "velodyneHandle" }],
+      "returns": []
+    },
+    "lua_raw": "simVision.destroyVelodyneVPL16(int velodyneHandle)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simVision.htm?#simVision.destroyVelodyneVPL16"
+  },
+  {
+    "prefix": "simVision",
+    "method": "distort",
+    "description": "Transforms (distorts) a vision sensor image via pixel remapping.",
+    "python": {
+      "params": [
+        { "param_type": "int", "param_name": "visionSensorHandle" },
+        { "param_type": "list", "param_name": "pixelMap" },
+        { "param_type": "list", "param_name": "depthScalings" }
+      ],
+      "returns": []
+    },
+    "python_raw": "simVision.distort(int visionSensorHandle,list pixelMap=None,list depthScalings=None)",
+    "lua": {
+      "params": [
+        { "param_type": "int", "param_name": "visionSensorHandle" },
+        { "param_type": "int[]", "param_name": "pixelMap" },
+        { "param_type": "float[]", "param_name": "depthScalings" }
+      ],
+      "returns": []
+    },
+    "lua_raw": "simVision.distort(int visionSensorHandle,int[] pixelMap=nil,float[] depthScalings=nil)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simVision.htm?#simVision.distort"
+  },
+  {
+    "prefix": "simVision",
+    "method": "handleAnaglyphStereo",
+    "description": "Allows to generate an anaglyph stereo image from two individual vision sensors (for the left and right eye).",
+    "python": {
+      "params": [
+        { "param_type": "int", "param_name": "rgbVisionSensorHandle" },
+        { "param_type": "list", "param_name": "handlesOfTwoVisionSensors" },
+        { "param_type": "list", "param_name": "leftAndRightColors" }
+      ],
+      "returns": []
+    },
+    "python_raw": "simVision.handleAnaglyphStereo(int rgbVisionSensorHandle,list handlesOfTwoVisionSensors,list leftAndRightColors=None)",
+    "lua": {
+      "params": [
+        { "param_type": "int", "param_name": "rgbVisionSensorHandle" },
+        { "param_type": "int[2]", "param_name": "handlesOfTwoVisionSensors" },
+        { "param_type": "float[6]", "param_name": "leftAndRightColors" }
+      ],
+      "returns": []
+    },
+    "lua_raw": "simVision.handleAnaglyphStereo(int rgbVisionSensorHandle,int[2] handlesOfTwoVisionSensors,float[6] leftAndRightColors=nil)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simVision.htm?#simVision.handleAnaglyphStereo"
+  },
+  {
+    "prefix": "simVision",
+    "method": "handleSpherical",
+    "description": "Allows to generate an RGB and/or depth image that covers all directions, i.e. spherical vision, based on the input of 6 individual vision sensors, each looking into a different and perpendicular direction.",
+    "python": {
+      "params": [
+        { "param_type": "int", "param_name": "rgbVisionSensorHandle" },
+        { "param_type": "list", "param_name": "handlesOfSixVisionSensors" },
+        { "param_type": "float", "param_name": "horizontalAngle" },
+        { "param_type": "float", "param_name": "verticalAngle" },
+        { "param_type": "int", "param_name": "depthVisionSensorHandle" }
+      ],
+      "returns": []
+    },
+    "python_raw": "simVision.handleSpherical(int rgbVisionSensorHandle,list handlesOfSixVisionSensors,float horizontalAngle,float verticalAngle,int depthVisionSensorHandle=-1)",
+    "lua": {
+      "params": [
+        { "param_type": "int", "param_name": "rgbVisionSensorHandle" },
+        { "param_type": "int[6]", "param_name": "handlesOfSixVisionSensors" },
+        { "param_type": "float", "param_name": "horizontalAngle" },
+        { "param_type": "float", "param_name": "verticalAngle" },
+        { "param_type": "int", "param_name": "depthVisionSensorHandle" }
+      ],
+      "returns": []
+    },
+    "lua_raw": "simVision.handleSpherical(int rgbVisionSensorHandle,int[6] handlesOfSixVisionSensors,float horizontalAngle,float verticalAngle,int depthVisionSensorHandle=-1)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simVision.htm?#simVision.handleSpherical"
+  },
+  {
+    "prefix": "simVision",
+    "method": "handleVelodyneHDL64E",
+    "description": "Handles a velodyne HDL64E sensor (i.e. generates and displays detection points. See also",
+    "python": {
+      "params": [
+        { "param_type": "int", "param_name": "velodyneHandle" },
+        { "param_type": "float", "param_name": "dt" }
+      ],
+      "returns": [
+        { "return_type": "bytes", "return_name": "points" },
+        { "return_type": "bytes", "return_name": "colors" }
+      ]
+    },
+    "python_raw": "bytes points,bytes colors=simVision.handleVelodyneHDL64E(int velodyneHandle,float dt)",
+    "lua": {
+      "params": [
+        { "param_type": "int", "param_name": "velodyneHandle" },
+        { "param_type": "float", "param_name": "dt" }
+      ],
+      "returns": [
+        { "return_type": "buffer", "return_name": "points" },
+        { "return_type": "buffer", "return_name": "colors" }
+      ]
+    },
+    "lua_raw": "buffer points,buffer colors=simVision.handleVelodyneHDL64E(int velodyneHandle,float dt)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simVision.htm?#simVision.handleVelodyneHDL64E"
+  },
+  {
+    "prefix": "simVision",
+    "method": "handleVelodyneVPL16",
+    "description": "Handles a velodyne VPL16 sensor (i.e. generates and displays detection points. See also",
+    "python": {
+      "params": [
+        { "param_type": "int", "param_name": "velodyneHandle" },
+        { "param_type": "float", "param_name": "dt" }
+      ],
+      "returns": [
+        { "return_type": "bytes", "return_name": "points" },
+        { "return_type": "bytes", "return_name": "colors" }
+      ]
+    },
+    "python_raw": "bytes points,bytes colors=simVision.handleVelodyneVPL16(int velodyneHandle,float dt)",
+    "lua": {
+      "params": [
+        { "param_type": "int", "param_name": "velodyneHandle" },
+        { "param_type": "float", "param_name": "dt" }
+      ],
+      "returns": [
+        { "return_type": "buffer", "return_name": "points" },
+        { "return_type": "buffer", "return_name": "colors" }
+      ]
+    },
+    "lua_raw": "buffer points,buffer colors=simVision.handleVelodyneVPL16(int velodyneHandle,float dt)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simVision.htm?#simVision.handleVelodyneVPL16"
+  },
+  {
+    "prefix": "simVision",
+    "method": "addBuffer1ToWorkImg",
+    "description": "Performs a pixel wise addition between the",
+    "python": {
+      "params": [{ "param_type": "int", "param_name": "handle" }],
+      "returns": []
+    },
+    "python_raw": "simVision.addBuffer1ToWorkImg(int handle)",
+    "lua": {
+      "params": [{ "param_type": "int", "param_name": "handle" }],
+      "returns": []
+    },
+    "lua_raw": "simVision.addBuffer1ToWorkImg(int handle)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simVision.htm?#simVision.addBuffer1ToWorkImg"
+  },
+  {
+    "prefix": "simVision",
+    "method": "addWorkImgToBuffer1",
+    "description": "Performs a pixel wise addition between the",
+    "python": {
+      "params": [{ "param_type": "int", "param_name": "handle" }],
+      "returns": []
+    },
+    "python_raw": "simVision.addWorkImgToBuffer1(int handle)",
+    "lua": {
+      "params": [{ "param_type": "int", "param_name": "handle" }],
+      "returns": []
+    },
+    "lua_raw": "simVision.addWorkImgToBuffer1(int handle)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simVision.htm?#simVision.addWorkImgToBuffer1"
+  },
+  {
+    "prefix": "simVision",
+    "method": "binaryWorkImg",
+    "description": "Transforms the",
+    "python": {
+      "params": [
+        { "param_type": "int", "param_name": "handle" },
+        { "param_type": "float", "param_name": "threshold" },
+        { "param_type": "float", "param_name": "oneProportion" },
+        { "param_type": "float", "param_name": "oneTol" },
+        { "param_type": "float", "param_name": "xCenter" },
+        { "param_type": "float", "param_name": "xCenterTol" },
+        { "param_type": "float", "param_name": "yCenter" },
+        { "param_type": "float", "param_name": "yCenterTol" },
+        { "param_type": "float", "param_name": "orient" },
+        { "param_type": "float", "param_name": "orientTol" },
+        { "param_type": "float", "param_name": "roundness" },
+        { "param_type": "bool", "param_name": "enableTrigger" },
+        { "param_type": "list", "param_name": "overlayColor" }
+      ],
+      "returns": [
+        { "return_type": "int", "return_name": "trigger" },
+        { "return_type": "bytes", "return_name": "packedPacket" }
+      ]
+    },
+    "python_raw": "int trigger,bytes packedPacket=simVision.binaryWorkImg(int handle,float threshold,float oneProportion,float oneTol,float xCenter,float xCenterTol,float yCenter,float yCenterTol,float orient,float orientTol,float roundness,bool enableTrigger,list overlayColor=[1.0,0.0,1.0]))",
+    "lua": {
+      "params": [
+        { "param_type": "int", "param_name": "handle" },
+        { "param_type": "float", "param_name": "threshold" },
+        { "param_type": "float", "param_name": "oneProportion" },
+        { "param_type": "float", "param_name": "oneTol" },
+        { "param_type": "float", "param_name": "xCenter" },
+        { "param_type": "float", "param_name": "xCenterTol" },
+        { "param_type": "float", "param_name": "yCenter" },
+        { "param_type": "float", "param_name": "yCenterTol" },
+        { "param_type": "float", "param_name": "orient" },
+        { "param_type": "float", "param_name": "orientTol" },
+        { "param_type": "float", "param_name": "roundness" },
+        { "param_type": "bool", "param_name": "enableTrigger" },
+        { "param_type": "float[3]", "param_name": "overlayColor" }
+      ],
+      "returns": [
+        { "return_type": "int", "return_name": "trigger" },
+        { "return_type": "buffer", "return_name": "packedPacket" }
+      ]
+    },
+    "lua_raw": "int trigger,buffer packedPacket=simVision.binaryWorkImg(int handle,float threshold,float oneProportion,float oneTol,float xCenter,float xCenterTol,float yCenter,float yCenterTol,float orient,float orientTol,float roundness,bool enableTrigger,float[3] overlayColor={1.0,0.0,1.0}))",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simVision.htm?#simVision.binaryWorkImg"
+  },
+  {
+    "prefix": "simVision",
+    "method": "blobDetectionOnWorkImg",
+    "description": "Performs blob detection on the",
+    "python": {
+      "params": [
+        { "param_type": "int", "param_name": "handle" },
+        { "param_type": "float", "param_name": "threshold" },
+        { "param_type": "float", "param_name": "minBlobSize" },
+        { "param_type": "bool", "param_name": "diffColor" },
+        { "param_type": "list", "param_name": "overlayColor" }
+      ],
+      "returns": [
+        { "return_type": "int", "return_name": "trigger" },
+        { "return_type": "bytes", "return_name": "packedPacket" }
+      ]
+    },
+    "python_raw": "int trigger,bytes packedPacket=simVision.blobDetectionOnWorkImg(int handle,float threshold,float minBlobSize,bool diffColor,list overlayColor=[1.0,0.0,1.0]))",
+    "lua": {
+      "params": [
+        { "param_type": "int", "param_name": "handle" },
+        { "param_type": "float", "param_name": "threshold" },
+        { "param_type": "float", "param_name": "minBlobSize" },
+        { "param_type": "bool", "param_name": "diffColor" },
+        { "param_type": "float[3]", "param_name": "overlayColor" }
+      ],
+      "returns": [
+        { "return_type": "int", "return_name": "trigger" },
+        { "return_type": "buffer", "return_name": "packedPacket" }
+      ]
+    },
+    "lua_raw": "int trigger,buffer packedPacket=simVision.blobDetectionOnWorkImg(int handle,float threshold,float minBlobSize,bool diffColor,float[3] overlayColor={1.0,0.0,1.0}))",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simVision.htm?#simVision.blobDetectionOnWorkImg"
+  },
+  {
+    "prefix": "simVision",
+    "method": "buffer1ToWorkImg",
+    "description": "Copies buffer",
+    "python": {
+      "params": [{ "param_type": "int", "param_name": "handle" }],
+      "returns": []
+    },
+    "python_raw": "simVision.buffer1ToWorkImg(int handle)",
+    "lua": {
+      "params": [{ "param_type": "int", "param_name": "handle" }],
+      "returns": []
+    },
+    "lua_raw": "simVision.buffer1ToWorkImg(int handle)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simVision.htm?#simVision.buffer1ToWorkImg"
+  },
+  {
+    "prefix": "simVision",
+    "method": "buffer2ToWorkImg",
+    "description": "Copies buffer",
+    "python": {
+      "params": [{ "param_type": "int", "param_name": "handle" }],
+      "returns": []
+    },
+    "python_raw": "simVision.buffer2ToWorkImg(int handle)",
+    "lua": {
+      "params": [{ "param_type": "int", "param_name": "handle" }],
+      "returns": []
+    },
+    "lua_raw": "simVision.buffer2ToWorkImg(int handle)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simVision.htm?#simVision.buffer2ToWorkImg"
+  },
+  {
+    "prefix": "simVision",
+    "method": "changedPixelsOnWorkImg",
+    "description": "Returns the pixels that changed the",
+    "python": {
+      "params": [
+        { "param_type": "int", "param_name": "handle" },
+        { "param_type": "float", "param_name": "threshold" }
+      ],
+      "returns": [
+        { "return_type": "int", "return_name": "trigger" },
+        { "return_type": "bytes", "return_name": "packedPacket" }
+      ]
+    },
+    "python_raw": "int trigger,bytes packedPacket=simVision.changedPixelsOnWorkImg(int handle,float threshold)",
+    "lua": {
+      "params": [
+        { "param_type": "int", "param_name": "handle" },
+        { "param_type": "float", "param_name": "threshold" }
+      ],
+      "returns": [
+        { "return_type": "int", "return_name": "trigger" },
+        { "return_type": "buffer", "return_name": "packedPacket" }
+      ]
+    },
+    "lua_raw": "int trigger,buffer packedPacket=simVision.changedPixelsOnWorkImg(int handle,float threshold)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simVision.htm?#simVision.changedPixelsOnWorkImg"
+  },
+  {
+    "prefix": "simVision",
+    "method": "circularCutWorkImg",
+    "description": "Performs a circular cut on the",
+    "python": {
+      "params": [
+        { "param_type": "int", "param_name": "handle" },
+        { "param_type": "float", "param_name": "radius" },
+        { "param_type": "bool", "param_name": "toBuffer1" }
+      ],
+      "returns": []
+    },
+    "python_raw": "simVision.circularCutWorkImg(int handle,float radius,bool toBuffer1)",
+    "lua": {
+      "params": [
+        { "param_type": "int", "param_name": "handle" },
+        { "param_type": "float", "param_name": "radius" },
+        { "param_type": "bool", "param_name": "toBuffer1" }
+      ],
+      "returns": []
+    },
+    "lua_raw": "simVision.circularCutWorkImg(int handle,float radius,bool toBuffer1)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simVision.htm?#simVision.circularCutWorkImg"
+  },
+  {
+    "prefix": "simVision",
+    "method": "colorSegmentationOnWorkImg",
+    "description": "Performs a color segmentation on the",
+    "python": {
+      "params": [
+        { "param_type": "int", "param_name": "handle" },
+        { "param_type": "float", "param_name": "colorDistance" }
+      ],
+      "returns": []
+    },
+    "python_raw": "simVision.colorSegmentationOnWorkImg(int handle,float colorDistance)",
+    "lua": {
+      "params": [
+        { "param_type": "int", "param_name": "handle" },
+        { "param_type": "float", "param_name": "colorDistance" }
+      ],
+      "returns": []
+    },
+    "lua_raw": "simVision.colorSegmentationOnWorkImg(int handle,float colorDistance)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simVision.htm?#simVision.colorSegmentationOnWorkImg"
+  },
+  {
+    "prefix": "simVision",
+    "method": "coordinatesFromWorkImg",
+    "description": "Extracts coordinates from the",
+    "python": {
+      "params": [
+        { "param_type": "int", "param_name": "handle" },
+        { "param_type": "list", "param_name": "pointCount" },
+        { "param_type": "bool", "param_name": "angularSpace" },
+        { "param_type": "bool", "param_name": "returnColorData" }
+      ],
+      "returns": [
+        { "return_type": "int", "return_name": "trigger" },
+        { "return_type": "bytes", "return_name": "packedPacket" },
+        { "return_type": "bytes", "return_name": "colorData" }
+      ]
+    },
+    "python_raw": "int trigger,bytes packedPacket,bytes colorData=simVision.coordinatesFromWorkImg(int handle,list pointCount,bool angularSpace,bool returnColorData)",
+    "lua": {
+      "params": [
+        { "param_type": "int", "param_name": "handle" },
+        { "param_type": "int[2]", "param_name": "pointCount" },
+        { "param_type": "bool", "param_name": "angularSpace" },
+        { "param_type": "bool", "param_name": "returnColorData" }
+      ],
+      "returns": [
+        { "return_type": "int", "return_name": "trigger" },
+        { "return_type": "buffer", "return_name": "packedPacket" },
+        { "return_type": "buffer", "return_name": "colorData" }
+      ]
+    },
+    "lua_raw": "int trigger,buffer packedPacket,buffer colorData=simVision.coordinatesFromWorkImg(int handle,int[2] pointCount,bool angularSpace,bool returnColorData)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simVision.htm?#simVision.coordinatesFromWorkImg"
+  },
+  {
+    "prefix": "simVision",
+    "method": "edgeDetectionOnWorkImg",
+    "description": "Applies an edge detection filter to the",
+    "python": {
+      "params": [
+        { "param_type": "int", "param_name": "handle" },
+        { "param_type": "float", "param_name": "threshold" }
+      ],
+      "returns": []
+    },
+    "python_raw": "simVision.edgeDetectionOnWorkImg(int handle,float threshold)",
+    "lua": {
+      "params": [
+        { "param_type": "int", "param_name": "handle" },
+        { "param_type": "float", "param_name": "threshold" }
+      ],
+      "returns": []
+    },
+    "lua_raw": "simVision.edgeDetectionOnWorkImg(int handle,float threshold)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simVision.htm?#simVision.edgeDetectionOnWorkImg"
+  },
+  {
+    "prefix": "simVision",
+    "method": "horizontalFlipWorkImg",
+    "description": "Horizontally flips the",
+    "python": {
+      "params": [{ "param_type": "int", "param_name": "handle" }],
+      "returns": []
+    },
+    "python_raw": "simVision.horizontalFlipWorkImg(int handle)",
+    "lua": {
+      "params": [{ "param_type": "int", "param_name": "handle" }],
+      "returns": []
+    },
+    "lua_raw": "simVision.horizontalFlipWorkImg(int handle)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simVision.htm?#simVision.horizontalFlipWorkImg"
+  },
+  {
+    "prefix": "simVision",
+    "method": "intensityScaleOnWorkImg",
+    "description": "Transforms the",
+    "python": {
+      "params": [
+        { "param_type": "int", "param_name": "handle" },
+        { "param_type": "float", "param_name": "start" },
+        { "param_type": "float", "param_name": "end" },
+        { "param_type": "bool", "param_name": "greyscale" }
+      ],
+      "returns": []
+    },
+    "python_raw": "simVision.intensityScaleOnWorkImg(int handle,float start,float end,bool greyscale)",
+    "lua": {
+      "params": [
+        { "param_type": "int", "param_name": "handle" },
+        { "param_type": "float", "param_name": "start" },
+        { "param_type": "float", "param_name": "end" },
+        { "param_type": "bool", "param_name": "greyscale" }
+      ],
+      "returns": []
+    },
+    "lua_raw": "simVision.intensityScaleOnWorkImg(int handle,float start,float end,bool greyscale)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simVision.htm?#simVision.intensityScaleOnWorkImg"
+  },
+  {
+    "prefix": "simVision",
+    "method": "matrix3x3OnWorkImg",
+    "description": "Applies a 3X3 matrix filter to the",
+    "python": {
+      "params": [
+        { "param_type": "int", "param_name": "handle" },
+        { "param_type": "int", "param_name": "passes" },
+        { "param_type": "float", "param_name": "multiplier" },
+        { "param_type": "list", "param_name": "matrix" }
+      ],
+      "returns": []
+    },
+    "python_raw": "simVision.matrix3x3OnWorkImg(int handle,int passes,float multiplier,list matrix)",
+    "lua": {
+      "params": [
+        { "param_type": "int", "param_name": "handle" },
+        { "param_type": "int", "param_name": "passes" },
+        { "param_type": "float", "param_name": "multiplier" },
+        { "param_type": "float[9]", "param_name": "matrix" }
+      ],
+      "returns": []
+    },
+    "lua_raw": "simVision.matrix3x3OnWorkImg(int handle,int passes,float multiplier,float[9] matrix)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simVision.htm?#simVision.matrix3x3OnWorkImg"
+  },
+  {
+    "prefix": "simVision",
+    "method": "matrix5x5OnWorkImg",
+    "description": "Applies a 5X5 matrix filter to the",
+    "python": {
+      "params": [
+        { "param_type": "int", "param_name": "handle" },
+        { "param_type": "int", "param_name": "passes" },
+        { "param_type": "float", "param_name": "multiplier" },
+        { "param_type": "list", "param_name": "matrix" }
+      ],
+      "returns": []
+    },
+    "python_raw": "simVision.matrix5x5OnWorkImg(int handle,int passes,float multiplier,list matrix)",
+    "lua": {
+      "params": [
+        { "param_type": "int", "param_name": "handle" },
+        { "param_type": "int", "param_name": "passes" },
+        { "param_type": "float", "param_name": "multiplier" }
+      ],
+      "returns": []
+    },
+    "lua_raw": "simVision.matrix5x5OnWorkImg(int handle,int passes,float multiplier,float[25] matrix)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simVision.htm?#simVision.matrix5x5OnWorkImg"
+  },
+  {
+    "prefix": "simVision",
+    "method": "multiplyWorkImgWithBuffer1",
+    "description": "Multiplies (pixel wise) the",
+    "python": {
+      "params": [{ "param_type": "int", "param_name": "handle" }],
+      "returns": []
+    },
+    "python_raw": "simVision.multiplyWorkImgWithBuffer1(int handle)",
+    "lua": {
+      "params": [{ "param_type": "int", "param_name": "handle" }],
+      "returns": []
+    },
+    "lua_raw": "simVision.multiplyWorkImgWithBuffer1(int handle)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simVision.htm?#simVision.multiplyWorkImgWithBuffer1"
+  },
+  {
+    "prefix": "simVision",
+    "method": "normalizeWorkImg",
+    "description": "Normalizes the",
+    "python": {
+      "params": [{ "param_type": "int", "param_name": "handle" }],
+      "returns": []
+    },
+    "python_raw": "simVision.normalizeWorkImg(int handle)",
+    "lua": {
+      "params": [{ "param_type": "int", "param_name": "handle" }],
+      "returns": []
+    },
+    "lua_raw": "simVision.normalizeWorkImg(int handle)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simVision.htm?#simVision.normalizeWorkImg"
+  },
+  {
+    "prefix": "simVision",
+    "method": "rectangularCutWorkImg",
+    "description": "Performs a rectangular cut on the",
+    "python": {
+      "params": [
+        { "param_type": "int", "param_name": "handle" },
+        { "param_type": "list", "param_name": "rectangle" },
+        { "param_type": "bool", "param_name": "toBuffer1" }
+      ],
+      "returns": []
+    },
+    "python_raw": "simVision.rectangularCutWorkImg(int handle,list rectangle,bool toBuffer1)",
+    "lua": {
+      "params": [
+        { "param_type": "int", "param_name": "handle" },
+        { "param_type": "float[2]", "param_name": "rectangle" },
+        { "param_type": "bool", "param_name": "toBuffer1" }
+      ],
+      "returns": []
+    },
+    "lua_raw": "simVision.rectangularCutWorkImg(int handle,float[2] rectangle,bool toBuffer1)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simVision.htm?#simVision.rectangularCutWorkImg"
+  },
+  {
+    "prefix": "simVision",
+    "method": "resizeWorkImg",
+    "description": "Scales the",
+    "python": {
+      "params": [
+        { "param_type": "int", "param_name": "handle" },
+        { "param_type": "list", "param_name": "scaling" }
+      ],
+      "returns": []
+    },
+    "python_raw": "simVision.resizeWorkImg(int handle,list scaling)",
+    "lua": {
+      "params": [
+        { "param_type": "int", "param_name": "handle" },
+        { "param_type": "float[2]", "param_name": "scaling" }
+      ],
+      "returns": []
+    },
+    "lua_raw": "simVision.resizeWorkImg(int handle,float[2] scaling)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simVision.htm?#simVision.resizeWorkImg"
+  },
+  {
+    "prefix": "simVision",
+    "method": "rotateWorkImg",
+    "description": "Performs a rotation of the",
+    "python": {
+      "params": [
+        { "param_type": "int", "param_name": "handle" },
+        { "param_type": "float", "param_name": "angle" }
+      ],
+      "returns": []
+    },
+    "python_raw": "simVision.rotateWorkImg(int handle,float angle)",
+    "lua": {
+      "params": [
+        { "param_type": "int", "param_name": "handle" },
+        { "param_type": "float", "param_name": "angle" }
+      ],
+      "returns": []
+    },
+    "lua_raw": "simVision.rotateWorkImg(int handle,float angle)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simVision.htm?#simVision.rotateWorkImg"
+  },
+  {
+    "prefix": "simVision",
+    "method": "scaleAndOffsetWorkImg",
+    "description": "Shifts and scales colors of the",
+    "python": {
+      "params": [
+        { "param_type": "int", "param_name": "handle" },
+        { "param_type": "list", "param_name": "colorPreOffset" },
+        { "param_type": "list", "param_name": "colorScaling" },
+        { "param_type": "list", "param_name": "colorPostOffset" },
+        { "param_type": "bool", "param_name": "rgbSpace" }
+      ],
+      "returns": []
+    },
+    "python_raw": "simVision.scaleAndOffsetWorkImg(int handle,list colorPreOffset,list colorScaling,list colorPostOffset,bool rgbSpace)",
+    "lua": {
+      "params": [
+        { "param_type": "int", "param_name": "handle" },
+        { "param_type": "float[3]", "param_name": "colorPreOffset" },
+        { "param_type": "float[3]", "param_name": "colorScaling" },
+        { "param_type": "float[3]", "param_name": "colorPostOffset" },
+        { "param_type": "bool", "param_name": "rgbSpace" }
+      ],
+      "returns": []
+    },
+    "lua_raw": "simVision.scaleAndOffsetWorkImg(int handle,float[3] colorPreOffset,float[3] colorScaling,float[3] colorPostOffset,bool rgbSpace)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simVision.htm?#simVision.scaleAndOffsetWorkImg"
+  },
+  {
+    "prefix": "simVision",
+    "method": "selectiveColorOnWorkImg",
+    "description": "Selects a specific color in the RGB or HSL space of the",
+    "python": {
+      "params": [
+        { "param_type": "int", "param_name": "handle" },
+        { "param_type": "list", "param_name": "nominalColor" },
+        { "param_type": "list", "param_name": "colorTolerance" },
+        { "param_type": "bool", "param_name": "rgbSpace" },
+        { "param_type": "bool", "param_name": "keepColor" },
+        { "param_type": "bool", "param_name": "toBuffer1" }
+      ],
+      "returns": []
+    },
+    "python_raw": "simVision.selectiveColorOnWorkImg(int handle,list nominalColor,list colorTolerance,bool rgbSpace,bool keepColor,bool toBuffer1)",
+    "lua": {
+      "params": [
+        { "param_type": "int", "param_name": "handle" },
+        { "param_type": "float[3]", "param_name": "nominalColor" },
+        { "param_type": "float[3]", "param_name": "colorTolerance" },
+        { "param_type": "bool", "param_name": "rgbSpace" },
+        { "param_type": "bool", "param_name": "keepColor" },
+        { "param_type": "bool", "param_name": "toBuffer1" }
+      ],
+      "returns": []
+    },
+    "lua_raw": "simVision.selectiveColorOnWorkImg(int handle,float[3] nominalColor,float[3] colorTolerance,bool rgbSpace,bool keepColor,bool toBuffer1)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simVision.htm?#simVision.selectiveColorOnWorkImg"
+  },
+  {
+    "prefix": "simVision",
+    "method": "sensorDepthMapToWorkImg",
+    "description": "Copies the depth buffer acquired by a vision sensor to the",
+    "python": {
+      "params": [{ "param_type": "int", "param_name": "handle" }],
+      "returns": []
+    },
+    "python_raw": "simVision.sensorDepthMapToWorkImg(int handle)",
+    "lua": {
+      "params": [{ "param_type": "int", "param_name": "handle" }],
+      "returns": []
+    },
+    "lua_raw": "simVision.sensorDepthMapToWorkImg(int handle)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simVision.htm?#simVision.sensorDepthMapToWorkImg"
+  },
+  {
+    "prefix": "simVision",
+    "method": "sensorImgToWorkImg",
+    "description": "Copies the RGB image acquired by a vision sensor to the",
+    "python": {
+      "params": [{ "param_type": "int", "param_name": "handle" }],
+      "returns": []
+    },
+    "python_raw": "simVision.sensorImgToWorkImg(int handle)",
+    "lua": {
+      "params": [{ "param_type": "int", "param_name": "handle" }],
+      "returns": []
+    },
+    "lua_raw": "simVision.sensorImgToWorkImg(int handle)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simVision.htm?#simVision.sensorImgToWorkImg"
+  },
+  {
+    "prefix": "simVision",
+    "method": "sharpenWorkImg",
+    "description": "Sharpens the",
+    "python": {
+      "params": [{ "param_type": "int", "param_name": "handle" }],
+      "returns": []
+    },
+    "python_raw": "simVision.sharpenWorkImg(int handle)",
+    "lua": {
+      "params": [{ "param_type": "int", "param_name": "handle" }],
+      "returns": []
+    },
+    "lua_raw": "simVision.sharpenWorkImg(int handle)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simVision.htm?#simVision.sharpenWorkImg"
+  },
+  {
+    "prefix": "simVision",
+    "method": "shiftWorkImg",
+    "description": "Shifts the",
+    "python": {
+      "params": [
+        { "param_type": "int", "param_name": "handle" },
+        { "param_type": "list", "param_name": "shift" },
+        { "param_type": "bool", "param_name": "wrap" }
+      ],
+      "returns": []
+    },
+    "python_raw": "simVision.shiftWorkImg(int handle,list shift,bool wrap)",
+    "lua": {
+      "params": [
+        { "param_type": "int", "param_name": "handle" },
+        { "param_type": "float[2]", "param_name": "shift" },
+        { "param_type": "bool", "param_name": "wrap" }
+      ],
+      "returns": []
+    },
+    "lua_raw": "simVision.shiftWorkImg(int handle,float[2] shift,bool wrap)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simVision.htm?#simVision.shiftWorkImg"
+  },
+  {
+    "prefix": "simVision",
+    "method": "subtractBuffer1FromWorkImg",
+    "description": "Subtracts (pixel wise subtraction) buffer",
+    "python": {
+      "params": [{ "param_type": "int", "param_name": "handle" }],
+      "returns": []
+    },
+    "python_raw": "simVision.subtractBuffer1FromWorkImg(int handle)",
+    "lua": {
+      "params": [{ "param_type": "int", "param_name": "handle" }],
+      "returns": []
+    },
+    "lua_raw": "simVision.subtractBuffer1FromWorkImg(int handle)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simVision.htm?#simVision.subtractBuffer1FromWorkImg"
+  },
+  {
+    "prefix": "simVision",
+    "method": "subtractWorkImgFromBuffer1",
+    "description": "Subtracts (pixel wise subtraction) the",
+    "python": {
+      "params": [{ "param_type": "int", "param_name": "handle" }],
+      "returns": []
+    },
+    "python_raw": "simVision.subtractWorkImgFromBuffer1(int handle)",
+    "lua": {
+      "params": [{ "param_type": "int", "param_name": "handle" }],
+      "returns": []
+    },
+    "lua_raw": "simVision.subtractWorkImgFromBuffer1(int handle)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simVision.htm?#simVision.subtractWorkImgFromBuffer1"
+  },
+  {
+    "prefix": "simVision",
+    "method": "swapBuffers",
+    "description": "Swaps buffer",
+    "python": {
+      "params": [{ "param_type": "int", "param_name": "handle" }],
+      "returns": []
+    },
+    "python_raw": "simVision.swapBuffers(int handle)",
+    "lua": {
+      "params": [{ "param_type": "int", "param_name": "handle" }],
+      "returns": []
+    },
+    "lua_raw": "simVision.swapBuffers(int handle)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simVision.htm?#simVision.swapBuffers"
+  },
+  {
+    "prefix": "simVision",
+    "method": "swapWorkImgWithBuffer1",
+    "description": "Swaps the",
+    "python": {
+      "params": [{ "param_type": "int", "param_name": "handle" }],
+      "returns": []
+    },
+    "python_raw": "simVision.swapWorkImgWithBuffer1(int handle)",
+    "lua": {
+      "params": [{ "param_type": "int", "param_name": "handle" }],
+      "returns": []
+    },
+    "lua_raw": "simVision.swapWorkImgWithBuffer1(int handle)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simVision.htm?#simVision.swapWorkImgWithBuffer1"
+  },
+  {
+    "prefix": "simVision",
+    "method": "uniformImgToWorkImg",
+    "description": "Applies a uniform color to the",
+    "python": {
+      "params": [
+        { "param_type": "int", "param_name": "handle" },
+        { "param_type": "list", "param_name": "color" }
+      ],
+      "returns": []
+    },
+    "python_raw": "simVision.uniformImgToWorkImg(int handle,list color)",
+    "lua": {
+      "params": [
+        { "param_type": "int", "param_name": "handle" },
+        { "param_type": "float[3]", "param_name": "color" }
+      ],
+      "returns": []
+    },
+    "lua_raw": "simVision.uniformImgToWorkImg(int handle,float[3] color)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simVision.htm?#simVision.uniformImgToWorkImg"
+  },
+  {
+    "prefix": "simVision",
+    "method": "velodyneDataFromWorkImg",
+    "description": "Extracts Velodyne coordinates from the",
+    "python": {
+      "params": [
+        { "param_type": "int", "param_name": "handle" },
+        { "param_type": "list", "param_name": "pointCount" },
+        { "param_type": "float", "param_name": "verticalScanAngle" },
+        { "param_type": "bool", "param_name": "returnColorData" }
+      ],
+      "returns": [
+        { "return_type": "int", "return_name": "trigger" },
+        { "return_type": "bytes", "return_name": "packedPacket" },
+        { "return_type": "bytes", "return_name": "colorData" }
+      ]
+    },
+    "python_raw": "int trigger,bytes packedPacket,bytes colorData=simVision.velodyneDataFromWorkImg(int handle,list pointCount,float verticalScanAngle,bool returnColorData=False)",
+    "lua": {
+      "params": [
+        { "param_type": "int", "param_name": "handle" },
+        { "param_type": "int[2]", "param_name": "pointCount" },
+        { "param_type": "float", "param_name": "verticalScanAngle" },
+        { "param_type": "bool", "param_name": "returnColorData" }
+      ],
+      "returns": [
+        { "return_type": "int", "return_name": "trigger" },
+        { "return_type": "buffer", "return_name": "packedPacket" },
+        { "return_type": "buffer", "return_name": "colorData" }
+      ]
+    },
+    "lua_raw": "int trigger,buffer packedPacket,buffer colorData=simVision.velodyneDataFromWorkImg(int handle,int[2] pointCount,float verticalScanAngle,bool returnColorData=false)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simVision.htm?#simVision.velodyneDataFromWorkImg"
+  },
+  {
+    "prefix": "simVision",
+    "method": "verticalFlipWorkImg",
+    "description": "Vertically flips the",
+    "python": {
+      "params": [{ "param_type": "int", "param_name": "handle" }],
+      "returns": []
+    },
+    "python_raw": "simVision.verticalFlipWorkImg(int handle)",
+    "lua": {
+      "params": [{ "param_type": "int", "param_name": "handle" }],
+      "returns": []
+    },
+    "lua_raw": "simVision.verticalFlipWorkImg(int handle)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simVision.htm?#simVision.verticalFlipWorkImg"
+  },
+  {
+    "prefix": "simVision",
+    "method": "workImgToBuffer1",
+    "description": "Copies the",
+    "python": {
+      "params": [{ "param_type": "int", "param_name": "handle" }],
+      "returns": []
+    },
+    "python_raw": "simVision.workImgToBuffer1(int handle)",
+    "lua": {
+      "params": [{ "param_type": "int", "param_name": "handle" }],
+      "returns": []
+    },
+    "lua_raw": "simVision.workImgToBuffer1(int handle)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simVision.htm?#simVision.workImgToBuffer1"
+  },
+  {
+    "prefix": "simVision",
+    "method": "workImgToBuffer2",
+    "description": "Copies the",
+    "python": {
+      "params": [{ "param_type": "int", "param_name": "handle" }],
+      "returns": []
+    },
+    "python_raw": "simVision.workImgToBuffer2(int handle)",
+    "lua": {
+      "params": [{ "param_type": "int", "param_name": "handle" }],
+      "returns": []
+    },
+    "lua_raw": "simVision.workImgToBuffer2(int handle)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simVision.htm?#simVision.workImgToBuffer2"
+  },
+  {
+    "prefix": "simVision",
+    "method": "workImgToSensorDepthMap",
+    "description": "Copies the",
+    "python": {
+      "params": [{ "param_type": "int", "param_name": "handle" }],
+      "returns": []
+    },
+    "python_raw": "simVision.workImgToSensorDepthMap(int handle)",
+    "lua": {
+      "params": [{ "param_type": "int", "param_name": "handle" }],
+      "returns": []
+    },
+    "lua_raw": "simVision.workImgToSensorDepthMap(int handle)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simVision.htm?#simVision.workImgToSensorDepthMap"
+  },
+  {
+    "prefix": "simVision",
+    "method": "workImgToSensorImg",
+    "description": "Copies the",
+    "python": {
+      "params": [{ "param_type": "int", "param_name": "handle" }],
+      "returns": []
+    },
+    "python_raw": "simVision.workImgToSensorImg(int handle)",
+    "lua": {
+      "params": [{ "param_type": "int", "param_name": "handle" }],
+      "returns": []
+    },
+    "lua_raw": "simVision.workImgToSensorImg(int handle)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simVision.htm?#simVision.workImgToSensorImg"
+  }
+]

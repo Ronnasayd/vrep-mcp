@@ -1,0 +1,3639 @@
+[
+  {
+    "prefix": "simUI",
+    "method": "addCurve",
+    "description": "Adds a curve to a plot widget.",
+    "python": {
+      "params": [
+        { "param_type": "string", "param_name": "handle" },
+        { "param_type": "int", "param_name": "id" },
+        { "param_type": "int", "param_name": "type" },
+        { "param_type": "string", "param_name": "name" },
+        { "param_type": "list", "param_name": "color" },
+        { "param_type": "int", "param_name": "style" },
+        { "param_type": "curve_options", "param_name": "options" }
+      ],
+      "returns": []
+    },
+    "python_raw": "simUI.addCurve(string handle, int id, int type, string name, list color, int style, curve_options options)",
+    "lua": {
+      "params": [
+        { "param_type": "string", "param_name": "handle" },
+        { "param_type": "int", "param_name": "id" },
+        { "param_type": "int", "param_name": "type" },
+        { "param_type": "string", "param_name": "name" },
+        { "param_type": "int[3]", "param_name": "color" },
+        { "param_type": "int", "param_name": "style" },
+        { "param_type": "curve_options", "param_name": "options" }
+      ],
+      "returns": []
+    },
+    "lua_raw": "simUI.addCurve(string handle, int id, int type, string name, int[3] color, int style, curve_options options)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simUI.htm?#addCurve"
+  },
+  {
+    "prefix": "simUI",
+    "method": "addCurveTimePoints",
+    "description": "Adds time points to the specified curve of the plot widget.",
+    "python": {
+      "params": [
+        { "param_type": "string", "param_name": "handle" },
+        { "param_type": "int", "param_name": "id" },
+        { "param_type": "string", "param_name": "name" },
+        { "param_type": "list", "param_name": "x" },
+        { "param_type": "list", "param_name": "y" }
+      ],
+      "returns": []
+    },
+    "python_raw": "simUI.addCurveTimePoints(string handle, int id, string name, list x, list y)",
+    "lua": {
+      "params": [
+        { "param_type": "string", "param_name": "handle" },
+        { "param_type": "int", "param_name": "id" },
+        { "param_type": "string", "param_name": "name" },
+        { "param_type": "float[]", "param_name": "x" },
+        { "param_type": "float[]", "param_name": "y" }
+      ],
+      "returns": []
+    },
+    "lua_raw": "simUI.addCurveTimePoints(string handle, int id, string name, float[] x, float[] y)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simUI.htm?#addCurveTimePoints"
+  },
+  {
+    "prefix": "simUI",
+    "method": "addCurveXYPoints",
+    "description": "Adds points to the specified curve of the plot widget.",
+    "python": {
+      "params": [
+        { "param_type": "string", "param_name": "handle" },
+        { "param_type": "int", "param_name": "id" },
+        { "param_type": "string", "param_name": "name" },
+        { "param_type": "list", "param_name": "t" },
+        { "param_type": "list", "param_name": "x" },
+        { "param_type": "list", "param_name": "y" }
+      ],
+      "returns": []
+    },
+    "python_raw": "simUI.addCurveXYPoints(string handle, int id, string name, list t, list x, list y)",
+    "lua": {
+      "params": [
+        { "param_type": "string", "param_name": "handle" },
+        { "param_type": "int", "param_name": "id" },
+        { "param_type": "string", "param_name": "name" },
+        { "param_type": "float[]", "param_name": "t" },
+        { "param_type": "float[]", "param_name": "x" },
+        { "param_type": "float[]", "param_name": "y" }
+      ],
+      "returns": []
+    },
+    "lua_raw": "simUI.addCurveXYPoints(string handle, int id, string name, float[] t, float[] x, float[] y)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simUI.htm?#addCurveXYPoints"
+  },
+  {
+    "prefix": "simUI",
+    "method": "addScene3DNode",
+    "description": "Add a node in a scene3d widget.",
+    "python": {
+      "params": [
+        { "param_type": "string", "param_name": "handle" },
+        { "param_type": "int", "param_name": "id" },
+        { "param_type": "int", "param_name": "nodeId" },
+        { "param_type": "int", "param_name": "parentNodeId" },
+        { "param_type": "int", "param_name": "type" }
+      ],
+      "returns": []
+    },
+    "python_raw": "simUI.addScene3DNode(string handle, int id, int nodeId, int parentNodeId, int type)",
+    "lua": {
+      "params": [
+        { "param_type": "string", "param_name": "handle" },
+        { "param_type": "int", "param_name": "id" },
+        { "param_type": "int", "param_name": "nodeId" },
+        { "param_type": "int", "param_name": "parentNodeId" },
+        { "param_type": "int", "param_name": "type" }
+      ],
+      "returns": []
+    },
+    "lua_raw": "simUI.addScene3DNode(string handle, int id, int nodeId, int parentNodeId, int type)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simUI.htm?#addScene3DNode"
+  },
+  {
+    "prefix": "simUI",
+    "method": "addTreeItem",
+    "description": "Add an item to the specified tree widget.",
+    "python": {
+      "params": [
+        { "param_type": "string", "param_name": "handle" },
+        { "param_type": "int", "param_name": "id" },
+        { "param_type": "int", "param_name": "item_id" },
+        { "param_type": "list", "param_name": "text" },
+        { "param_type": "int", "param_name": "parent_id" },
+        { "param_type": "bool", "param_name": "expanded" },
+        { "param_type": "bool", "param_name": "suppressEvents" }
+      ],
+      "returns": []
+    },
+    "python_raw": "simUI.addTreeItem(string handle, int id, int item_id, list text, int parent_id=0, bool expanded=false, bool suppressEvents=true)",
+    "lua": {
+      "params": [
+        { "param_type": "string", "param_name": "handle" },
+        { "param_type": "int", "param_name": "id" },
+        { "param_type": "int", "param_name": "item_id" },
+        { "param_type": "string[]", "param_name": "text" },
+        { "param_type": "int", "param_name": "parent_id" },
+        { "param_type": "bool", "param_name": "expanded" },
+        { "param_type": "bool", "param_name": "suppressEvents" }
+      ],
+      "returns": []
+    },
+    "lua_raw": "simUI.addTreeItem(string handle, int id, int item_id, string[] text, int parent_id=0, bool expanded=false, bool suppressEvents=true)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simUI.htm?#addTreeItem"
+  },
+  {
+    "prefix": "simUI",
+    "method": "adjustSize",
+    "description": "Adjusts the size of the window to fit its contents.",
+    "python": {
+      "params": [{ "param_type": "string", "param_name": "handle" }],
+      "returns": []
+    },
+    "python_raw": "simUI.adjustSize(string handle)",
+    "lua": {
+      "params": [{ "param_type": "string", "param_name": "handle" }],
+      "returns": []
+    },
+    "lua_raw": "simUI.adjustSize(string handle)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simUI.htm?#adjustSize"
+  },
+  {
+    "prefix": "simUI",
+    "method": "appendText",
+    "description": "Append text in a text-browser widget.",
+    "python": {
+      "params": [
+        { "param_type": "string", "param_name": "handle" },
+        { "param_type": "int", "param_name": "id" },
+        { "param_type": "string", "param_name": "text" },
+        { "param_type": "bool", "param_name": "suppressEvents" }
+      ],
+      "returns": []
+    },
+    "python_raw": "simUI.appendText(string handle, int id, string text, bool suppressEvents=true)",
+    "lua": {
+      "params": [
+        { "param_type": "string", "param_name": "handle" },
+        { "param_type": "int", "param_name": "id" },
+        { "param_type": "string", "param_name": "text" },
+        { "param_type": "bool", "param_name": "suppressEvents" }
+      ],
+      "returns": []
+    },
+    "lua_raw": "simUI.appendText(string handle, int id, string text, bool suppressEvents=true)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simUI.htm?#appendText"
+  },
+  {
+    "prefix": "simUI",
+    "method": "bannerCreate",
+    "description": "",
+    "python": {
+      "params": [
+        { "param_type": "string", "param_name": "text" },
+        { "param_type": "list", "param_name": "btnKeys" },
+        { "param_type": "list", "param_name": "btnLabels" },
+        { "param_type": "string", "param_name": "callback" }
+      ],
+      "returns": [{ "return_type": "int", "return_name": "id" }]
+    },
+    "python_raw": "int id = simUI.bannerCreate(string text, list btnKeys=nil, list btnLabels=nil, string callback=nil)",
+    "lua": {
+      "params": [
+        { "param_type": "string", "param_name": "text" },
+        { "param_type": "string[]", "param_name": "btnKeys" },
+        { "param_type": "string[]", "param_name": "btnLabels" },
+        { "param_type": "string", "param_name": "callback" }
+      ],
+      "returns": [{ "return_type": "int", "return_name": "id" }]
+    },
+    "lua_raw": "int id = simUI.bannerCreate(string text, string[] btnKeys=nil, string[] btnLabels=nil, string callback=nil)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simUI.htm?#bannerCreate"
+  },
+  {
+    "prefix": "simUI",
+    "method": "bannerDestroy",
+    "description": "",
+    "python": {
+      "params": [{ "param_type": "int", "param_name": "id" }],
+      "returns": []
+    },
+    "python_raw": "simUI.bannerDestroy(int id)",
+    "lua": {
+      "params": [{ "param_type": "int", "param_name": "id" }],
+      "returns": []
+    },
+    "lua_raw": "simUI.bannerDestroy(int id)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simUI.htm?#bannerDestroy"
+  },
+  {
+    "prefix": "simUI",
+    "method": "clearCurve",
+    "description": "Clear points of the specified curve of the plot widget.",
+    "python": {
+      "params": [
+        { "param_type": "string", "param_name": "handle" },
+        { "param_type": "int", "param_name": "id" },
+        { "param_type": "string", "param_name": "name" }
+      ],
+      "returns": []
+    },
+    "python_raw": "simUI.clearCurve(string handle, int id, string name)",
+    "lua": {
+      "params": [
+        { "param_type": "string", "param_name": "handle" },
+        { "param_type": "int", "param_name": "id" },
+        { "param_type": "string", "param_name": "name" }
+      ],
+      "returns": []
+    },
+    "lua_raw": "simUI.clearCurve(string handle, int id, string name)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simUI.htm?#clearCurve"
+  },
+  {
+    "prefix": "simUI",
+    "method": "clearTable",
+    "description": "Clear the specified table widget.",
+    "python": {
+      "params": [
+        { "param_type": "string", "param_name": "handle" },
+        { "param_type": "int", "param_name": "id" },
+        { "param_type": "bool", "param_name": "suppressEvents" }
+      ],
+      "returns": []
+    },
+    "python_raw": "simUI.clearTable(string handle, int id, bool suppressEvents=true)",
+    "lua": {
+      "params": [
+        { "param_type": "string", "param_name": "handle" },
+        { "param_type": "int", "param_name": "id" },
+        { "param_type": "bool", "param_name": "suppressEvents" }
+      ],
+      "returns": []
+    },
+    "lua_raw": "simUI.clearTable(string handle, int id, bool suppressEvents=true)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simUI.htm?#clearTable"
+  },
+  {
+    "prefix": "simUI",
+    "method": "clearTree",
+    "description": "Clear the specified tree widget.",
+    "python": {
+      "params": [
+        { "param_type": "string", "param_name": "handle" },
+        { "param_type": "int", "param_name": "id" },
+        { "param_type": "bool", "param_name": "suppressEvents" }
+      ],
+      "returns": []
+    },
+    "python_raw": "simUI.clearTree(string handle, int id, bool suppressEvents=true)",
+    "lua": {
+      "params": [
+        { "param_type": "string", "param_name": "handle" },
+        { "param_type": "int", "param_name": "id" },
+        { "param_type": "bool", "param_name": "suppressEvents" }
+      ],
+      "returns": []
+    },
+    "lua_raw": "simUI.clearTree(string handle, int id, bool suppressEvents=true)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simUI.htm?#clearTree"
+  },
+  {
+    "prefix": "simUI",
+    "method": "collapseAll",
+    "description": "Collapse all nodes in the specified tree widget.",
+    "python": {
+      "params": [
+        { "param_type": "string", "param_name": "handle" },
+        { "param_type": "int", "param_name": "id" },
+        { "param_type": "bool", "param_name": "suppressEvents" }
+      ],
+      "returns": []
+    },
+    "python_raw": "simUI.collapseAll(string handle, int id, bool suppressEvents=true)",
+    "lua": {
+      "params": [
+        { "param_type": "string", "param_name": "handle" },
+        { "param_type": "int", "param_name": "id" },
+        { "param_type": "bool", "param_name": "suppressEvents" }
+      ],
+      "returns": []
+    },
+    "lua_raw": "simUI.collapseAll(string handle, int id, bool suppressEvents=true)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simUI.htm?#collapseAll"
+  },
+  {
+    "prefix": "simUI",
+    "method": "colorDialog",
+    "description": "Display a color dialog.",
+    "python": {
+      "params": [
+        { "param_type": "list", "param_name": "initColor" },
+        { "param_type": "string", "param_name": "title" },
+        { "param_type": "bool", "param_name": "showAlphaChannel" },
+        { "param_type": "bool", "param_name": "native" }
+      ],
+      "returns": [{ "return_type": "list", "return_name": "result" }]
+    },
+    "python_raw": "list result = simUI.colorDialog(list initColor={1,1,1}, string title=\"Select color\", bool showAlphaChannel=false, bool native=true)",
+    "lua": {
+      "params": [
+        { "param_type": "string", "param_name": "title" },
+        { "param_type": "bool", "param_name": "showAlphaChannel" },
+        { "param_type": "bool", "param_name": "native" }
+      ],
+      "returns": [{ "return_type": "float[3]", "return_name": "result" }]
+    },
+    "lua_raw": "float[3] result = simUI.colorDialog(float[3..4] initColor={1,1,1}, string title=\"Select color\", bool showAlphaChannel=false, bool native=true)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simUI.htm?#colorDialog"
+  },
+  {
+    "prefix": "simUI",
+    "method": "create",
+    "description": "Create a window.",
+    "python": {
+      "params": [{ "param_type": "string", "param_name": "xml" }],
+      "returns": [{ "return_type": "string", "return_name": "uiHandle" }]
+    },
+    "python_raw": "string uiHandle = simUI.create(string xml)",
+    "lua": {
+      "params": [{ "param_type": "string", "param_name": "xml" }],
+      "returns": [{ "return_type": "string", "return_name": "uiHandle" }]
+    },
+    "lua_raw": "string uiHandle = simUI.create(string xml)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simUI.htm?#create"
+  },
+  {
+    "prefix": "simUI",
+    "method": "destroy",
+    "description": "Destroy a window.",
+    "python": {
+      "params": [{ "param_type": "string", "param_name": "handle" }],
+      "returns": []
+    },
+    "python_raw": "simUI.destroy(string handle)",
+    "lua": {
+      "params": [{ "param_type": "string", "param_name": "handle" }],
+      "returns": []
+    },
+    "lua_raw": "simUI.destroy(string handle)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simUI.htm?#destroy"
+  },
+  {
+    "prefix": "simUI",
+    "method": "expandAll",
+    "description": "Expand all nodes in the specified tree widget.",
+    "python": {
+      "params": [
+        { "param_type": "string", "param_name": "handle" },
+        { "param_type": "int", "param_name": "id" },
+        { "param_type": "bool", "param_name": "suppressEvents" }
+      ],
+      "returns": []
+    },
+    "python_raw": "simUI.expandAll(string handle, int id, bool suppressEvents=true)",
+    "lua": {
+      "params": [
+        { "param_type": "string", "param_name": "handle" },
+        { "param_type": "int", "param_name": "id" },
+        { "param_type": "bool", "param_name": "suppressEvents" }
+      ],
+      "returns": []
+    },
+    "lua_raw": "simUI.expandAll(string handle, int id, bool suppressEvents=true)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simUI.htm?#expandAll"
+  },
+  {
+    "prefix": "simUI",
+    "method": "expandToDepth",
+    "description": "Expand nodes up to a certain depth in the specified tree widget.",
+    "python": {
+      "params": [
+        { "param_type": "string", "param_name": "handle" },
+        { "param_type": "int", "param_name": "id" },
+        { "param_type": "int", "param_name": "depth" },
+        { "param_type": "bool", "param_name": "suppressEvents" }
+      ],
+      "returns": []
+    },
+    "python_raw": "simUI.expandToDepth(string handle, int id, int depth, bool suppressEvents=true)",
+    "lua": {
+      "params": [
+        { "param_type": "string", "param_name": "handle" },
+        { "param_type": "int", "param_name": "id" },
+        { "param_type": "int", "param_name": "depth" },
+        { "param_type": "bool", "param_name": "suppressEvents" }
+      ],
+      "returns": []
+    },
+    "lua_raw": "simUI.expandToDepth(string handle, int id, int depth, bool suppressEvents=true)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simUI.htm?#expandToDepth"
+  },
+  {
+    "prefix": "simUI",
+    "method": "fileDialog",
+    "description": "Display a file dialog.",
+    "python": {
+      "params": [
+        { "param_type": "int", "param_name": "type" },
+        { "param_type": "string", "param_name": "title" },
+        { "param_type": "string", "param_name": "startPath" },
+        { "param_type": "string", "param_name": "initName" },
+        { "param_type": "string", "param_name": "extName" },
+        { "param_type": "string", "param_name": "ext" },
+        { "param_type": "bool", "param_name": "native" }
+      ],
+      "returns": [{ "return_type": "list", "return_name": "result" }]
+    },
+    "python_raw": "list result = simUI.fileDialog(int type, string title, string startPath, string initName, string extName, string ext, bool native=false)",
+    "lua": {
+      "params": [
+        { "param_type": "int", "param_name": "type" },
+        { "param_type": "string", "param_name": "title" },
+        { "param_type": "string", "param_name": "startPath" },
+        { "param_type": "string", "param_name": "initName" },
+        { "param_type": "string", "param_name": "extName" },
+        { "param_type": "string", "param_name": "ext" },
+        { "param_type": "bool", "param_name": "native" }
+      ],
+      "returns": [{ "return_type": "string[]", "return_name": "result" }]
+    },
+    "lua_raw": "string[] result = simUI.fileDialog(int type, string title, string startPath, string initName, string extName, string ext, bool native=false)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simUI.htm?#fileDialog"
+  },
+  {
+    "prefix": "simUI",
+    "method": "getCheckboxValue",
+    "description": "Get the value of a checkbox widget.",
+    "python": {
+      "params": [
+        { "param_type": "string", "param_name": "handle" },
+        { "param_type": "int", "param_name": "id" }
+      ],
+      "returns": [{ "return_type": "int", "return_name": "value" }]
+    },
+    "python_raw": "int value = simUI.getCheckboxValue(string handle, int id)",
+    "lua": {
+      "params": [
+        { "param_type": "string", "param_name": "handle" },
+        { "param_type": "int", "param_name": "id" }
+      ],
+      "returns": [{ "return_type": "int", "return_name": "value" }]
+    },
+    "lua_raw": "int value = simUI.getCheckboxValue(string handle, int id)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simUI.htm?#getCheckboxValue"
+  },
+  {
+    "prefix": "simUI",
+    "method": "getColumnCount",
+    "description": "Get the number of columns in the specified table/tree widget.",
+    "python": {
+      "params": [
+        { "param_type": "string", "param_name": "handle" },
+        { "param_type": "int", "param_name": "id" }
+      ],
+      "returns": [{ "return_type": "int", "return_name": "count" }]
+    },
+    "python_raw": "int count = simUI.getColumnCount(string handle, int id)",
+    "lua": {
+      "params": [
+        { "param_type": "string", "param_name": "handle" },
+        { "param_type": "int", "param_name": "id" }
+      ],
+      "returns": [{ "return_type": "int", "return_name": "count" }]
+    },
+    "lua_raw": "int count = simUI.getColumnCount(string handle, int id)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simUI.htm?#getColumnCount"
+  },
+  {
+    "prefix": "simUI",
+    "method": "getComboboxItemCount",
+    "description": "Get the number of items in the specified combobox widget.",
+    "python": {
+      "params": [
+        { "param_type": "string", "param_name": "handle" },
+        { "param_type": "int", "param_name": "id" }
+      ],
+      "returns": [{ "return_type": "int", "return_name": "count" }]
+    },
+    "python_raw": "int count = simUI.getComboboxItemCount(string handle, int id)",
+    "lua": {
+      "params": [
+        { "param_type": "string", "param_name": "handle" },
+        { "param_type": "int", "param_name": "id" }
+      ],
+      "returns": [{ "return_type": "int", "return_name": "count" }]
+    },
+    "lua_raw": "int count = simUI.getComboboxItemCount(string handle, int id)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simUI.htm?#getComboboxItemCount"
+  },
+  {
+    "prefix": "simUI",
+    "method": "getComboboxItemText",
+    "description": "Get the text of an item in a combobox widget.",
+    "python": {
+      "params": [
+        { "param_type": "string", "param_name": "handle" },
+        { "param_type": "int", "param_name": "id" },
+        { "param_type": "int", "param_name": "index" }
+      ],
+      "returns": [{ "return_type": "string", "return_name": "text" }]
+    },
+    "python_raw": "string text = simUI.getComboboxItemText(string handle, int id, int index)",
+    "lua": {
+      "params": [
+        { "param_type": "string", "param_name": "handle" },
+        { "param_type": "int", "param_name": "id" },
+        { "param_type": "int", "param_name": "index" }
+      ],
+      "returns": [{ "return_type": "string", "return_name": "text" }]
+    },
+    "lua_raw": "string text = simUI.getComboboxItemText(string handle, int id, int index)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simUI.htm?#getComboboxItemText"
+  },
+  {
+    "prefix": "simUI",
+    "method": "getComboboxItems",
+    "description": "Get the content of a combobox.",
+    "python": {
+      "params": [
+        { "param_type": "string", "param_name": "handle" },
+        { "param_type": "int", "param_name": "id" }
+      ],
+      "returns": [{ "return_type": "list", "return_name": "items" }]
+    },
+    "python_raw": "list items = simUI.getComboboxItems(string handle, int id)",
+    "lua": {
+      "params": [
+        { "param_type": "string", "param_name": "handle" },
+        { "param_type": "int", "param_name": "id" }
+      ],
+      "returns": [{ "return_type": "string[]", "return_name": "items" }]
+    },
+    "lua_raw": "string[] items = simUI.getComboboxItems(string handle, int id)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simUI.htm?#getComboboxItems"
+  },
+  {
+    "prefix": "simUI",
+    "method": "getComboboxSelectedIndex",
+    "description": "Get the selected item index in a combobox widget.",
+    "python": {
+      "params": [
+        { "param_type": "string", "param_name": "handle" },
+        { "param_type": "int", "param_name": "id" }
+      ],
+      "returns": [{ "return_type": "int", "return_name": "index" }]
+    },
+    "python_raw": "int index = simUI.getComboboxSelectedIndex(string handle, int id)",
+    "lua": {
+      "params": [
+        { "param_type": "string", "param_name": "handle" },
+        { "param_type": "int", "param_name": "id" }
+      ],
+      "returns": [{ "return_type": "int", "return_name": "index" }]
+    },
+    "lua_raw": "int index = simUI.getComboboxSelectedIndex(string handle, int id)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simUI.htm?#getComboboxSelectedIndex"
+  },
+  {
+    "prefix": "simUI",
+    "method": "getCurrentEditWidget",
+    "description": "Get the edit widget with focus and selected text.",
+    "python": {
+      "params": [{ "param_type": "string", "param_name": "handle" }],
+      "returns": [{ "return_type": "int", "return_name": "id" }]
+    },
+    "python_raw": "int id = simUI.getCurrentEditWidget(string handle)",
+    "lua": {
+      "params": [{ "param_type": "string", "param_name": "handle" }],
+      "returns": [{ "return_type": "int", "return_name": "id" }]
+    },
+    "lua_raw": "int id = simUI.getCurrentEditWidget(string handle)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simUI.htm?#getCurrentEditWidget"
+  },
+  {
+    "prefix": "simUI",
+    "method": "getCurrentTab",
+    "description": "Get the current tab index of a tabs widget.",
+    "python": {
+      "params": [
+        { "param_type": "string", "param_name": "handle" },
+        { "param_type": "int", "param_name": "id" }
+      ],
+      "returns": [{ "return_type": "int", "return_name": "index" }]
+    },
+    "python_raw": "int index = simUI.getCurrentTab(string handle, int id)",
+    "lua": {
+      "params": [
+        { "param_type": "string", "param_name": "handle" },
+        { "param_type": "int", "param_name": "id" }
+      ],
+      "returns": [{ "return_type": "int", "return_name": "index" }]
+    },
+    "lua_raw": "int index = simUI.getCurrentTab(string handle, int id)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simUI.htm?#getCurrentTab"
+  },
+  {
+    "prefix": "simUI",
+    "method": "getCurveData",
+    "description": "Get the data contained in the specified curve.",
+    "python": {
+      "params": [
+        { "param_type": "string", "param_name": "handle" },
+        { "param_type": "int", "param_name": "id" },
+        { "param_type": "string", "param_name": "name" }
+      ],
+      "returns": [
+        { "return_type": "list", "return_name": "t" },
+        { "return_type": "list", "return_name": "x" },
+        { "return_type": "list", "return_name": "y" }
+      ]
+    },
+    "python_raw": "list t, list x, list y = simUI.getCurveData(string handle, int id, string name)",
+    "lua": {
+      "params": [
+        { "param_type": "string", "param_name": "handle" },
+        { "param_type": "int", "param_name": "id" },
+        { "param_type": "string", "param_name": "name" }
+      ],
+      "returns": [
+        { "return_type": "float[]", "return_name": "t" },
+        { "return_type": "float[]", "return_name": "x" },
+        { "return_type": "float[]", "return_name": "y" }
+      ]
+    },
+    "lua_raw": "float[] t, float[] x, float[] y = simUI.getCurveData(string handle, int id, string name)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simUI.htm?#getCurveData"
+  },
+  {
+    "prefix": "simUI",
+    "method": "getEditValue",
+    "description": "Get the value of a edit widget.",
+    "python": {
+      "params": [
+        { "param_type": "string", "param_name": "handle" },
+        { "param_type": "int", "param_name": "id" }
+      ],
+      "returns": [{ "return_type": "string", "return_name": "value" }]
+    },
+    "python_raw": "string value = simUI.getEditValue(string handle, int id)",
+    "lua": {
+      "params": [
+        { "param_type": "string", "param_name": "handle" },
+        { "param_type": "int", "param_name": "id" }
+      ],
+      "returns": [{ "return_type": "string", "return_name": "value" }]
+    },
+    "lua_raw": "string value = simUI.getEditValue(string handle, int id)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simUI.htm?#getEditValue"
+  },
+  {
+    "prefix": "simUI",
+    "method": "getItem",
+    "description": "Get the table widget item text.",
+    "python": {
+      "params": [
+        { "param_type": "string", "param_name": "handle" },
+        { "param_type": "int", "param_name": "id" },
+        { "param_type": "int", "param_name": "row" },
+        { "param_type": "int", "param_name": "column" }
+      ],
+      "returns": [{ "return_type": "string", "return_name": "text" }]
+    },
+    "python_raw": "string text = simUI.getItem(string handle, int id, int row, int column)",
+    "lua": {
+      "params": [
+        { "param_type": "string", "param_name": "handle" },
+        { "param_type": "int", "param_name": "id" },
+        { "param_type": "int", "param_name": "row" },
+        { "param_type": "int", "param_name": "column" }
+      ],
+      "returns": [{ "return_type": "string", "return_name": "text" }]
+    },
+    "lua_raw": "string text = simUI.getItem(string handle, int id, int row, int column)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simUI.htm?#getItem"
+  },
+  {
+    "prefix": "simUI",
+    "method": "getKeyboardModifiers",
+    "description": "returns the current state of the modifier keys on the keyboard",
+    "python": {
+      "params": [],
+      "returns": [{ "return_type": "keyboard_modifiers", "return_name": "m" }]
+    },
+    "python_raw": "keyboard_modifiers m = simUI.getKeyboardModifiers()",
+    "lua": {
+      "params": [],
+      "returns": [{ "return_type": "keyboard_modifiers", "return_name": "m" }]
+    },
+    "lua_raw": "keyboard_modifiers m = simUI.getKeyboardModifiers()",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simUI.htm?#getKeyboardModifiers"
+  },
+  {
+    "prefix": "simUI",
+    "method": "getLabelText",
+    "description": "Get the text of a label widget.",
+    "python": {
+      "params": [
+        { "param_type": "string", "param_name": "handle" },
+        { "param_type": "int", "param_name": "id" }
+      ],
+      "returns": [{ "return_type": "string", "return_name": "text" }]
+    },
+    "python_raw": "string text = simUI.getLabelText(string handle, int id)",
+    "lua": {
+      "params": [
+        { "param_type": "string", "param_name": "handle" },
+        { "param_type": "int", "param_name": "id" }
+      ],
+      "returns": [{ "return_type": "string", "return_name": "text" }]
+    },
+    "lua_raw": "string text = simUI.getLabelText(string handle, int id)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simUI.htm?#getLabelText"
+  },
+  {
+    "prefix": "simUI",
+    "method": "getPosition",
+    "description": "Get the position of a UI window.",
+    "python": {
+      "params": [{ "param_type": "string", "param_name": "handle" }],
+      "returns": [
+        { "return_type": "int", "return_name": "x" },
+        { "return_type": "int", "return_name": "y" }
+      ]
+    },
+    "python_raw": "int x, int y = simUI.getPosition(string handle)",
+    "lua": {
+      "params": [{ "param_type": "string", "param_name": "handle" }],
+      "returns": [
+        { "return_type": "int", "return_name": "x" },
+        { "return_type": "int", "return_name": "y" }
+      ]
+    },
+    "lua_raw": "int x, int y = simUI.getPosition(string handle)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simUI.htm?#getPosition"
+  },
+  {
+    "prefix": "simUI",
+    "method": "getPropertiesState",
+    "description": "",
+    "python": {
+      "params": [
+        { "param_type": "string", "param_name": "handle" },
+        { "param_type": "int", "param_name": "id" }
+      ],
+      "returns": [{ "return_type": "string", "return_name": "state" }]
+    },
+    "python_raw": "string state = simUI.getPropertiesState(string handle, int id)",
+    "lua": {
+      "params": [
+        { "param_type": "string", "param_name": "handle" },
+        { "param_type": "int", "param_name": "id" }
+      ],
+      "returns": [{ "return_type": "string", "return_name": "state" }]
+    },
+    "lua_raw": "string state = simUI.getPropertiesState(string handle, int id)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simUI.htm?#getPropertiesState"
+  },
+  {
+    "prefix": "simUI",
+    "method": "getRadiobuttonValue",
+    "description": "Get the value of a radiobutton widget.",
+    "python": {
+      "params": [
+        { "param_type": "string", "param_name": "handle" },
+        { "param_type": "int", "param_name": "id" }
+      ],
+      "returns": [{ "return_type": "int", "return_name": "value" }]
+    },
+    "python_raw": "int value = simUI.getRadiobuttonValue(string handle, int id)",
+    "lua": {
+      "params": [
+        { "param_type": "string", "param_name": "handle" },
+        { "param_type": "int", "param_name": "id" }
+      ],
+      "returns": [{ "return_type": "int", "return_name": "value" }]
+    },
+    "lua_raw": "int value = simUI.getRadiobuttonValue(string handle, int id)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simUI.htm?#getRadiobuttonValue"
+  },
+  {
+    "prefix": "simUI",
+    "method": "getRowCount",
+    "description": "Get the table widget number of rows.",
+    "python": {
+      "params": [
+        { "param_type": "string", "param_name": "handle" },
+        { "param_type": "int", "param_name": "id" }
+      ],
+      "returns": [{ "return_type": "int", "return_name": "count" }]
+    },
+    "python_raw": "int count = simUI.getRowCount(string handle, int id)",
+    "lua": {
+      "params": [
+        { "param_type": "string", "param_name": "handle" },
+        { "param_type": "int", "param_name": "id" }
+      ],
+      "returns": [{ "return_type": "int", "return_name": "count" }]
+    },
+    "lua_raw": "int count = simUI.getRowCount(string handle, int id)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simUI.htm?#getRowCount"
+  },
+  {
+    "prefix": "simUI",
+    "method": "getSize",
+    "description": "Get the size of a UI window.",
+    "python": {
+      "params": [{ "param_type": "string", "param_name": "handle" }],
+      "returns": [
+        { "return_type": "int", "return_name": "w" },
+        { "return_type": "int", "return_name": "h" }
+      ]
+    },
+    "python_raw": "int w, int h = simUI.getSize(string handle)",
+    "lua": {
+      "params": [{ "param_type": "string", "param_name": "handle" }],
+      "returns": [
+        { "return_type": "int", "return_name": "w" },
+        { "return_type": "int", "return_name": "h" }
+      ]
+    },
+    "lua_raw": "int w, int h = simUI.getSize(string handle)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simUI.htm?#getSize"
+  },
+  {
+    "prefix": "simUI",
+    "method": "getSliderValue",
+    "description": "Get the value of a slider widget.",
+    "python": {
+      "params": [
+        { "param_type": "string", "param_name": "handle" },
+        { "param_type": "int", "param_name": "id" }
+      ],
+      "returns": [{ "return_type": "int", "return_name": "value" }]
+    },
+    "python_raw": "int value = simUI.getSliderValue(string handle, int id)",
+    "lua": {
+      "params": [
+        { "param_type": "string", "param_name": "handle" },
+        { "param_type": "int", "param_name": "id" }
+      ],
+      "returns": [{ "return_type": "int", "return_name": "value" }]
+    },
+    "lua_raw": "int value = simUI.getSliderValue(string handle, int id)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simUI.htm?#getSliderValue"
+  },
+  {
+    "prefix": "simUI",
+    "method": "getSpinboxValue",
+    "description": "Get the value of a spinbox widget.",
+    "python": {
+      "params": [
+        { "param_type": "string", "param_name": "handle" },
+        { "param_type": "int", "param_name": "id" }
+      ],
+      "returns": [{ "return_type": "float", "return_name": "value" }]
+    },
+    "python_raw": "float value = simUI.getSpinboxValue(string handle, int id)",
+    "lua": {
+      "params": [
+        { "param_type": "string", "param_name": "handle" },
+        { "param_type": "int", "param_name": "id" }
+      ],
+      "returns": [{ "return_type": "float", "return_name": "value" }]
+    },
+    "lua_raw": "float value = simUI.getSpinboxValue(string handle, int id)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simUI.htm?#getSpinboxValue"
+  },
+  {
+    "prefix": "simUI",
+    "method": "getTitle",
+    "description": "Get the title of a UI window.",
+    "python": {
+      "params": [{ "param_type": "string", "param_name": "handle" }],
+      "returns": [{ "return_type": "string", "return_name": "title" }]
+    },
+    "python_raw": "string title = simUI.getTitle(string handle)",
+    "lua": {
+      "params": [{ "param_type": "string", "param_name": "handle" }],
+      "returns": [{ "return_type": "string", "return_name": "title" }]
+    },
+    "lua_raw": "string title = simUI.getTitle(string handle)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simUI.htm?#getTitle"
+  },
+  {
+    "prefix": "simUI",
+    "method": "getWidgetVisibility",
+    "description": "Get the visibility status of a widget.",
+    "python": {
+      "params": [
+        { "param_type": "string", "param_name": "handle" },
+        { "param_type": "int", "param_name": "id" }
+      ],
+      "returns": [{ "return_type": "bool", "return_name": "visibility" }]
+    },
+    "python_raw": "bool visibility = simUI.getWidgetVisibility(string handle, int id)",
+    "lua": {
+      "params": [
+        { "param_type": "string", "param_name": "handle" },
+        { "param_type": "int", "param_name": "id" }
+      ],
+      "returns": [{ "return_type": "bool", "return_name": "visibility" }]
+    },
+    "lua_raw": "bool visibility = simUI.getWidgetVisibility(string handle, int id)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simUI.htm?#getWidgetVisibility"
+  },
+  {
+    "prefix": "simUI",
+    "method": "growPlotRanges",
+    "description": "Increase the ranges of the plot widget by a fixed amount.",
+    "python": {
+      "params": [
+        { "param_type": "string", "param_name": "handle" },
+        { "param_type": "int", "param_name": "id" },
+        { "param_type": "float", "param_name": "xmin" },
+        { "param_type": "float", "param_name": "xmax" },
+        { "param_type": "float", "param_name": "ymin" },
+        { "param_type": "float", "param_name": "ymax" }
+      ],
+      "returns": []
+    },
+    "python_raw": "simUI.growPlotRanges(string handle, int id, float xmin, float xmax, float ymin, float ymax)",
+    "lua": {
+      "params": [
+        { "param_type": "string", "param_name": "handle" },
+        { "param_type": "int", "param_name": "id" },
+        { "param_type": "float", "param_name": "xmin" },
+        { "param_type": "float", "param_name": "xmax" },
+        { "param_type": "float", "param_name": "ymin" },
+        { "param_type": "float", "param_name": "ymax" }
+      ],
+      "returns": []
+    },
+    "lua_raw": "simUI.growPlotRanges(string handle, int id, float xmin, float xmax, float ymin, float ymax)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simUI.htm?#growPlotRanges"
+  },
+  {
+    "prefix": "simUI",
+    "method": "growPlotXRange",
+    "description": "Increase the X range of the plot widget.",
+    "python": {
+      "params": [
+        { "param_type": "string", "param_name": "handle" },
+        { "param_type": "int", "param_name": "id" },
+        { "param_type": "float", "param_name": "xmin" },
+        { "param_type": "float", "param_name": "xmax" }
+      ],
+      "returns": []
+    },
+    "python_raw": "simUI.growPlotXRange(string handle, int id, float xmin, float xmax)",
+    "lua": {
+      "params": [
+        { "param_type": "string", "param_name": "handle" },
+        { "param_type": "int", "param_name": "id" },
+        { "param_type": "float", "param_name": "xmin" },
+        { "param_type": "float", "param_name": "xmax" }
+      ],
+      "returns": []
+    },
+    "lua_raw": "simUI.growPlotXRange(string handle, int id, float xmin, float xmax)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simUI.htm?#growPlotXRange"
+  },
+  {
+    "prefix": "simUI",
+    "method": "growPlotYRange",
+    "description": "Increase the Y range of the plot widget.",
+    "python": {
+      "params": [
+        { "param_type": "string", "param_name": "handle" },
+        { "param_type": "int", "param_name": "id" },
+        { "param_type": "float", "param_name": "ymin" },
+        { "param_type": "float", "param_name": "ymax" }
+      ],
+      "returns": []
+    },
+    "python_raw": "simUI.growPlotYRange(string handle, int id, float ymin, float ymax)",
+    "lua": {
+      "params": [
+        { "param_type": "string", "param_name": "handle" },
+        { "param_type": "int", "param_name": "id" },
+        { "param_type": "float", "param_name": "ymin" },
+        { "param_type": "float", "param_name": "ymax" }
+      ],
+      "returns": []
+    },
+    "lua_raw": "simUI.growPlotYRange(string handle, int id, float ymin, float ymax)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simUI.htm?#growPlotYRange"
+  },
+  {
+    "prefix": "simUI",
+    "method": "hide",
+    "description": "Hide the UI window.",
+    "python": {
+      "params": [{ "param_type": "string", "param_name": "handle" }],
+      "returns": []
+    },
+    "python_raw": "simUI.hide(string handle)",
+    "lua": {
+      "params": [{ "param_type": "string", "param_name": "handle" }],
+      "returns": []
+    },
+    "lua_raw": "simUI.hide(string handle)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simUI.htm?#hide"
+  },
+  {
+    "prefix": "simUI",
+    "method": "inputDialog",
+    "description": "Display an input dialog.",
+    "python": {
+      "params": [
+        { "param_type": "string", "param_name": "initValue" },
+        { "param_type": "string", "param_name": "label" },
+        { "param_type": "string", "param_name": "title" }
+      ],
+      "returns": [{ "return_type": "string", "return_name": "result" }]
+    },
+    "python_raw": "string result = simUI.inputDialog(string initValue=\"\", string label=\"Input value:\", string title=\"\")",
+    "lua": {
+      "params": [
+        { "param_type": "string", "param_name": "initValue" },
+        { "param_type": "string", "param_name": "label" },
+        { "param_type": "string", "param_name": "title" }
+      ],
+      "returns": [{ "return_type": "string", "return_name": "result" }]
+    },
+    "lua_raw": "string result = simUI.inputDialog(string initValue=\"\", string label=\"Input value:\", string title=\"\")",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simUI.htm?#inputDialog"
+  },
+  {
+    "prefix": "simUI",
+    "method": "insertComboboxItem",
+    "description": "Insert an item in a combobox widget.",
+    "python": {
+      "params": [
+        { "param_type": "string", "param_name": "handle" },
+        { "param_type": "int", "param_name": "id" },
+        { "param_type": "int", "param_name": "index" },
+        { "param_type": "string", "param_name": "text" },
+        { "param_type": "bool", "param_name": "suppressEvents" }
+      ],
+      "returns": []
+    },
+    "python_raw": "simUI.insertComboboxItem(string handle, int id, int index, string text, bool suppressEvents=true)",
+    "lua": {
+      "params": [
+        { "param_type": "string", "param_name": "handle" },
+        { "param_type": "int", "param_name": "id" },
+        { "param_type": "int", "param_name": "index" },
+        { "param_type": "string", "param_name": "text" },
+        { "param_type": "bool", "param_name": "suppressEvents" }
+      ],
+      "returns": []
+    },
+    "lua_raw": "simUI.insertComboboxItem(string handle, int id, int index, string text, bool suppressEvents=true)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simUI.htm?#insertComboboxItem"
+  },
+  {
+    "prefix": "simUI",
+    "method": "insertTableColumn",
+    "description": "insert a column in a table widget",
+    "python": {
+      "params": [
+        { "param_type": "int", "param_name": "ui" },
+        { "param_type": "int", "param_name": "widget" },
+        { "param_type": "int", "param_name": "index" }
+      ],
+      "returns": []
+    },
+    "python_raw": "simUI.insertTableColumn(int ui, int widget, int index)",
+    "lua": {
+      "params": [
+        { "param_type": "int", "param_name": "ui" },
+        { "param_type": "int", "param_name": "widget" },
+        { "param_type": "int", "param_name": "index" }
+      ],
+      "returns": []
+    },
+    "lua_raw": "simUI.insertTableColumn(int ui, int widget, int index)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simUI.htm?#insertTableColumn"
+  },
+  {
+    "prefix": "simUI",
+    "method": "insertTableRow",
+    "description": "insert a row in a table widget",
+    "python": {
+      "params": [
+        { "param_type": "int", "param_name": "ui" },
+        { "param_type": "int", "param_name": "widget" },
+        { "param_type": "int", "param_name": "index" }
+      ],
+      "returns": []
+    },
+    "python_raw": "simUI.insertTableRow(int ui, int widget, int index)",
+    "lua": {
+      "params": [
+        { "param_type": "int", "param_name": "ui" },
+        { "param_type": "int", "param_name": "widget" },
+        { "param_type": "int", "param_name": "index" }
+      ],
+      "returns": []
+    },
+    "lua_raw": "simUI.insertTableRow(int ui, int widget, int index)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simUI.htm?#insertTableRow"
+  },
+  {
+    "prefix": "simUI",
+    "method": "isVisible",
+    "description": "Check if the window is visible.",
+    "python": {
+      "params": [{ "param_type": "string", "param_name": "handle" }],
+      "returns": [{ "return_type": "bool", "return_name": "visibility" }]
+    },
+    "python_raw": "bool visibility = simUI.isVisible(string handle)",
+    "lua": {
+      "params": [{ "param_type": "string", "param_name": "handle" }],
+      "returns": [{ "return_type": "bool", "return_name": "visibility" }]
+    },
+    "lua_raw": "bool visibility = simUI.isVisible(string handle)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simUI.htm?#isVisible"
+  },
+  {
+    "prefix": "simUI",
+    "method": "msgBox",
+    "description": "Display a message box.",
+    "python": {
+      "params": [
+        { "param_type": "int", "param_name": "type" },
+        { "param_type": "int", "param_name": "buttons" },
+        { "param_type": "string", "param_name": "title" },
+        { "param_type": "string", "param_name": "message" }
+      ],
+      "returns": [{ "return_type": "int", "return_name": "result" }]
+    },
+    "python_raw": "int result = simUI.msgBox(int type, int buttons, string title, string message)",
+    "lua": {
+      "params": [
+        { "param_type": "int", "param_name": "type" },
+        { "param_type": "int", "param_name": "buttons" },
+        { "param_type": "string", "param_name": "title" },
+        { "param_type": "string", "param_name": "message" }
+      ],
+      "returns": [{ "return_type": "int", "return_name": "result" }]
+    },
+    "lua_raw": "int result = simUI.msgBox(int type, int buttons, string title, string message)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simUI.htm?#msgBox"
+  },
+  {
+    "prefix": "simUI",
+    "method": "qtVersion",
+    "description": "Returns the version of the Qt library.",
+    "python": {
+      "params": [],
+      "returns": [{ "return_type": "list", "return_name": "version" }]
+    },
+    "python_raw": "list version = simUI.qtVersion()",
+    "lua": {
+      "params": [],
+      "returns": [{ "return_type": "int[]", "return_name": "version" }]
+    },
+    "lua_raw": "int[] version = simUI.qtVersion()",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simUI.htm?#qtVersion"
+  },
+  {
+    "prefix": "simUI",
+    "method": "removeComboboxItem",
+    "description": "Remove an item from a combobox widget.",
+    "python": {
+      "params": [
+        { "param_type": "string", "param_name": "handle" },
+        { "param_type": "int", "param_name": "id" },
+        { "param_type": "int", "param_name": "index" },
+        { "param_type": "bool", "param_name": "suppressEvents" }
+      ],
+      "returns": []
+    },
+    "python_raw": "simUI.removeComboboxItem(string handle, int id, int index, bool suppressEvents=true)",
+    "lua": {
+      "params": [
+        { "param_type": "string", "param_name": "handle" },
+        { "param_type": "int", "param_name": "id" },
+        { "param_type": "int", "param_name": "index" },
+        { "param_type": "bool", "param_name": "suppressEvents" }
+      ],
+      "returns": []
+    },
+    "lua_raw": "simUI.removeComboboxItem(string handle, int id, int index, bool suppressEvents=true)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simUI.htm?#removeComboboxItem"
+  },
+  {
+    "prefix": "simUI",
+    "method": "removeCurve",
+    "description": "Remove the specified curve from the plot widget.",
+    "python": {
+      "params": [
+        { "param_type": "string", "param_name": "handle" },
+        { "param_type": "int", "param_name": "id" },
+        { "param_type": "string", "param_name": "name" }
+      ],
+      "returns": []
+    },
+    "python_raw": "simUI.removeCurve(string handle, int id, string name)",
+    "lua": {
+      "params": [
+        { "param_type": "string", "param_name": "handle" },
+        { "param_type": "int", "param_name": "id" },
+        { "param_type": "string", "param_name": "name" }
+      ],
+      "returns": []
+    },
+    "lua_raw": "simUI.removeCurve(string handle, int id, string name)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simUI.htm?#removeCurve"
+  },
+  {
+    "prefix": "simUI",
+    "method": "removeScene3DNode",
+    "description": "Remove a node in a scene3d widget.",
+    "python": {
+      "params": [
+        { "param_type": "string", "param_name": "handle" },
+        { "param_type": "int", "param_name": "id" },
+        { "param_type": "int", "param_name": "nodeId" }
+      ],
+      "returns": []
+    },
+    "python_raw": "simUI.removeScene3DNode(string handle, int id, int nodeId)",
+    "lua": {
+      "params": [
+        { "param_type": "string", "param_name": "handle" },
+        { "param_type": "int", "param_name": "id" },
+        { "param_type": "int", "param_name": "nodeId" }
+      ],
+      "returns": []
+    },
+    "lua_raw": "simUI.removeScene3DNode(string handle, int id, int nodeId)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simUI.htm?#removeScene3DNode"
+  },
+  {
+    "prefix": "simUI",
+    "method": "removeTableColumn",
+    "description": "remove a column from a table widget",
+    "python": {
+      "params": [
+        { "param_type": "int", "param_name": "ui" },
+        { "param_type": "int", "param_name": "widget" },
+        { "param_type": "int", "param_name": "index" }
+      ],
+      "returns": []
+    },
+    "python_raw": "simUI.removeTableColumn(int ui, int widget, int index)",
+    "lua": {
+      "params": [
+        { "param_type": "int", "param_name": "ui" },
+        { "param_type": "int", "param_name": "widget" },
+        { "param_type": "int", "param_name": "index" }
+      ],
+      "returns": []
+    },
+    "lua_raw": "simUI.removeTableColumn(int ui, int widget, int index)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simUI.htm?#removeTableColumn"
+  },
+  {
+    "prefix": "simUI",
+    "method": "removeTableRow",
+    "description": "remove a row from a table widget",
+    "python": {
+      "params": [
+        { "param_type": "int", "param_name": "ui" },
+        { "param_type": "int", "param_name": "widget" },
+        { "param_type": "int", "param_name": "index" }
+      ],
+      "returns": []
+    },
+    "python_raw": "simUI.removeTableRow(int ui, int widget, int index)",
+    "lua": {
+      "params": [
+        { "param_type": "int", "param_name": "ui" },
+        { "param_type": "int", "param_name": "widget" },
+        { "param_type": "int", "param_name": "index" }
+      ],
+      "returns": []
+    },
+    "lua_raw": "simUI.removeTableRow(int ui, int widget, int index)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simUI.htm?#removeTableRow"
+  },
+  {
+    "prefix": "simUI",
+    "method": "removeTreeItem",
+    "description": "Remove an item from the specified tree widget.",
+    "python": {
+      "params": [
+        { "param_type": "string", "param_name": "handle" },
+        { "param_type": "int", "param_name": "id" },
+        { "param_type": "int", "param_name": "item_id" },
+        { "param_type": "bool", "param_name": "suppressEvents" }
+      ],
+      "returns": []
+    },
+    "python_raw": "simUI.removeTreeItem(string handle, int id, int item_id, bool suppressEvents=true)",
+    "lua": {
+      "params": [
+        { "param_type": "string", "param_name": "handle" },
+        { "param_type": "int", "param_name": "id" },
+        { "param_type": "int", "param_name": "item_id" },
+        { "param_type": "bool", "param_name": "suppressEvents" }
+      ],
+      "returns": []
+    },
+    "lua_raw": "simUI.removeTreeItem(string handle, int id, int item_id, bool suppressEvents=true)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simUI.htm?#removeTreeItem"
+  },
+  {
+    "prefix": "simUI",
+    "method": "replot",
+    "description": "Refresh all the plots of a plot widget.",
+    "python": {
+      "params": [
+        { "param_type": "string", "param_name": "handle" },
+        { "param_type": "int", "param_name": "id" }
+      ],
+      "returns": []
+    },
+    "python_raw": "simUI.replot(string handle, int id)",
+    "lua": {
+      "params": [
+        { "param_type": "string", "param_name": "handle" },
+        { "param_type": "int", "param_name": "id" }
+      ],
+      "returns": []
+    },
+    "lua_raw": "simUI.replot(string handle, int id)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simUI.htm?#replot"
+  },
+  {
+    "prefix": "simUI",
+    "method": "rescaleAxes",
+    "description": "Rescales the axes such that the specified curve in the plot is fully visible.",
+    "python": {
+      "params": [
+        { "param_type": "string", "param_name": "handle" },
+        { "param_type": "int", "param_name": "id" },
+        { "param_type": "string", "param_name": "name" },
+        { "param_type": "bool", "param_name": "onlyEnlargeX" },
+        { "param_type": "bool", "param_name": "onlyEnlargeY" }
+      ],
+      "returns": []
+    },
+    "python_raw": "simUI.rescaleAxes(string handle, int id, string name, bool onlyEnlargeX=false, bool onlyEnlargeY=false)",
+    "lua": {
+      "params": [
+        { "param_type": "string", "param_name": "handle" },
+        { "param_type": "int", "param_name": "id" },
+        { "param_type": "string", "param_name": "name" },
+        { "param_type": "bool", "param_name": "onlyEnlargeX" },
+        { "param_type": "bool", "param_name": "onlyEnlargeY" }
+      ],
+      "returns": []
+    },
+    "lua_raw": "simUI.rescaleAxes(string handle, int id, string name, bool onlyEnlargeX=false, bool onlyEnlargeY=false)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simUI.htm?#rescaleAxes"
+  },
+  {
+    "prefix": "simUI",
+    "method": "rescaleAxesAll",
+    "description": "Rescales the axes such that all curves in the plot are fully visible.",
+    "python": {
+      "params": [
+        { "param_type": "string", "param_name": "handle" },
+        { "param_type": "int", "param_name": "id" },
+        { "param_type": "bool", "param_name": "onlyEnlargeX" },
+        { "param_type": "bool", "param_name": "onlyEnlargeY" }
+      ],
+      "returns": []
+    },
+    "python_raw": "simUI.rescaleAxesAll(string handle, int id, bool onlyEnlargeX=false, bool onlyEnlargeY=false)",
+    "lua": {
+      "params": [
+        { "param_type": "string", "param_name": "handle" },
+        { "param_type": "int", "param_name": "id" },
+        { "param_type": "bool", "param_name": "onlyEnlargeX" },
+        { "param_type": "bool", "param_name": "onlyEnlargeY" }
+      ],
+      "returns": []
+    },
+    "lua_raw": "simUI.rescaleAxesAll(string handle, int id, bool onlyEnlargeX=false, bool onlyEnlargeY=false)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simUI.htm?#rescaleAxesAll"
+  },
+  {
+    "prefix": "simUI",
+    "method": "restoreState",
+    "description": "Restore a previously saved header state of the specified table/tree widget.",
+    "python": {
+      "params": [
+        { "param_type": "string", "param_name": "handle" },
+        { "param_type": "int", "param_name": "id" },
+        { "param_type": "buffer", "param_name": "state" }
+      ],
+      "returns": []
+    },
+    "python_raw": "simUI.restoreState(string handle, int id, buffer state)",
+    "lua": {
+      "params": [
+        { "param_type": "string", "param_name": "handle" },
+        { "param_type": "int", "param_name": "id" },
+        { "param_type": "buffer", "param_name": "state" }
+      ],
+      "returns": []
+    },
+    "lua_raw": "simUI.restoreState(string handle, int id, buffer state)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simUI.htm?#restoreState"
+  },
+  {
+    "prefix": "simUI",
+    "method": "saveState",
+    "description": "Save header state of the specified table/tree widget.",
+    "python": {
+      "params": [
+        { "param_type": "string", "param_name": "handle" },
+        { "param_type": "int", "param_name": "id" }
+      ],
+      "returns": [{ "return_type": "buffer", "return_name": "state" }]
+    },
+    "python_raw": "buffer state = simUI.saveState(string handle, int id)",
+    "lua": {
+      "params": [
+        { "param_type": "string", "param_name": "handle" },
+        { "param_type": "int", "param_name": "id" }
+      ],
+      "returns": [{ "return_type": "buffer", "return_name": "state" }]
+    },
+    "lua_raw": "buffer state = simUI.saveState(string handle, int id)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simUI.htm?#saveState"
+  },
+  {
+    "prefix": "simUI",
+    "method": "setButtonPressed",
+    "description": "Set the state of a button.",
+    "python": {
+      "params": [
+        { "param_type": "string", "param_name": "handle" },
+        { "param_type": "int", "param_name": "id" },
+        { "param_type": "bool", "param_name": "pressed" }
+      ],
+      "returns": []
+    },
+    "python_raw": "simUI.setButtonPressed(string handle, int id, bool pressed)",
+    "lua": {
+      "params": [
+        { "param_type": "string", "param_name": "handle" },
+        { "param_type": "int", "param_name": "id" },
+        { "param_type": "bool", "param_name": "pressed" }
+      ],
+      "returns": []
+    },
+    "lua_raw": "simUI.setButtonPressed(string handle, int id, bool pressed)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simUI.htm?#setButtonPressed"
+  },
+  {
+    "prefix": "simUI",
+    "method": "setButtonText",
+    "description": "Set the text of a button.",
+    "python": {
+      "params": [
+        { "param_type": "string", "param_name": "handle" },
+        { "param_type": "int", "param_name": "id" },
+        { "param_type": "string", "param_name": "text" }
+      ],
+      "returns": []
+    },
+    "python_raw": "simUI.setButtonText(string handle, int id, string text)",
+    "lua": {
+      "params": [
+        { "param_type": "string", "param_name": "handle" },
+        { "param_type": "int", "param_name": "id" },
+        { "param_type": "string", "param_name": "text" }
+      ],
+      "returns": []
+    },
+    "lua_raw": "simUI.setButtonText(string handle, int id, string text)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simUI.htm?#setButtonText"
+  },
+  {
+    "prefix": "simUI",
+    "method": "setCheckboxValue",
+    "description": "Set the value of a checkbox widget.",
+    "python": {
+      "params": [
+        { "param_type": "string", "param_name": "handle" },
+        { "param_type": "int", "param_name": "id" },
+        { "param_type": "int", "param_name": "value" },
+        { "param_type": "bool", "param_name": "suppressEvents" }
+      ],
+      "returns": []
+    },
+    "python_raw": "simUI.setCheckboxValue(string handle, int id, int value, bool suppressEvents=true)",
+    "lua": {
+      "params": [
+        { "param_type": "string", "param_name": "handle" },
+        { "param_type": "int", "param_name": "id" },
+        { "param_type": "int", "param_name": "value" },
+        { "param_type": "bool", "param_name": "suppressEvents" }
+      ],
+      "returns": []
+    },
+    "lua_raw": "simUI.setCheckboxValue(string handle, int id, int value, bool suppressEvents=true)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simUI.htm?#setCheckboxValue"
+  },
+  {
+    "prefix": "simUI",
+    "method": "setClipboardText",
+    "description": "Set the content of the clipboard to the specified text.",
+    "python": {
+      "params": [{ "param_type": "string", "param_name": "text" }],
+      "returns": []
+    },
+    "python_raw": "simUI.setClipboardText(string text)",
+    "lua": {
+      "params": [{ "param_type": "string", "param_name": "text" }],
+      "returns": []
+    },
+    "lua_raw": "simUI.setClipboardText(string text)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simUI.htm?#setClipboardText"
+  },
+  {
+    "prefix": "simUI",
+    "method": "setColumnCount",
+    "description": "Resize the specified table/tree widget.",
+    "python": {
+      "params": [
+        { "param_type": "string", "param_name": "handle" },
+        { "param_type": "int", "param_name": "id" },
+        { "param_type": "int", "param_name": "count" },
+        { "param_type": "bool", "param_name": "suppressEvents" }
+      ],
+      "returns": []
+    },
+    "python_raw": "simUI.setColumnCount(string handle, int id, int count, bool suppressEvents=true)",
+    "lua": {
+      "params": [
+        { "param_type": "string", "param_name": "handle" },
+        { "param_type": "int", "param_name": "id" },
+        { "param_type": "int", "param_name": "count" },
+        { "param_type": "bool", "param_name": "suppressEvents" }
+      ],
+      "returns": []
+    },
+    "lua_raw": "simUI.setColumnCount(string handle, int id, int count, bool suppressEvents=true)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simUI.htm?#setColumnCount"
+  },
+  {
+    "prefix": "simUI",
+    "method": "setColumnHeaderText",
+    "description": "Set the column header text of the specified table/tree widget.",
+    "python": {
+      "params": [
+        { "param_type": "string", "param_name": "handle" },
+        { "param_type": "int", "param_name": "id" },
+        { "param_type": "int", "param_name": "column" },
+        { "param_type": "string", "param_name": "text" }
+      ],
+      "returns": []
+    },
+    "python_raw": "simUI.setColumnHeaderText(string handle, int id, int column, string text)",
+    "lua": {
+      "params": [
+        { "param_type": "string", "param_name": "handle" },
+        { "param_type": "int", "param_name": "id" },
+        { "param_type": "int", "param_name": "column" },
+        { "param_type": "string", "param_name": "text" }
+      ],
+      "returns": []
+    },
+    "lua_raw": "simUI.setColumnHeaderText(string handle, int id, int column, string text)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simUI.htm?#setColumnHeaderText"
+  },
+  {
+    "prefix": "simUI",
+    "method": "setColumnWidth",
+    "description": "Resize a column in the specified table/tree widget.",
+    "python": {
+      "params": [
+        { "param_type": "string", "param_name": "handle" },
+        { "param_type": "int", "param_name": "id" },
+        { "param_type": "int", "param_name": "column" },
+        { "param_type": "int", "param_name": "min_size" },
+        { "param_type": "int", "param_name": "max_size" }
+      ],
+      "returns": []
+    },
+    "python_raw": "simUI.setColumnWidth(string handle, int id, int column, int min_size, int max_size)",
+    "lua": {
+      "params": [
+        { "param_type": "string", "param_name": "handle" },
+        { "param_type": "int", "param_name": "id" },
+        { "param_type": "int", "param_name": "column" },
+        { "param_type": "int", "param_name": "min_size" },
+        { "param_type": "int", "param_name": "max_size" }
+      ],
+      "returns": []
+    },
+    "lua_raw": "simUI.setColumnWidth(string handle, int id, int column, int min_size, int max_size)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simUI.htm?#setColumnWidth"
+  },
+  {
+    "prefix": "simUI",
+    "method": "setComboboxItems",
+    "description": "Populate a combobox widget with the specified items, and set the selected item to the specified index.",
+    "python": {
+      "params": [
+        { "param_type": "string", "param_name": "handle" },
+        { "param_type": "int", "param_name": "id" },
+        { "param_type": "list", "param_name": "items" },
+        { "param_type": "int", "param_name": "index" },
+        { "param_type": "bool", "param_name": "suppressEvents" }
+      ],
+      "returns": []
+    },
+    "python_raw": "simUI.setComboboxItems(string handle, int id, list items, int index, bool suppressEvents=true)",
+    "lua": {
+      "params": [
+        { "param_type": "string", "param_name": "handle" },
+        { "param_type": "int", "param_name": "id" },
+        { "param_type": "string[]", "param_name": "items" },
+        { "param_type": "int", "param_name": "index" },
+        { "param_type": "bool", "param_name": "suppressEvents" }
+      ],
+      "returns": []
+    },
+    "lua_raw": "simUI.setComboboxItems(string handle, int id, string[] items, int index, bool suppressEvents=true)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simUI.htm?#setComboboxItems"
+  },
+  {
+    "prefix": "simUI",
+    "method": "setComboboxSelectedIndex",
+    "description": "Change the selected item index in a combobox widget.",
+    "python": {
+      "params": [
+        { "param_type": "string", "param_name": "handle" },
+        { "param_type": "int", "param_name": "id" },
+        { "param_type": "int", "param_name": "index" },
+        { "param_type": "bool", "param_name": "suppressEvents" }
+      ],
+      "returns": []
+    },
+    "python_raw": "simUI.setComboboxSelectedIndex(string handle, int id, int index, bool suppressEvents=true)",
+    "lua": {
+      "params": [
+        { "param_type": "string", "param_name": "handle" },
+        { "param_type": "int", "param_name": "id" },
+        { "param_type": "int", "param_name": "index" },
+        { "param_type": "bool", "param_name": "suppressEvents" }
+      ],
+      "returns": []
+    },
+    "lua_raw": "simUI.setComboboxSelectedIndex(string handle, int id, int index, bool suppressEvents=true)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simUI.htm?#setComboboxSelectedIndex"
+  },
+  {
+    "prefix": "simUI",
+    "method": "setCurrentEditWidget",
+    "description": "Set the edit widget focus and selected text.",
+    "python": {
+      "params": [
+        { "param_type": "string", "param_name": "handle" },
+        { "param_type": "int", "param_name": "id" }
+      ],
+      "returns": []
+    },
+    "python_raw": "simUI.setCurrentEditWidget(string handle, int id)",
+    "lua": {
+      "params": [
+        { "param_type": "string", "param_name": "handle" },
+        { "param_type": "int", "param_name": "id" }
+      ],
+      "returns": []
+    },
+    "lua_raw": "simUI.setCurrentEditWidget(string handle, int id)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simUI.htm?#setCurrentEditWidget"
+  },
+  {
+    "prefix": "simUI",
+    "method": "setCurrentTab",
+    "description": "Set the current tab index in a tabs widget.",
+    "python": {
+      "params": [
+        { "param_type": "string", "param_name": "handle" },
+        { "param_type": "int", "param_name": "id" },
+        { "param_type": "int", "param_name": "index" },
+        { "param_type": "bool", "param_name": "suppressEvents" }
+      ],
+      "returns": []
+    },
+    "python_raw": "simUI.setCurrentTab(string handle, int id, int index, bool suppressEvents=true)",
+    "lua": {
+      "params": [
+        { "param_type": "string", "param_name": "handle" },
+        { "param_type": "int", "param_name": "id" },
+        { "param_type": "int", "param_name": "index" },
+        { "param_type": "bool", "param_name": "suppressEvents" }
+      ],
+      "returns": []
+    },
+    "lua_raw": "simUI.setCurrentTab(string handle, int id, int index, bool suppressEvents=true)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simUI.htm?#setCurrentTab"
+  },
+  {
+    "prefix": "simUI",
+    "method": "setEditValue",
+    "description": "Set the value of a edit widget.",
+    "python": {
+      "params": [
+        { "param_type": "string", "param_name": "handle" },
+        { "param_type": "int", "param_name": "id" },
+        { "param_type": "string", "param_name": "value" },
+        { "param_type": "bool", "param_name": "suppressEvents" }
+      ],
+      "returns": []
+    },
+    "python_raw": "simUI.setEditValue(string handle, int id, string value, bool suppressEvents=true)",
+    "lua": {
+      "params": [
+        { "param_type": "string", "param_name": "handle" },
+        { "param_type": "int", "param_name": "id" },
+        { "param_type": "string", "param_name": "value" },
+        { "param_type": "bool", "param_name": "suppressEvents" }
+      ],
+      "returns": []
+    },
+    "lua_raw": "simUI.setEditValue(string handle, int id, string value, bool suppressEvents=true)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simUI.htm?#setEditValue"
+  },
+  {
+    "prefix": "simUI",
+    "method": "setEnabled",
+    "description": "Enable or disable a widget.",
+    "python": {
+      "params": [
+        { "param_type": "string", "param_name": "handle" },
+        { "param_type": "int", "param_name": "id" },
+        { "param_type": "bool", "param_name": "enabled" },
+        { "param_type": "bool", "param_name": "suppressEvents" }
+      ],
+      "returns": []
+    },
+    "python_raw": "simUI.setEnabled(string handle, int id, bool enabled, bool suppressEvents=true)",
+    "lua": {
+      "params": [
+        { "param_type": "string", "param_name": "handle" },
+        { "param_type": "int", "param_name": "id" },
+        { "param_type": "bool", "param_name": "enabled" },
+        { "param_type": "bool", "param_name": "suppressEvents" }
+      ],
+      "returns": []
+    },
+    "lua_raw": "simUI.setEnabled(string handle, int id, bool enabled, bool suppressEvents=true)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simUI.htm?#setEnabled"
+  },
+  {
+    "prefix": "simUI",
+    "method": "setImageData",
+    "description": "Set image content using specified bitmap (RGB888) data.",
+    "python": {
+      "params": [
+        { "param_type": "string", "param_name": "handle" },
+        { "param_type": "int", "param_name": "id" },
+        { "param_type": "buffer", "param_name": "data" },
+        { "param_type": "int", "param_name": "width" },
+        { "param_type": "int", "param_name": "height" }
+      ],
+      "returns": []
+    },
+    "python_raw": "simUI.setImageData(string handle, int id, buffer data, int width, int height)",
+    "lua": {
+      "params": [
+        { "param_type": "string", "param_name": "handle" },
+        { "param_type": "int", "param_name": "id" },
+        { "param_type": "buffer", "param_name": "data" },
+        { "param_type": "int", "param_name": "width" },
+        { "param_type": "int", "param_name": "height" }
+      ],
+      "returns": []
+    },
+    "lua_raw": "simUI.setImageData(string handle, int id, buffer data, int width, int height)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simUI.htm?#setImageData"
+  },
+  {
+    "prefix": "simUI",
+    "method": "setItem",
+    "description": "Change item value in the specified table widget.",
+    "python": {
+      "params": [
+        { "param_type": "string", "param_name": "handle" },
+        { "param_type": "int", "param_name": "id" },
+        { "param_type": "int", "param_name": "row" },
+        { "param_type": "int", "param_name": "column" },
+        { "param_type": "string", "param_name": "text" },
+        { "param_type": "bool", "param_name": "suppressEvents" }
+      ],
+      "returns": []
+    },
+    "python_raw": "simUI.setItem(string handle, int id, int row, int column, string text, bool suppressEvents=true)",
+    "lua": {
+      "params": [
+        { "param_type": "string", "param_name": "handle" },
+        { "param_type": "int", "param_name": "id" },
+        { "param_type": "int", "param_name": "row" },
+        { "param_type": "int", "param_name": "column" },
+        { "param_type": "string", "param_name": "text" },
+        { "param_type": "bool", "param_name": "suppressEvents" }
+      ],
+      "returns": []
+    },
+    "lua_raw": "simUI.setItem(string handle, int id, int row, int column, string text, bool suppressEvents=true)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simUI.htm?#setItem"
+  },
+  {
+    "prefix": "simUI",
+    "method": "setItemEditable",
+    "description": "Change item editable flag in the specified table widget.",
+    "python": {
+      "params": [
+        { "param_type": "string", "param_name": "handle" },
+        { "param_type": "int", "param_name": "id" },
+        { "param_type": "int", "param_name": "row" },
+        { "param_type": "int", "param_name": "column" },
+        { "param_type": "bool", "param_name": "editable" }
+      ],
+      "returns": []
+    },
+    "python_raw": "simUI.setItemEditable(string handle, int id, int row, int column, bool editable)",
+    "lua": {
+      "params": [
+        { "param_type": "string", "param_name": "handle" },
+        { "param_type": "int", "param_name": "id" },
+        { "param_type": "int", "param_name": "row" },
+        { "param_type": "int", "param_name": "column" },
+        { "param_type": "bool", "param_name": "editable" }
+      ],
+      "returns": []
+    },
+    "lua_raw": "simUI.setItemEditable(string handle, int id, int row, int column, bool editable)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simUI.htm?#setItemEditable"
+  },
+  {
+    "prefix": "simUI",
+    "method": "setItemImage",
+    "description": "Change item image in the specified table widget.",
+    "python": {
+      "params": [
+        { "param_type": "string", "param_name": "handle" },
+        { "param_type": "int", "param_name": "id" },
+        { "param_type": "int", "param_name": "row" },
+        { "param_type": "int", "param_name": "column" },
+        { "param_type": "string", "param_name": "data" },
+        { "param_type": "int", "param_name": "width" },
+        { "param_type": "int", "param_name": "height" },
+        { "param_type": "bool", "param_name": "suppressEvents" }
+      ],
+      "returns": []
+    },
+    "python_raw": "simUI.setItemImage(string handle, int id, int row, int column, string data, int width, int height, bool suppressEvents=true)",
+    "lua": {
+      "params": [
+        { "param_type": "string", "param_name": "handle" },
+        { "param_type": "int", "param_name": "id" },
+        { "param_type": "int", "param_name": "row" },
+        { "param_type": "int", "param_name": "column" },
+        { "param_type": "string", "param_name": "data" },
+        { "param_type": "int", "param_name": "width" },
+        { "param_type": "int", "param_name": "height" },
+        { "param_type": "bool", "param_name": "suppressEvents" }
+      ],
+      "returns": []
+    },
+    "lua_raw": "simUI.setItemImage(string handle, int id, int row, int column, string data, int width, int height, bool suppressEvents=true)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simUI.htm?#setItemImage"
+  },
+  {
+    "prefix": "simUI",
+    "method": "setItems",
+    "description": "",
+    "python": {
+      "params": [
+        { "param_type": "string", "param_name": "handle" },
+        { "param_type": "int", "param_name": "id" },
+        { "param_type": "string", "param_name": "data" },
+        { "param_type": "bool", "param_name": "suppressEvents" }
+      ],
+      "returns": []
+    },
+    "python_raw": "simUI.setItems(string handle, int id, string data, bool suppressEvents=true)",
+    "lua": {
+      "params": [
+        { "param_type": "string", "param_name": "handle" },
+        { "param_type": "int", "param_name": "id" },
+        { "param_type": "string", "param_name": "data" },
+        { "param_type": "bool", "param_name": "suppressEvents" }
+      ],
+      "returns": []
+    },
+    "lua_raw": "simUI.setItems(string handle, int id, string data, bool suppressEvents=true)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simUI.htm?#setItems"
+  },
+  {
+    "prefix": "simUI",
+    "method": "setLabelText",
+    "description": "Set the text of a label widget.",
+    "python": {
+      "params": [
+        { "param_type": "string", "param_name": "handle" },
+        { "param_type": "int", "param_name": "id" },
+        { "param_type": "string", "param_name": "text" },
+        { "param_type": "bool", "param_name": "suppressEvents" }
+      ],
+      "returns": []
+    },
+    "python_raw": "simUI.setLabelText(string handle, int id, string text, bool suppressEvents=true)",
+    "lua": {
+      "params": [
+        { "param_type": "string", "param_name": "handle" },
+        { "param_type": "int", "param_name": "id" },
+        { "param_type": "string", "param_name": "text" },
+        { "param_type": "bool", "param_name": "suppressEvents" }
+      ],
+      "returns": []
+    },
+    "lua_raw": "simUI.setLabelText(string handle, int id, string text, bool suppressEvents=true)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simUI.htm?#setLabelText"
+  },
+  {
+    "prefix": "simUI",
+    "method": "setLegendVisibility",
+    "description": "Set visibility of the plot legend (default is hidden).",
+    "python": {
+      "params": [
+        { "param_type": "string", "param_name": "handle" },
+        { "param_type": "int", "param_name": "id" },
+        { "param_type": "bool", "param_name": "visible" }
+      ],
+      "returns": []
+    },
+    "python_raw": "simUI.setLegendVisibility(string handle, int id, bool visible)",
+    "lua": {
+      "params": [
+        { "param_type": "string", "param_name": "handle" },
+        { "param_type": "int", "param_name": "id" },
+        { "param_type": "bool", "param_name": "visible" }
+      ],
+      "returns": []
+    },
+    "lua_raw": "simUI.setLegendVisibility(string handle, int id, bool visible)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simUI.htm?#setLegendVisibility"
+  },
+  {
+    "prefix": "simUI",
+    "method": "setMouseOptions",
+    "description": "Set plot widget options for interacting with mouse.",
+    "python": {
+      "params": [
+        { "param_type": "string", "param_name": "handle" },
+        { "param_type": "int", "param_name": "id" },
+        { "param_type": "bool", "param_name": "panX" },
+        { "param_type": "bool", "param_name": "panY" },
+        { "param_type": "bool", "param_name": "zoomX" },
+        { "param_type": "bool", "param_name": "zoomY" }
+      ],
+      "returns": []
+    },
+    "python_raw": "simUI.setMouseOptions(string handle, int id, bool panX, bool panY, bool zoomX, bool zoomY)",
+    "lua": {
+      "params": [
+        { "param_type": "string", "param_name": "handle" },
+        { "param_type": "int", "param_name": "id" },
+        { "param_type": "bool", "param_name": "panX" },
+        { "param_type": "bool", "param_name": "panY" },
+        { "param_type": "bool", "param_name": "zoomX" },
+        { "param_type": "bool", "param_name": "zoomY" }
+      ],
+      "returns": []
+    },
+    "lua_raw": "simUI.setMouseOptions(string handle, int id, bool panX, bool panY, bool zoomX, bool zoomY)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simUI.htm?#setMouseOptions"
+  },
+  {
+    "prefix": "simUI",
+    "method": "setPlotLabels",
+    "description": "Set the labels of the plot widget.",
+    "python": {
+      "params": [
+        { "param_type": "string", "param_name": "handle" },
+        { "param_type": "int", "param_name": "id" },
+        { "param_type": "string", "param_name": "x" },
+        { "param_type": "string", "param_name": "y" }
+      ],
+      "returns": []
+    },
+    "python_raw": "simUI.setPlotLabels(string handle, int id, string x, string y)",
+    "lua": {
+      "params": [
+        { "param_type": "string", "param_name": "handle" },
+        { "param_type": "int", "param_name": "id" },
+        { "param_type": "string", "param_name": "x" },
+        { "param_type": "string", "param_name": "y" }
+      ],
+      "returns": []
+    },
+    "lua_raw": "simUI.setPlotLabels(string handle, int id, string x, string y)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simUI.htm?#setPlotLabels"
+  },
+  {
+    "prefix": "simUI",
+    "method": "setPlotRanges",
+    "description": "Set the ranges of the plot widget.",
+    "python": {
+      "params": [
+        { "param_type": "string", "param_name": "handle" },
+        { "param_type": "int", "param_name": "id" },
+        { "param_type": "float", "param_name": "xmin" },
+        { "param_type": "float", "param_name": "xmax" },
+        { "param_type": "float", "param_name": "ymin" },
+        { "param_type": "float", "param_name": "ymax" }
+      ],
+      "returns": []
+    },
+    "python_raw": "simUI.setPlotRanges(string handle, int id, float xmin, float xmax, float ymin, float ymax)",
+    "lua": {
+      "params": [
+        { "param_type": "string", "param_name": "handle" },
+        { "param_type": "int", "param_name": "id" },
+        { "param_type": "float", "param_name": "xmin" },
+        { "param_type": "float", "param_name": "xmax" },
+        { "param_type": "float", "param_name": "ymin" },
+        { "param_type": "float", "param_name": "ymax" }
+      ],
+      "returns": []
+    },
+    "lua_raw": "simUI.setPlotRanges(string handle, int id, float xmin, float xmax, float ymin, float ymax)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simUI.htm?#setPlotRanges"
+  },
+  {
+    "prefix": "simUI",
+    "method": "setPlotXLabel",
+    "description": "Set the X label of the plot widget.",
+    "python": {
+      "params": [
+        { "param_type": "string", "param_name": "handle" },
+        { "param_type": "int", "param_name": "id" },
+        { "param_type": "string", "param_name": "label" }
+      ],
+      "returns": []
+    },
+    "python_raw": "simUI.setPlotXLabel(string handle, int id, string label)",
+    "lua": {
+      "params": [
+        { "param_type": "string", "param_name": "handle" },
+        { "param_type": "int", "param_name": "id" },
+        { "param_type": "string", "param_name": "label" }
+      ],
+      "returns": []
+    },
+    "lua_raw": "simUI.setPlotXLabel(string handle, int id, string label)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simUI.htm?#setPlotXLabel"
+  },
+  {
+    "prefix": "simUI",
+    "method": "setPlotXRange",
+    "description": "Set the X range of the plot widget.",
+    "python": {
+      "params": [
+        { "param_type": "string", "param_name": "handle" },
+        { "param_type": "int", "param_name": "id" },
+        { "param_type": "float", "param_name": "xmin" },
+        { "param_type": "float", "param_name": "xmax" }
+      ],
+      "returns": []
+    },
+    "python_raw": "simUI.setPlotXRange(string handle, int id, float xmin, float xmax)",
+    "lua": {
+      "params": [
+        { "param_type": "string", "param_name": "handle" },
+        { "param_type": "int", "param_name": "id" },
+        { "param_type": "float", "param_name": "xmin" },
+        { "param_type": "float", "param_name": "xmax" }
+      ],
+      "returns": []
+    },
+    "lua_raw": "simUI.setPlotXRange(string handle, int id, float xmin, float xmax)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simUI.htm?#setPlotXRange"
+  },
+  {
+    "prefix": "simUI",
+    "method": "setPlotYLabel",
+    "description": "Set the Y label of the plot widget.",
+    "python": {
+      "params": [
+        { "param_type": "string", "param_name": "handle" },
+        { "param_type": "int", "param_name": "id" },
+        { "param_type": "string", "param_name": "label" }
+      ],
+      "returns": []
+    },
+    "python_raw": "simUI.setPlotYLabel(string handle, int id, string label)",
+    "lua": {
+      "params": [
+        { "param_type": "string", "param_name": "handle" },
+        { "param_type": "int", "param_name": "id" },
+        { "param_type": "string", "param_name": "label" }
+      ],
+      "returns": []
+    },
+    "lua_raw": "simUI.setPlotYLabel(string handle, int id, string label)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simUI.htm?#setPlotYLabel"
+  },
+  {
+    "prefix": "simUI",
+    "method": "setPlotYRange",
+    "description": "Set the Y range of the plot widget.",
+    "python": {
+      "params": [
+        { "param_type": "string", "param_name": "handle" },
+        { "param_type": "int", "param_name": "id" },
+        { "param_type": "float", "param_name": "ymin" },
+        { "param_type": "float", "param_name": "ymax" }
+      ],
+      "returns": []
+    },
+    "python_raw": "simUI.setPlotYRange(string handle, int id, float ymin, float ymax)",
+    "lua": {
+      "params": [
+        { "param_type": "string", "param_name": "handle" },
+        { "param_type": "int", "param_name": "id" },
+        { "param_type": "float", "param_name": "ymin" },
+        { "param_type": "float", "param_name": "ymax" }
+      ],
+      "returns": []
+    },
+    "lua_raw": "simUI.setPlotYRange(string handle, int id, float ymin, float ymax)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simUI.htm?#setPlotYRange"
+  },
+  {
+    "prefix": "simUI",
+    "method": "setPosition",
+    "description": "Set the position of a UI window.",
+    "python": {
+      "params": [
+        { "param_type": "string", "param_name": "handle" },
+        { "param_type": "int", "param_name": "x" },
+        { "param_type": "int", "param_name": "y" },
+        { "param_type": "bool", "param_name": "suppressEvents" }
+      ],
+      "returns": []
+    },
+    "python_raw": "simUI.setPosition(string handle, int x, int y, bool suppressEvents=true)",
+    "lua": {
+      "params": [
+        { "param_type": "string", "param_name": "handle" },
+        { "param_type": "int", "param_name": "x" },
+        { "param_type": "int", "param_name": "y" },
+        { "param_type": "bool", "param_name": "suppressEvents" }
+      ],
+      "returns": []
+    },
+    "lua_raw": "simUI.setPosition(string handle, int x, int y, bool suppressEvents=true)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simUI.htm?#setPosition"
+  },
+  {
+    "prefix": "simUI",
+    "method": "setProgress",
+    "description": "Chnge the value of a progressbar widget.",
+    "python": {
+      "params": [
+        { "param_type": "string", "param_name": "handle" },
+        { "param_type": "int", "param_name": "id" },
+        { "param_type": "int", "param_name": "value" }
+      ],
+      "returns": []
+    },
+    "python_raw": "simUI.setProgress(string handle, int id, int value)",
+    "lua": {
+      "params": [
+        { "param_type": "string", "param_name": "handle" },
+        { "param_type": "int", "param_name": "id" },
+        { "param_type": "int", "param_name": "value" }
+      ],
+      "returns": []
+    },
+    "lua_raw": "simUI.setProgress(string handle, int id, int value)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simUI.htm?#setProgress"
+  },
+  {
+    "prefix": "simUI",
+    "method": "setProperties",
+    "description": "",
+    "python": {
+      "params": [
+        { "param_type": "string", "param_name": "handle" },
+        { "param_type": "int", "param_name": "id" },
+        { "param_type": "list", "param_name": "pnames" },
+        { "param_type": "list", "param_name": "ptypes" },
+        { "param_type": "list", "param_name": "pvalues" },
+        { "param_type": "list", "param_name": "pflags" },
+        { "param_type": "list", "param_name": "pdisplayk" },
+        { "param_type": "list", "param_name": "pdisplayv" },
+        { "param_type": "list", "param_name": "icons" },
+        { "param_type": "bool", "param_name": "suppressEvents" }
+      ],
+      "returns": []
+    },
+    "python_raw": "simUI.setProperties(string handle, int id, list pnames, list ptypes, list pvalues, list pflags, list pdisplayk, list pdisplayv, list icons, bool suppressEvents=true)",
+    "lua": {
+      "params": [
+        { "param_type": "string", "param_name": "handle" },
+        { "param_type": "int", "param_name": "id" },
+        { "param_type": "string[]", "param_name": "pnames" },
+        { "param_type": "string[]", "param_name": "ptypes" },
+        { "param_type": "string[]", "param_name": "pvalues" },
+        { "param_type": "int[]", "param_name": "pflags" },
+        { "param_type": "string[]", "param_name": "pdisplayk" },
+        { "param_type": "string[]", "param_name": "pdisplayv" },
+        { "param_type": "int[]", "param_name": "icons" },
+        { "param_type": "bool", "param_name": "suppressEvents" }
+      ],
+      "returns": []
+    },
+    "lua_raw": "simUI.setProperties(string handle, int id, string[] pnames, string[] ptypes, string[] pvalues, int[] pflags, string[] pdisplayk, string[] pdisplayv, int[] icons, bool suppressEvents=true)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simUI.htm?#setProperties"
+  },
+  {
+    "prefix": "simUI",
+    "method": "setPropertiesContextMenu",
+    "description": "",
+    "python": {
+      "params": [
+        { "param_type": "string", "param_name": "handle" },
+        { "param_type": "int", "param_name": "id" },
+        { "param_type": "list", "param_name": "keys" },
+        { "param_type": "list", "param_name": "titles" }
+      ],
+      "returns": []
+    },
+    "python_raw": "simUI.setPropertiesContextMenu(string handle, int id, list keys, list titles)",
+    "lua": {
+      "params": [
+        { "param_type": "string", "param_name": "handle" },
+        { "param_type": "int", "param_name": "id" },
+        { "param_type": "string[]", "param_name": "keys" },
+        { "param_type": "string[]", "param_name": "titles" }
+      ],
+      "returns": []
+    },
+    "lua_raw": "simUI.setPropertiesContextMenu(string handle, int id, string[] keys, string[] titles)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simUI.htm?#setPropertiesContextMenu"
+  },
+  {
+    "prefix": "simUI",
+    "method": "setPropertiesRows",
+    "description": "",
+    "python": {
+      "params": [
+        { "param_type": "string", "param_name": "handle" },
+        { "param_type": "int", "param_name": "id" },
+        { "param_type": "list", "param_name": "rows" },
+        { "param_type": "list", "param_name": "pnames" },
+        { "param_type": "list", "param_name": "ptypes" },
+        { "param_type": "list", "param_name": "pvalues" },
+        { "param_type": "list", "param_name": "pflags" },
+        { "param_type": "list", "param_name": "pdisplayk" },
+        { "param_type": "list", "param_name": "pdisplayv" },
+        { "param_type": "list", "param_name": "icons" },
+        { "param_type": "bool", "param_name": "suppressEvents" }
+      ],
+      "returns": []
+    },
+    "python_raw": "simUI.setPropertiesRows(string handle, int id, list rows, list pnames, list ptypes, list pvalues, list pflags, list pdisplayk, list pdisplayv, list icons, bool suppressEvents=true)",
+    "lua": {
+      "params": [
+        { "param_type": "string", "param_name": "handle" },
+        { "param_type": "int", "param_name": "id" },
+        { "param_type": "int[]", "param_name": "rows" },
+        { "param_type": "string[]", "param_name": "pnames" },
+        { "param_type": "string[]", "param_name": "ptypes" },
+        { "param_type": "string[]", "param_name": "pvalues" },
+        { "param_type": "int[]", "param_name": "pflags" },
+        { "param_type": "string[]", "param_name": "pdisplayk" },
+        { "param_type": "string[]", "param_name": "pdisplayv" },
+        { "param_type": "int[]", "param_name": "icons" },
+        { "param_type": "bool", "param_name": "suppressEvents" }
+      ],
+      "returns": []
+    },
+    "lua_raw": "simUI.setPropertiesRows(string handle, int id, int[] rows, string[] pnames, string[] ptypes, string[] pvalues, int[] pflags, string[] pdisplayk, string[] pdisplayv, int[] icons, bool suppressEvents=true)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simUI.htm?#setPropertiesRows"
+  },
+  {
+    "prefix": "simUI",
+    "method": "setPropertiesSelection",
+    "description": "",
+    "python": {
+      "params": [
+        { "param_type": "string", "param_name": "handle" },
+        { "param_type": "int", "param_name": "id" },
+        { "param_type": "int", "param_name": "row" },
+        { "param_type": "bool", "param_name": "suppressEvents" }
+      ],
+      "returns": []
+    },
+    "python_raw": "simUI.setPropertiesSelection(string handle, int id, int row, bool suppressEvents=true)",
+    "lua": {
+      "params": [
+        { "param_type": "string", "param_name": "handle" },
+        { "param_type": "int", "param_name": "id" },
+        { "param_type": "int", "param_name": "row" },
+        { "param_type": "bool", "param_name": "suppressEvents" }
+      ],
+      "returns": []
+    },
+    "lua_raw": "simUI.setPropertiesSelection(string handle, int id, int row, bool suppressEvents=true)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simUI.htm?#setPropertiesSelection"
+  },
+  {
+    "prefix": "simUI",
+    "method": "setPropertiesState",
+    "description": "",
+    "python": {
+      "params": [
+        { "param_type": "string", "param_name": "handle" },
+        { "param_type": "int", "param_name": "id" },
+        { "param_type": "string", "param_name": "state" }
+      ],
+      "returns": []
+    },
+    "python_raw": "simUI.setPropertiesState(string handle, int id, string state)",
+    "lua": {
+      "params": [
+        { "param_type": "string", "param_name": "handle" },
+        { "param_type": "int", "param_name": "id" },
+        { "param_type": "string", "param_name": "state" }
+      ],
+      "returns": []
+    },
+    "lua_raw": "simUI.setPropertiesState(string handle, int id, string state)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simUI.htm?#setPropertiesState"
+  },
+  {
+    "prefix": "simUI",
+    "method": "setRadiobuttonValue",
+    "description": "Set the value of a radiobutton widget.",
+    "python": {
+      "params": [
+        { "param_type": "string", "param_name": "handle" },
+        { "param_type": "int", "param_name": "id" },
+        { "param_type": "int", "param_name": "value" },
+        { "param_type": "bool", "param_name": "suppressEvents" }
+      ],
+      "returns": []
+    },
+    "python_raw": "simUI.setRadiobuttonValue(string handle, int id, int value, bool suppressEvents=true)",
+    "lua": {
+      "params": [
+        { "param_type": "string", "param_name": "handle" },
+        { "param_type": "int", "param_name": "id" },
+        { "param_type": "int", "param_name": "value" },
+        { "param_type": "bool", "param_name": "suppressEvents" }
+      ],
+      "returns": []
+    },
+    "lua_raw": "simUI.setRadiobuttonValue(string handle, int id, int value, bool suppressEvents=true)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simUI.htm?#setRadiobuttonValue"
+  },
+  {
+    "prefix": "simUI",
+    "method": "setRowCount",
+    "description": "Resize the specified table widget.",
+    "python": {
+      "params": [
+        { "param_type": "string", "param_name": "handle" },
+        { "param_type": "int", "param_name": "id" },
+        { "param_type": "int", "param_name": "count" },
+        { "param_type": "bool", "param_name": "suppressEvents" }
+      ],
+      "returns": []
+    },
+    "python_raw": "simUI.setRowCount(string handle, int id, int count, bool suppressEvents=true)",
+    "lua": {
+      "params": [
+        { "param_type": "string", "param_name": "handle" },
+        { "param_type": "int", "param_name": "id" },
+        { "param_type": "int", "param_name": "count" },
+        { "param_type": "bool", "param_name": "suppressEvents" }
+      ],
+      "returns": []
+    },
+    "lua_raw": "simUI.setRowCount(string handle, int id, int count, bool suppressEvents=true)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simUI.htm?#setRowCount"
+  },
+  {
+    "prefix": "simUI",
+    "method": "setRowHeaderText",
+    "description": "Set the row header text of the specified table widget.",
+    "python": {
+      "params": [
+        { "param_type": "string", "param_name": "handle" },
+        { "param_type": "int", "param_name": "id" },
+        { "param_type": "int", "param_name": "row" },
+        { "param_type": "string", "param_name": "text" }
+      ],
+      "returns": []
+    },
+    "python_raw": "simUI.setRowHeaderText(string handle, int id, int row, string text)",
+    "lua": {
+      "params": [
+        { "param_type": "string", "param_name": "handle" },
+        { "param_type": "int", "param_name": "id" },
+        { "param_type": "int", "param_name": "row" },
+        { "param_type": "string", "param_name": "text" }
+      ],
+      "returns": []
+    },
+    "lua_raw": "simUI.setRowHeaderText(string handle, int id, int row, string text)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simUI.htm?#setRowHeaderText"
+  },
+  {
+    "prefix": "simUI",
+    "method": "setRowHeight",
+    "description": "Resize a row in the specified table widget.",
+    "python": {
+      "params": [
+        { "param_type": "string", "param_name": "handle" },
+        { "param_type": "int", "param_name": "id" },
+        { "param_type": "int", "param_name": "row" },
+        { "param_type": "int", "param_name": "min_size" },
+        { "param_type": "int", "param_name": "max_size" }
+      ],
+      "returns": []
+    },
+    "python_raw": "simUI.setRowHeight(string handle, int id, int row, int min_size, int max_size)",
+    "lua": {
+      "params": [
+        { "param_type": "string", "param_name": "handle" },
+        { "param_type": "int", "param_name": "id" },
+        { "param_type": "int", "param_name": "row" },
+        { "param_type": "int", "param_name": "min_size" },
+        { "param_type": "int", "param_name": "max_size" }
+      ],
+      "returns": []
+    },
+    "lua_raw": "simUI.setRowHeight(string handle, int id, int row, int min_size, int max_size)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simUI.htm?#setRowHeight"
+  },
+  {
+    "prefix": "simUI",
+    "method": "setScene3DNodeEnabled",
+    "description": "Enable or disable a node in a scene3d widget.",
+    "python": {
+      "params": [
+        { "param_type": "string", "param_name": "handle" },
+        { "param_type": "int", "param_name": "id" },
+        { "param_type": "int", "param_name": "nodeId" },
+        { "param_type": "bool", "param_name": "enabled" }
+      ],
+      "returns": []
+    },
+    "python_raw": "simUI.setScene3DNodeEnabled(string handle, int id, int nodeId, bool enabled)",
+    "lua": {
+      "params": [
+        { "param_type": "string", "param_name": "handle" },
+        { "param_type": "int", "param_name": "id" },
+        { "param_type": "int", "param_name": "nodeId" },
+        { "param_type": "bool", "param_name": "enabled" }
+      ],
+      "returns": []
+    },
+    "lua_raw": "simUI.setScene3DNodeEnabled(string handle, int id, int nodeId, bool enabled)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simUI.htm?#setScene3DNodeEnabled"
+  },
+  {
+    "prefix": "simUI",
+    "method": "setScene3DNodeFloatParam",
+    "description": "Set node float parameter in a scene3d widget.",
+    "python": {
+      "params": [
+        { "param_type": "string", "param_name": "handle" },
+        { "param_type": "int", "param_name": "id" },
+        { "param_type": "int", "param_name": "nodeId" },
+        { "param_type": "string", "param_name": "paramName" },
+        { "param_type": "float", "param_name": "value" }
+      ],
+      "returns": []
+    },
+    "python_raw": "simUI.setScene3DNodeFloatParam(string handle, int id, int nodeId, string paramName, float value)",
+    "lua": {
+      "params": [
+        { "param_type": "string", "param_name": "handle" },
+        { "param_type": "int", "param_name": "id" },
+        { "param_type": "int", "param_name": "nodeId" },
+        { "param_type": "string", "param_name": "paramName" },
+        { "param_type": "float", "param_name": "value" }
+      ],
+      "returns": []
+    },
+    "lua_raw": "simUI.setScene3DNodeFloatParam(string handle, int id, int nodeId, string paramName, float value)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simUI.htm?#setScene3DNodeFloatParam"
+  },
+  {
+    "prefix": "simUI",
+    "method": "setScene3DNodeIntParam",
+    "description": "Set node int parameter in a scene3d widget.",
+    "python": {
+      "params": [
+        { "param_type": "string", "param_name": "handle" },
+        { "param_type": "int", "param_name": "id" },
+        { "param_type": "int", "param_name": "nodeId" },
+        { "param_type": "string", "param_name": "paramName" },
+        { "param_type": "int", "param_name": "value" }
+      ],
+      "returns": []
+    },
+    "python_raw": "simUI.setScene3DNodeIntParam(string handle, int id, int nodeId, string paramName, int value)",
+    "lua": {
+      "params": [
+        { "param_type": "string", "param_name": "handle" },
+        { "param_type": "int", "param_name": "id" },
+        { "param_type": "int", "param_name": "nodeId" },
+        { "param_type": "string", "param_name": "paramName" },
+        { "param_type": "int", "param_name": "value" }
+      ],
+      "returns": []
+    },
+    "lua_raw": "simUI.setScene3DNodeIntParam(string handle, int id, int nodeId, string paramName, int value)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simUI.htm?#setScene3DNodeIntParam"
+  },
+  {
+    "prefix": "simUI",
+    "method": "setScene3DNodeParam",
+    "description": "polymorphic version of the onSetScene3DNodeXXXParam() functions",
+    "python": {
+      "params": [
+        { "param_type": "int", "param_name": "ui" },
+        { "param_type": "int", "param_name": "widget" },
+        { "param_type": "int", "param_name": "nodeId" },
+        { "param_type": "string", "param_name": "paramName" },
+        { "param_type": "any", "param_name": "paramValue" }
+      ],
+      "returns": []
+    },
+    "python_raw": "simUI.setScene3DNodeParam(int ui, int widget, int nodeId, string paramName, any paramValue)",
+    "lua": {
+      "params": [
+        { "param_type": "int", "param_name": "ui" },
+        { "param_type": "int", "param_name": "widget" },
+        { "param_type": "int", "param_name": "nodeId" },
+        { "param_type": "string", "param_name": "paramName" },
+        { "param_type": "any", "param_name": "paramValue" }
+      ],
+      "returns": []
+    },
+    "lua_raw": "simUI.setScene3DNodeParam(int ui, int widget, int nodeId, string paramName, any paramValue)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simUI.htm?#setScene3DNodeParam"
+  },
+  {
+    "prefix": "simUI",
+    "method": "setScene3DNodeStringParam",
+    "description": "Set node string parameter in a scene3d widget.",
+    "python": {
+      "params": [
+        { "param_type": "string", "param_name": "handle" },
+        { "param_type": "int", "param_name": "id" },
+        { "param_type": "int", "param_name": "nodeId" },
+        { "param_type": "string", "param_name": "paramName" },
+        { "param_type": "string", "param_name": "value" }
+      ],
+      "returns": []
+    },
+    "python_raw": "simUI.setScene3DNodeStringParam(string handle, int id, int nodeId, string paramName, string value)",
+    "lua": {
+      "params": [
+        { "param_type": "string", "param_name": "handle" },
+        { "param_type": "int", "param_name": "id" },
+        { "param_type": "int", "param_name": "nodeId" },
+        { "param_type": "string", "param_name": "paramName" },
+        { "param_type": "string", "param_name": "value" }
+      ],
+      "returns": []
+    },
+    "lua_raw": "simUI.setScene3DNodeStringParam(string handle, int id, int nodeId, string paramName, string value)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simUI.htm?#setScene3DNodeStringParam"
+  },
+  {
+    "prefix": "simUI",
+    "method": "setScene3DNodeVector2Param",
+    "description": "Set node vector2 parameter in a scene3d widget.",
+    "python": {
+      "params": [
+        { "param_type": "string", "param_name": "handle" },
+        { "param_type": "int", "param_name": "id" },
+        { "param_type": "int", "param_name": "nodeId" },
+        { "param_type": "string", "param_name": "paramName" },
+        { "param_type": "float", "param_name": "x" },
+        { "param_type": "float", "param_name": "y" }
+      ],
+      "returns": []
+    },
+    "python_raw": "simUI.setScene3DNodeVector2Param(string handle, int id, int nodeId, string paramName, float x, float y)",
+    "lua": {
+      "params": [
+        { "param_type": "string", "param_name": "handle" },
+        { "param_type": "int", "param_name": "id" },
+        { "param_type": "int", "param_name": "nodeId" },
+        { "param_type": "string", "param_name": "paramName" },
+        { "param_type": "float", "param_name": "x" },
+        { "param_type": "float", "param_name": "y" }
+      ],
+      "returns": []
+    },
+    "lua_raw": "simUI.setScene3DNodeVector2Param(string handle, int id, int nodeId, string paramName, float x, float y)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simUI.htm?#setScene3DNodeVector2Param"
+  },
+  {
+    "prefix": "simUI",
+    "method": "setScene3DNodeVector3Param",
+    "description": "Set node vector3 parameter in a scene3d widget.",
+    "python": {
+      "params": [
+        { "param_type": "string", "param_name": "handle" },
+        { "param_type": "int", "param_name": "id" },
+        { "param_type": "int", "param_name": "nodeId" },
+        { "param_type": "string", "param_name": "paramName" },
+        { "param_type": "float", "param_name": "x" },
+        { "param_type": "float", "param_name": "y" },
+        { "param_type": "float", "param_name": "z" }
+      ],
+      "returns": []
+    },
+    "python_raw": "simUI.setScene3DNodeVector3Param(string handle, int id, int nodeId, string paramName, float x, float y, float z)",
+    "lua": {
+      "params": [
+        { "param_type": "string", "param_name": "handle" },
+        { "param_type": "int", "param_name": "id" },
+        { "param_type": "int", "param_name": "nodeId" },
+        { "param_type": "string", "param_name": "paramName" },
+        { "param_type": "float", "param_name": "x" },
+        { "param_type": "float", "param_name": "y" },
+        { "param_type": "float", "param_name": "z" }
+      ],
+      "returns": []
+    },
+    "lua_raw": "simUI.setScene3DNodeVector3Param(string handle, int id, int nodeId, string paramName, float x, float y, float z)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simUI.htm?#setScene3DNodeVector3Param"
+  },
+  {
+    "prefix": "simUI",
+    "method": "setScene3DNodeVector4Param",
+    "description": "Set node vector4 parameter in a scene3d widget.",
+    "python": {
+      "params": [
+        { "param_type": "string", "param_name": "handle" },
+        { "param_type": "int", "param_name": "id" },
+        { "param_type": "int", "param_name": "nodeId" },
+        { "param_type": "string", "param_name": "paramName" },
+        { "param_type": "float", "param_name": "x" },
+        { "param_type": "float", "param_name": "y" },
+        { "param_type": "float", "param_name": "z" },
+        { "param_type": "float", "param_name": "w" }
+      ],
+      "returns": []
+    },
+    "python_raw": "simUI.setScene3DNodeVector4Param(string handle, int id, int nodeId, string paramName, float x, float y, float z, float w)",
+    "lua": {
+      "params": [
+        { "param_type": "string", "param_name": "handle" },
+        { "param_type": "int", "param_name": "id" },
+        { "param_type": "int", "param_name": "nodeId" },
+        { "param_type": "string", "param_name": "paramName" },
+        { "param_type": "float", "param_name": "x" },
+        { "param_type": "float", "param_name": "y" },
+        { "param_type": "float", "param_name": "z" },
+        { "param_type": "float", "param_name": "w" }
+      ],
+      "returns": []
+    },
+    "lua_raw": "simUI.setScene3DNodeVector4Param(string handle, int id, int nodeId, string paramName, float x, float y, float z, float w)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simUI.htm?#setScene3DNodeVector4Param"
+  },
+  {
+    "prefix": "simUI",
+    "method": "setSize",
+    "description": "Set the size of a UI window.",
+    "python": {
+      "params": [
+        { "param_type": "string", "param_name": "handle" },
+        { "param_type": "int", "param_name": "w" },
+        { "param_type": "int", "param_name": "h" },
+        { "param_type": "bool", "param_name": "suppressEvents" }
+      ],
+      "returns": []
+    },
+    "python_raw": "simUI.setSize(string handle, int w, int h, bool suppressEvents=true)",
+    "lua": {
+      "params": [
+        { "param_type": "string", "param_name": "handle" },
+        { "param_type": "int", "param_name": "w" },
+        { "param_type": "int", "param_name": "h" },
+        { "param_type": "bool", "param_name": "suppressEvents" }
+      ],
+      "returns": []
+    },
+    "lua_raw": "simUI.setSize(string handle, int w, int h, bool suppressEvents=true)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simUI.htm?#setSize"
+  },
+  {
+    "prefix": "simUI",
+    "method": "setSliderValue",
+    "description": "Set the value of a slider widget.",
+    "python": {
+      "params": [
+        { "param_type": "string", "param_name": "handle" },
+        { "param_type": "int", "param_name": "id" },
+        { "param_type": "int", "param_name": "value" },
+        { "param_type": "bool", "param_name": "suppressEvents" }
+      ],
+      "returns": []
+    },
+    "python_raw": "simUI.setSliderValue(string handle, int id, int value, bool suppressEvents=true)",
+    "lua": {
+      "params": [
+        { "param_type": "string", "param_name": "handle" },
+        { "param_type": "int", "param_name": "id" },
+        { "param_type": "int", "param_name": "value" },
+        { "param_type": "bool", "param_name": "suppressEvents" }
+      ],
+      "returns": []
+    },
+    "lua_raw": "simUI.setSliderValue(string handle, int id, int value, bool suppressEvents=true)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simUI.htm?#setSliderValue"
+  },
+  {
+    "prefix": "simUI",
+    "method": "setSpinboxValue",
+    "description": "Set the value of a spinbox widget.",
+    "python": {
+      "params": [
+        { "param_type": "string", "param_name": "handle" },
+        { "param_type": "int", "param_name": "id" },
+        { "param_type": "float", "param_name": "value" },
+        { "param_type": "bool", "param_name": "suppressEvents" }
+      ],
+      "returns": []
+    },
+    "python_raw": "simUI.setSpinboxValue(string handle, int id, float value, bool suppressEvents=true)",
+    "lua": {
+      "params": [
+        { "param_type": "string", "param_name": "handle" },
+        { "param_type": "int", "param_name": "id" },
+        { "param_type": "float", "param_name": "value" },
+        { "param_type": "bool", "param_name": "suppressEvents" }
+      ],
+      "returns": []
+    },
+    "lua_raw": "simUI.setSpinboxValue(string handle, int id, float value, bool suppressEvents=true)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simUI.htm?#setSpinboxValue"
+  },
+  {
+    "prefix": "simUI",
+    "method": "setStyleSheet",
+    "description": "Set the stylesheet of a widget.",
+    "python": {
+      "params": [
+        { "param_type": "string", "param_name": "handle" },
+        { "param_type": "int", "param_name": "id" },
+        { "param_type": "string", "param_name": "styleSheet" }
+      ],
+      "returns": []
+    },
+    "python_raw": "simUI.setStyleSheet(string handle, int id, string styleSheet)",
+    "lua": {
+      "params": [
+        { "param_type": "string", "param_name": "handle" },
+        { "param_type": "int", "param_name": "id" },
+        { "param_type": "string", "param_name": "styleSheet" }
+      ],
+      "returns": []
+    },
+    "lua_raw": "simUI.setStyleSheet(string handle, int id, string styleSheet)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simUI.htm?#setStyleSheet"
+  },
+  {
+    "prefix": "simUI",
+    "method": "setTableSelection",
+    "description": "Set selection in a table widget.",
+    "python": {
+      "params": [
+        { "param_type": "string", "param_name": "handle" },
+        { "param_type": "int", "param_name": "id" },
+        { "param_type": "int", "param_name": "row" },
+        { "param_type": "int", "param_name": "column" },
+        { "param_type": "bool", "param_name": "suppressEvents" }
+      ],
+      "returns": []
+    },
+    "python_raw": "simUI.setTableSelection(string handle, int id, int row, int column, bool suppressEvents=true)",
+    "lua": {
+      "params": [
+        { "param_type": "string", "param_name": "handle" },
+        { "param_type": "int", "param_name": "id" },
+        { "param_type": "int", "param_name": "row" },
+        { "param_type": "int", "param_name": "column" },
+        { "param_type": "bool", "param_name": "suppressEvents" }
+      ],
+      "returns": []
+    },
+    "lua_raw": "simUI.setTableSelection(string handle, int id, int row, int column, bool suppressEvents=true)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simUI.htm?#setTableSelection"
+  },
+  {
+    "prefix": "simUI",
+    "method": "setText",
+    "description": "Set the text in a text-browser widget.",
+    "python": {
+      "params": [
+        { "param_type": "string", "param_name": "handle" },
+        { "param_type": "int", "param_name": "id" },
+        { "param_type": "string", "param_name": "text" },
+        { "param_type": "bool", "param_name": "suppressEvents" }
+      ],
+      "returns": []
+    },
+    "python_raw": "simUI.setText(string handle, int id, string text, bool suppressEvents=true)",
+    "lua": {
+      "params": [
+        { "param_type": "string", "param_name": "handle" },
+        { "param_type": "int", "param_name": "id" },
+        { "param_type": "string", "param_name": "text" },
+        { "param_type": "bool", "param_name": "suppressEvents" }
+      ],
+      "returns": []
+    },
+    "lua_raw": "simUI.setText(string handle, int id, string text, bool suppressEvents=true)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simUI.htm?#setText"
+  },
+  {
+    "prefix": "simUI",
+    "method": "setTitle",
+    "description": "Set the title of a UI window.",
+    "python": {
+      "params": [
+        { "param_type": "string", "param_name": "handle" },
+        { "param_type": "string", "param_name": "title" },
+        { "param_type": "bool", "param_name": "suppressEvents" }
+      ],
+      "returns": []
+    },
+    "python_raw": "simUI.setTitle(string handle, string title, bool suppressEvents=true)",
+    "lua": {
+      "params": [
+        { "param_type": "string", "param_name": "handle" },
+        { "param_type": "string", "param_name": "title" },
+        { "param_type": "bool", "param_name": "suppressEvents" }
+      ],
+      "returns": []
+    },
+    "lua_raw": "simUI.setTitle(string handle, string title, bool suppressEvents=true)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simUI.htm?#setTitle"
+  },
+  {
+    "prefix": "simUI",
+    "method": "setTreeSelection",
+    "description": "Set selection in a tree widget.",
+    "python": {
+      "params": [
+        { "param_type": "string", "param_name": "handle" },
+        { "param_type": "int", "param_name": "id" },
+        { "param_type": "int", "param_name": "item_id" },
+        { "param_type": "bool", "param_name": "suppressEvents" }
+      ],
+      "returns": []
+    },
+    "python_raw": "simUI.setTreeSelection(string handle, int id, int item_id, bool suppressEvents=true)",
+    "lua": {
+      "params": [
+        { "param_type": "string", "param_name": "handle" },
+        { "param_type": "int", "param_name": "id" },
+        { "param_type": "int", "param_name": "item_id" },
+        { "param_type": "bool", "param_name": "suppressEvents" }
+      ],
+      "returns": []
+    },
+    "lua_raw": "simUI.setTreeSelection(string handle, int id, int item_id, bool suppressEvents=true)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simUI.htm?#setTreeSelection"
+  },
+  {
+    "prefix": "simUI",
+    "method": "setUrl",
+    "description": "Load an url in a text-browser widget.",
+    "python": {
+      "params": [
+        { "param_type": "string", "param_name": "handle" },
+        { "param_type": "int", "param_name": "id" },
+        { "param_type": "string", "param_name": "url" }
+      ],
+      "returns": []
+    },
+    "python_raw": "simUI.setUrl(string handle, int id, string url)",
+    "lua": {
+      "params": [
+        { "param_type": "string", "param_name": "handle" },
+        { "param_type": "int", "param_name": "id" },
+        { "param_type": "string", "param_name": "url" }
+      ],
+      "returns": []
+    },
+    "lua_raw": "simUI.setUrl(string handle, int id, string url)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simUI.htm?#setUrl"
+  },
+  {
+    "prefix": "simUI",
+    "method": "setWidgetVisibility",
+    "description": "Hide or show a widget.",
+    "python": {
+      "params": [
+        { "param_type": "string", "param_name": "handle" },
+        { "param_type": "int", "param_name": "id" },
+        { "param_type": "bool", "param_name": "visibility" }
+      ],
+      "returns": []
+    },
+    "python_raw": "simUI.setWidgetVisibility(string handle, int id, bool visibility)",
+    "lua": {
+      "params": [
+        { "param_type": "string", "param_name": "handle" },
+        { "param_type": "int", "param_name": "id" },
+        { "param_type": "bool", "param_name": "visibility" }
+      ],
+      "returns": []
+    },
+    "lua_raw": "simUI.setWidgetVisibility(string handle, int id, bool visibility)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simUI.htm?#setWidgetVisibility"
+  },
+  {
+    "prefix": "simUI",
+    "method": "setWindowEnabled",
+    "description": "Enable or disable a UI window.",
+    "python": {
+      "params": [
+        { "param_type": "string", "param_name": "handle" },
+        { "param_type": "bool", "param_name": "enabled" },
+        { "param_type": "bool", "param_name": "suppressEvents" }
+      ],
+      "returns": []
+    },
+    "python_raw": "simUI.setWindowEnabled(string handle, bool enabled, bool suppressEvents=true)",
+    "lua": {
+      "params": [
+        { "param_type": "string", "param_name": "handle" },
+        { "param_type": "bool", "param_name": "enabled" },
+        { "param_type": "bool", "param_name": "suppressEvents" }
+      ],
+      "returns": []
+    },
+    "lua_raw": "simUI.setWindowEnabled(string handle, bool enabled, bool suppressEvents=true)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simUI.htm?#setWindowEnabled"
+  },
+  {
+    "prefix": "simUI",
+    "method": "show",
+    "description": "Show the UI window.",
+    "python": {
+      "params": [{ "param_type": "string", "param_name": "handle" }],
+      "returns": []
+    },
+    "python_raw": "simUI.show(string handle)",
+    "lua": {
+      "params": [{ "param_type": "string", "param_name": "handle" }],
+      "returns": []
+    },
+    "lua_raw": "simUI.show(string handle)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simUI.htm?#show"
+  },
+  {
+    "prefix": "simUI",
+    "method": "supportedImageFormats",
+    "description": "Return a list of supported image formats",
+    "python": {
+      "params": [{ "param_type": "string", "param_name": "separator" }],
+      "returns": [
+        { "return_type": "list", "return_name": "formatList" },
+        { "return_type": "string", "return_name": "formatListStr" }
+      ]
+    },
+    "python_raw": "list formatList, string formatListStr = simUI.supportedImageFormats(string separator=nil)",
+    "lua": {
+      "params": [{ "param_type": "string", "param_name": "separator" }],
+      "returns": [
+        { "return_type": "string[]", "return_name": "formatList" },
+        { "return_type": "string", "return_name": "formatListStr" }
+      ]
+    },
+    "lua_raw": "string[] formatList, string formatListStr = simUI.supportedImageFormats(string separator=nil)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simUI.htm?#supportedImageFormats"
+  },
+  {
+    "prefix": "simUI",
+    "method": "svgLoadData",
+    "description": "Load a SVG document in a SVG widget.",
+    "python": {
+      "params": [
+        { "param_type": "string", "param_name": "handle" },
+        { "param_type": "int", "param_name": "id" },
+        { "param_type": "string", "param_name": "data" }
+      ],
+      "returns": []
+    },
+    "python_raw": "simUI.svgLoadData(string handle, int id, string data)",
+    "lua": {
+      "params": [
+        { "param_type": "string", "param_name": "handle" },
+        { "param_type": "int", "param_name": "id" },
+        { "param_type": "string", "param_name": "data" }
+      ],
+      "returns": []
+    },
+    "lua_raw": "simUI.svgLoadData(string handle, int id, string data)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simUI.htm?#svgLoadData"
+  },
+  {
+    "prefix": "simUI",
+    "method": "svgLoadFile",
+    "description": "Load a SVG file in a SVG widget.",
+    "python": {
+      "params": [
+        { "param_type": "string", "param_name": "handle" },
+        { "param_type": "int", "param_name": "id" },
+        { "param_type": "string", "param_name": "file" }
+      ],
+      "returns": []
+    },
+    "python_raw": "simUI.svgLoadFile(string handle, int id, string file)",
+    "lua": {
+      "params": [
+        { "param_type": "string", "param_name": "handle" },
+        { "param_type": "int", "param_name": "id" },
+        { "param_type": "string", "param_name": "file" }
+      ],
+      "returns": []
+    },
+    "lua_raw": "simUI.svgLoadFile(string handle, int id, string file)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simUI.htm?#svgLoadFile"
+  },
+  {
+    "prefix": "simUI",
+    "method": "updateTreeItemParent",
+    "description": "Modify the parent of an existing item in the specified tree widget.",
+    "python": {
+      "params": [
+        { "param_type": "string", "param_name": "handle" },
+        { "param_type": "int", "param_name": "id" },
+        { "param_type": "int", "param_name": "item_id" },
+        { "param_type": "int", "param_name": "parent_id" },
+        { "param_type": "bool", "param_name": "suppressEvents" }
+      ],
+      "returns": []
+    },
+    "python_raw": "simUI.updateTreeItemParent(string handle, int id, int item_id, int parent_id, bool suppressEvents=true)",
+    "lua": {
+      "params": [
+        { "param_type": "string", "param_name": "handle" },
+        { "param_type": "int", "param_name": "id" },
+        { "param_type": "int", "param_name": "item_id" },
+        { "param_type": "int", "param_name": "parent_id" },
+        { "param_type": "bool", "param_name": "suppressEvents" }
+      ],
+      "returns": []
+    },
+    "lua_raw": "simUI.updateTreeItemParent(string handle, int id, int item_id, int parent_id, bool suppressEvents=true)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simUI.htm?#updateTreeItemParent"
+  },
+  {
+    "prefix": "simUI",
+    "method": "updateTreeItemText",
+    "description": "Modify the text of an existing item in the specified tree widget.",
+    "python": {
+      "params": [
+        { "param_type": "string", "param_name": "handle" },
+        { "param_type": "int", "param_name": "id" },
+        { "param_type": "int", "param_name": "item_id" },
+        { "param_type": "list", "param_name": "text" }
+      ],
+      "returns": []
+    },
+    "python_raw": "simUI.updateTreeItemText(string handle, int id, int item_id, list text)",
+    "lua": {
+      "params": [
+        { "param_type": "string", "param_name": "handle" },
+        { "param_type": "int", "param_name": "id" },
+        { "param_type": "int", "param_name": "item_id" },
+        { "param_type": "string[]", "param_name": "text" }
+      ],
+      "returns": []
+    },
+    "lua_raw": "simUI.updateTreeItemText(string handle, int id, int item_id, string[] text)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simUI.htm?#updateTreeItemText"
+  },
+  {
+    "prefix": "simUI",
+    "method": "onclickCallback",
+    "description": "Callback for button click event.",
+    "python": {
+      "params": [
+        { "param_type": "string", "param_name": "handle" },
+        { "param_type": "int", "param_name": "id" }
+      ],
+      "returns": []
+    },
+    "python_raw": "simUI.onclickCallback(string handle, int id)",
+    "lua": {
+      "params": [
+        { "param_type": "string", "param_name": "handle" },
+        { "param_type": "int", "param_name": "id" }
+      ],
+      "returns": []
+    },
+    "lua_raw": "simUI.onclickCallback(string handle, int id)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simUI.htm?#onclickCallback"
+  },
+  {
+    "prefix": "simUI",
+    "method": "onLinkActivatedCallback",
+    "description": "Callback for when a link is clicked.",
+    "python": {
+      "params": [
+        { "param_type": "string", "param_name": "handle" },
+        { "param_type": "int", "param_name": "id" },
+        { "param_type": "string", "param_name": "link" }
+      ],
+      "returns": []
+    },
+    "python_raw": "simUI.onLinkActivatedCallback(string handle, int id, string link)",
+    "lua": {
+      "params": [
+        { "param_type": "string", "param_name": "handle" },
+        { "param_type": "int", "param_name": "id" },
+        { "param_type": "string", "param_name": "link" }
+      ],
+      "returns": []
+    },
+    "lua_raw": "simUI.onLinkActivatedCallback(string handle, int id, string link)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simUI.htm?#onLinkActivatedCallback"
+  },
+  {
+    "prefix": "simUI",
+    "method": "onchangeIntCallback",
+    "description": "Callback for widget change event.",
+    "python": {
+      "params": [
+        { "param_type": "string", "param_name": "handle" },
+        { "param_type": "int", "param_name": "id" },
+        { "param_type": "int", "param_name": "value" }
+      ],
+      "returns": []
+    },
+    "python_raw": "simUI.onchangeIntCallback(string handle, int id, int value)",
+    "lua": {
+      "params": [
+        { "param_type": "string", "param_name": "handle" },
+        { "param_type": "int", "param_name": "id" },
+        { "param_type": "int", "param_name": "value" }
+      ],
+      "returns": []
+    },
+    "lua_raw": "simUI.onchangeIntCallback(string handle, int id, int value)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simUI.htm?#onchangeIntCallback"
+  },
+  {
+    "prefix": "simUI",
+    "method": "onchangeDoubleCallback",
+    "description": "Callback for widget change event.",
+    "python": {
+      "params": [
+        { "param_type": "string", "param_name": "handle" },
+        { "param_type": "int", "param_name": "id" },
+        { "param_type": "float", "param_name": "value" }
+      ],
+      "returns": []
+    },
+    "python_raw": "simUI.onchangeDoubleCallback(string handle, int id, float value)",
+    "lua": {
+      "params": [
+        { "param_type": "string", "param_name": "handle" },
+        { "param_type": "int", "param_name": "id" },
+        { "param_type": "float", "param_name": "value" }
+      ],
+      "returns": []
+    },
+    "lua_raw": "simUI.onchangeDoubleCallback(string handle, int id, float value)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simUI.htm?#onchangeDoubleCallback"
+  },
+  {
+    "prefix": "simUI",
+    "method": "onchangeStringCallback",
+    "description": "Callback for widget change event.",
+    "python": {
+      "params": [
+        { "param_type": "string", "param_name": "handle" },
+        { "param_type": "int", "param_name": "id" },
+        { "param_type": "string", "param_name": "value" }
+      ],
+      "returns": []
+    },
+    "python_raw": "simUI.onchangeStringCallback(string handle, int id, string value)",
+    "lua": {
+      "params": [
+        { "param_type": "string", "param_name": "handle" },
+        { "param_type": "int", "param_name": "id" },
+        { "param_type": "string", "param_name": "value" }
+      ],
+      "returns": []
+    },
+    "lua_raw": "simUI.onchangeStringCallback(string handle, int id, string value)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simUI.htm?#onchangeStringCallback"
+  },
+  {
+    "prefix": "simUI",
+    "method": "oneditingfinishedCallback",
+    "description": "Callback for editing finished event.",
+    "python": {
+      "params": [
+        { "param_type": "string", "param_name": "handle" },
+        { "param_type": "int", "param_name": "id" },
+        { "param_type": "string", "param_name": "value" }
+      ],
+      "returns": []
+    },
+    "python_raw": "simUI.oneditingfinishedCallback(string handle, int id, string value)",
+    "lua": {
+      "params": [
+        { "param_type": "string", "param_name": "handle" },
+        { "param_type": "int", "param_name": "id" },
+        { "param_type": "string", "param_name": "value" }
+      ],
+      "returns": []
+    },
+    "lua_raw": "simUI.oneditingfinishedCallback(string handle, int id, string value)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simUI.htm?#oneditingfinishedCallback"
+  },
+  {
+    "prefix": "simUI",
+    "method": "oncloseCallback",
+    "description": "Callback for window close event. It will be called when the user clicks the close button of the window. When an onclose callback is specified, the window will not close automatically when the user clicks the window close button.",
+    "python": {
+      "params": [{ "param_type": "string", "param_name": "handle" }],
+      "returns": []
+    },
+    "python_raw": "simUI.oncloseCallback(string handle)",
+    "lua": {
+      "params": [{ "param_type": "string", "param_name": "handle" }],
+      "returns": []
+    },
+    "lua_raw": "simUI.oncloseCallback(string handle)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simUI.htm?#oncloseCallback"
+  },
+  {
+    "prefix": "simUI",
+    "method": "onPlottableClickCallback",
+    "description": "Callback for plot widget plottableClick event.",
+    "python": {
+      "params": [
+        { "param_type": "string", "param_name": "handle" },
+        { "param_type": "int", "param_name": "id" },
+        { "param_type": "string", "param_name": "curve" },
+        { "param_type": "int", "param_name": "index" },
+        { "param_type": "float", "param_name": "x" },
+        { "param_type": "float", "param_name": "y" }
+      ],
+      "returns": []
+    },
+    "python_raw": "simUI.onPlottableClickCallback(string handle, int id, string curve, int index, float x, float y)",
+    "lua": {
+      "params": [
+        { "param_type": "string", "param_name": "handle" },
+        { "param_type": "int", "param_name": "id" },
+        { "param_type": "string", "param_name": "curve" },
+        { "param_type": "int", "param_name": "index" },
+        { "param_type": "float", "param_name": "x" },
+        { "param_type": "float", "param_name": "y" }
+      ],
+      "returns": []
+    },
+    "lua_raw": "simUI.onPlottableClickCallback(string handle, int id, string curve, int index, float x, float y)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simUI.htm?#onPlottableClickCallback"
+  },
+  {
+    "prefix": "simUI",
+    "method": "onLegendClickCallback",
+    "description": "Callback for plot widget legendClick event.",
+    "python": {
+      "params": [
+        { "param_type": "string", "param_name": "handle" },
+        { "param_type": "int", "param_name": "id" },
+        { "param_type": "string", "param_name": "curve" }
+      ],
+      "returns": []
+    },
+    "python_raw": "simUI.onLegendClickCallback(string handle, int id, string curve)",
+    "lua": {
+      "params": [
+        { "param_type": "string", "param_name": "handle" },
+        { "param_type": "int", "param_name": "id" },
+        { "param_type": "string", "param_name": "curve" }
+      ],
+      "returns": []
+    },
+    "lua_raw": "simUI.onLegendClickCallback(string handle, int id, string curve)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simUI.htm?#onLegendClickCallback"
+  },
+  {
+    "prefix": "simUI",
+    "method": "onCellActivateCallback",
+    "description": "Callback for table widget cellActivated event.",
+    "python": {
+      "params": [
+        { "param_type": "string", "param_name": "handle" },
+        { "param_type": "int", "param_name": "id" },
+        { "param_type": "int", "param_name": "row" },
+        { "param_type": "int", "param_name": "column" },
+        { "param_type": "string", "param_name": "cellValue" }
+      ],
+      "returns": []
+    },
+    "python_raw": "simUI.onCellActivateCallback(string handle, int id, int row, int column, string cellValue)",
+    "lua": {
+      "params": [
+        { "param_type": "string", "param_name": "handle" },
+        { "param_type": "int", "param_name": "id" },
+        { "param_type": "int", "param_name": "row" },
+        { "param_type": "int", "param_name": "column" },
+        { "param_type": "string", "param_name": "cellValue" }
+      ],
+      "returns": []
+    },
+    "lua_raw": "simUI.onCellActivateCallback(string handle, int id, int row, int column, string cellValue)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simUI.htm?#onCellActivateCallback"
+  },
+  {
+    "prefix": "simUI",
+    "method": "onTableSelectionChangeCallback",
+    "description": "Callback for table widget selectionChanged event.",
+    "python": {
+      "params": [
+        { "param_type": "string", "param_name": "handle" },
+        { "param_type": "int", "param_name": "id" },
+        { "param_type": "int", "param_name": "row" },
+        { "param_type": "int", "param_name": "column" }
+      ],
+      "returns": []
+    },
+    "python_raw": "simUI.onTableSelectionChangeCallback(string handle, int id, int row, int column)",
+    "lua": {
+      "params": [
+        { "param_type": "string", "param_name": "handle" },
+        { "param_type": "int", "param_name": "id" },
+        { "param_type": "int", "param_name": "row" },
+        { "param_type": "int", "param_name": "column" }
+      ],
+      "returns": []
+    },
+    "lua_raw": "simUI.onTableSelectionChangeCallback(string handle, int id, int row, int column)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simUI.htm?#onTableSelectionChangeCallback"
+  },
+  {
+    "prefix": "simUI",
+    "method": "onPropertiesSelectionChangeCallback",
+    "description": "",
+    "python": {
+      "params": [
+        { "param_type": "string", "param_name": "handle" },
+        { "param_type": "int", "param_name": "id" },
+        { "param_type": "int", "param_name": "row" }
+      ],
+      "returns": []
+    },
+    "python_raw": "simUI.onPropertiesSelectionChangeCallback(string handle, int id, int row)",
+    "lua": {
+      "params": [
+        { "param_type": "string", "param_name": "handle" },
+        { "param_type": "int", "param_name": "id" },
+        { "param_type": "int", "param_name": "row" }
+      ],
+      "returns": []
+    },
+    "lua_raw": "simUI.onPropertiesSelectionChangeCallback(string handle, int id, int row)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simUI.htm?#onPropertiesSelectionChangeCallback"
+  },
+  {
+    "prefix": "simUI",
+    "method": "onPropertiesDoubleClickCallback",
+    "description": "",
+    "python": {
+      "params": [
+        { "param_type": "string", "param_name": "handle" },
+        { "param_type": "int", "param_name": "id" },
+        { "param_type": "int", "param_name": "row" },
+        { "param_type": "int", "param_name": "col" }
+      ],
+      "returns": []
+    },
+    "python_raw": "simUI.onPropertiesDoubleClickCallback(string handle, int id, int row, int col)",
+    "lua": {
+      "params": [
+        { "param_type": "string", "param_name": "handle" },
+        { "param_type": "int", "param_name": "id" },
+        { "param_type": "int", "param_name": "row" },
+        { "param_type": "int", "param_name": "col" }
+      ],
+      "returns": []
+    },
+    "lua_raw": "simUI.onPropertiesDoubleClickCallback(string handle, int id, int row, int col)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simUI.htm?#onPropertiesDoubleClickCallback"
+  },
+  {
+    "prefix": "simUI",
+    "method": "onPropertiesContextMenuTriggeredCallback",
+    "description": "",
+    "python": {
+      "params": [
+        { "param_type": "string", "param_name": "handle" },
+        { "param_type": "int", "param_name": "id" },
+        { "param_type": "string", "param_name": "key" }
+      ],
+      "returns": []
+    },
+    "python_raw": "simUI.onPropertiesContextMenuTriggeredCallback(string handle, int id, string key)",
+    "lua": {
+      "params": [
+        { "param_type": "string", "param_name": "handle" },
+        { "param_type": "int", "param_name": "id" },
+        { "param_type": "string", "param_name": "key" }
+      ],
+      "returns": []
+    },
+    "lua_raw": "simUI.onPropertiesContextMenuTriggeredCallback(string handle, int id, string key)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simUI.htm?#onPropertiesContextMenuTriggeredCallback"
+  },
+  {
+    "prefix": "simUI",
+    "method": "onPropertiesPropertyEditCallback",
+    "description": "",
+    "python": {
+      "params": [
+        { "param_type": "string", "param_name": "handle" },
+        { "param_type": "int", "param_name": "id" },
+        { "param_type": "string", "param_name": "key" },
+        { "param_type": "string", "param_name": "value" }
+      ],
+      "returns": []
+    },
+    "python_raw": "simUI.onPropertiesPropertyEditCallback(string handle, int id, string key, string value)",
+    "lua": {
+      "params": [
+        { "param_type": "string", "param_name": "handle" },
+        { "param_type": "int", "param_name": "id" },
+        { "param_type": "string", "param_name": "key" },
+        { "param_type": "string", "param_name": "value" }
+      ],
+      "returns": []
+    },
+    "lua_raw": "simUI.onPropertiesPropertyEditCallback(string handle, int id, string key, string value)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simUI.htm?#onPropertiesPropertyEditCallback"
+  },
+  {
+    "prefix": "simUI",
+    "method": "onTreeSelectionChangeCallback",
+    "description": "Callback for tree widget selectionChanged event.",
+    "python": {
+      "params": [
+        { "param_type": "string", "param_name": "handle" },
+        { "param_type": "int", "param_name": "id" },
+        { "param_type": "int", "param_name": "item_id" }
+      ],
+      "returns": []
+    },
+    "python_raw": "simUI.onTreeSelectionChangeCallback(string handle, int id, int item_id)",
+    "lua": {
+      "params": [
+        { "param_type": "string", "param_name": "handle" },
+        { "param_type": "int", "param_name": "id" },
+        { "param_type": "int", "param_name": "item_id" }
+      ],
+      "returns": []
+    },
+    "lua_raw": "simUI.onTreeSelectionChangeCallback(string handle, int id, int item_id)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simUI.htm?#onTreeSelectionChangeCallback"
+  },
+  {
+    "prefix": "simUI",
+    "method": "onMouseEventCallback",
+    "description": "Callback for a mouse event.",
+    "python": {
+      "params": [
+        { "param_type": "string", "param_name": "handle" },
+        { "param_type": "int", "param_name": "id" },
+        { "param_type": "int", "param_name": "type" },
+        { "param_type": "keyboard_modifiers", "param_name": "mods" },
+        { "param_type": "int", "param_name": "x" },
+        { "param_type": "int", "param_name": "y" }
+      ],
+      "returns": []
+    },
+    "python_raw": "simUI.onMouseEventCallback(string handle, int id, int type, keyboard_modifiers mods, int x, int y)",
+    "lua": {
+      "params": [
+        { "param_type": "string", "param_name": "handle" },
+        { "param_type": "int", "param_name": "id" },
+        { "param_type": "int", "param_name": "type" },
+        { "param_type": "keyboard_modifiers", "param_name": "mods" },
+        { "param_type": "int", "param_name": "x" },
+        { "param_type": "int", "param_name": "y" }
+      ],
+      "returns": []
+    },
+    "lua_raw": "simUI.onMouseEventCallback(string handle, int id, int type, keyboard_modifiers mods, int x, int y)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simUI.htm?#onMouseEventCallback"
+  },
+  {
+    "prefix": "simUI",
+    "method": "onKeyPressCallback",
+    "description": "Callback called when a key is pressed in a widget.",
+    "python": {
+      "params": [
+        { "param_type": "string", "param_name": "handle" },
+        { "param_type": "int", "param_name": "id" },
+        { "param_type": "int", "param_name": "key" },
+        { "param_type": "string", "param_name": "text" }
+      ],
+      "returns": []
+    },
+    "python_raw": "simUI.onKeyPressCallback(string handle, int id, int key, string text)",
+    "lua": {
+      "params": [
+        { "param_type": "string", "param_name": "handle" },
+        { "param_type": "int", "param_name": "id" },
+        { "param_type": "int", "param_name": "key" },
+        { "param_type": "string", "param_name": "text" }
+      ],
+      "returns": []
+    },
+    "lua_raw": "simUI.onKeyPressCallback(string handle, int id, int key, string text)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simUI.htm?#onKeyPressCallback"
+  },
+  {
+    "prefix": "simUI",
+    "method": "onScene3DObjectClickCallback",
+    "description": "Callback called when an object is clicked in a scene3d widget.",
+    "python": {
+      "params": [
+        { "param_type": "string", "param_name": "handle" },
+        { "param_type": "int", "param_name": "id" },
+        { "param_type": "int", "param_name": "nodeId" }
+      ],
+      "returns": []
+    },
+    "python_raw": "simUI.onScene3DObjectClickCallback(string handle, int id, int nodeId)",
+    "lua": {
+      "params": [
+        { "param_type": "string", "param_name": "handle" },
+        { "param_type": "int", "param_name": "id" },
+        { "param_type": "int", "param_name": "nodeId" }
+      ],
+      "returns": []
+    },
+    "lua_raw": "simUI.onScene3DObjectClickCallback(string handle, int id, int nodeId)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simUI.htm?#onScene3DObjectClickCallback"
+  },
+  {
+    "prefix": "simUI",
+    "method": "onBannerButtonClickCallback",
+    "description": "Callback for banner button click event.",
+    "python": {
+      "params": [
+        { "param_type": "int", "param_name": "bannerId" },
+        { "param_type": "string", "param_name": "btnKey" }
+      ],
+      "returns": []
+    },
+    "python_raw": "simUI.onBannerButtonClickCallback(int bannerId, string btnKey)",
+    "lua": {
+      "params": [
+        { "param_type": "int", "param_name": "bannerId" },
+        { "param_type": "string", "param_name": "btnKey" }
+      ],
+      "returns": []
+    },
+    "lua_raw": "simUI.onBannerButtonClickCallback(int bannerId, string btnKey)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simUI.htm?#onBannerButtonClickCallback"
+  }
+]

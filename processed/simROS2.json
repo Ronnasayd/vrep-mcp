@@ -1,0 +1,1262 @@
+[
+  {
+    "prefix": "simROS2",
+    "method": "actionClientTreatUInt8ArrayAsString",
+    "description": "After calling this function, this action client will treat uint8 arrays as string. Using strings should be in general much faster that using int arrays in Lua.",
+    "python": {
+      "params": [
+        { "param_type": "string", "param_name": "actionClientHandle" }
+      ],
+      "returns": []
+    },
+    "python_raw": "simROS2.actionClientTreatUInt8ArrayAsString(string actionClientHandle)",
+    "lua": {
+      "params": [
+        { "param_type": "string", "param_name": "actionClientHandle" }
+      ],
+      "returns": []
+    },
+    "lua_raw": "simROS2.actionClientTreatUInt8ArrayAsString(string actionClientHandle)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simROS2.htm?#actionClientTreatUInt8ArrayAsString"
+  },
+  {
+    "prefix": "simROS2",
+    "method": "actionServerActionAbort",
+    "description": "Indicate that a goal could not be reached and has been aborted. Only call this if the goal was executing but cannot be completed. This is a terminal state, no more methods should be called on a goal after this is called.",
+    "python": {
+      "params": [
+        { "param_type": "string", "param_name": "actionServerHandle" },
+        { "param_type": "string", "param_name": "goalUUID" },
+        { "param_type": "list", "param_name": "result" }
+      ],
+      "returns": []
+    },
+    "python_raw": "simROS2.actionServerActionAbort(string actionServerHandle, string goalUUID, list result)",
+    "lua": {
+      "params": [
+        { "param_type": "string", "param_name": "actionServerHandle" },
+        { "param_type": "string", "param_name": "goalUUID" },
+        { "param_type": "table", "param_name": "result" }
+      ],
+      "returns": []
+    },
+    "lua_raw": "simROS2.actionServerActionAbort(string actionServerHandle, string goalUUID, table result)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simROS2.htm?#actionServerActionAbort"
+  },
+  {
+    "prefix": "simROS2",
+    "method": "actionServerActionCanceled",
+    "description": "Indicate that a goal has been canceled. Only call this if the goal is executing or pending, but has been canceled. This is a terminal state, no more methods should be called on a goal after this is called.",
+    "python": {
+      "params": [
+        { "param_type": "string", "param_name": "actionServerHandle" },
+        { "param_type": "string", "param_name": "goalUUID" },
+        { "param_type": "list", "param_name": "result" }
+      ],
+      "returns": []
+    },
+    "python_raw": "simROS2.actionServerActionCanceled(string actionServerHandle, string goalUUID, list result)",
+    "lua": {
+      "params": [
+        { "param_type": "string", "param_name": "actionServerHandle" },
+        { "param_type": "string", "param_name": "goalUUID" },
+        { "param_type": "table", "param_name": "result" }
+      ],
+      "returns": []
+    },
+    "lua_raw": "simROS2.actionServerActionCanceled(string actionServerHandle, string goalUUID, table result)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simROS2.htm?#actionServerActionCanceled"
+  },
+  {
+    "prefix": "simROS2",
+    "method": "actionServerActionExecute",
+    "description": "Indicate that the server is starting to execute a goal. Only call this if the goal is pending.",
+    "python": {
+      "params": [
+        { "param_type": "string", "param_name": "actionServerHandle" },
+        { "param_type": "string", "param_name": "goalUUID" }
+      ],
+      "returns": []
+    },
+    "python_raw": "simROS2.actionServerActionExecute(string actionServerHandle, string goalUUID)",
+    "lua": {
+      "params": [
+        { "param_type": "string", "param_name": "actionServerHandle" },
+        { "param_type": "string", "param_name": "goalUUID" }
+      ],
+      "returns": []
+    },
+    "lua_raw": "simROS2.actionServerActionExecute(string actionServerHandle, string goalUUID)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simROS2.htm?#actionServerActionExecute"
+  },
+  {
+    "prefix": "simROS2",
+    "method": "actionServerActionIsActive",
+    "description": "Check if goal is pending or executing",
+    "python": {
+      "params": [
+        { "param_type": "string", "param_name": "actionServerHandle" },
+        { "param_type": "string", "param_name": "goalUUID" }
+      ],
+      "returns": [{ "return_type": "bool", "return_name": "result" }]
+    },
+    "python_raw": "bool result = simROS2.actionServerActionIsActive(string actionServerHandle, string goalUUID)",
+    "lua": {
+      "params": [
+        { "param_type": "string", "param_name": "actionServerHandle" },
+        { "param_type": "string", "param_name": "goalUUID" }
+      ],
+      "returns": [{ "return_type": "bool", "return_name": "result" }]
+    },
+    "lua_raw": "bool result = simROS2.actionServerActionIsActive(string actionServerHandle, string goalUUID)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simROS2.htm?#actionServerActionIsActive"
+  },
+  {
+    "prefix": "simROS2",
+    "method": "actionServerActionIsCanceling",
+    "description": "Check if there is a cancel request",
+    "python": {
+      "params": [
+        { "param_type": "string", "param_name": "actionServerHandle" },
+        { "param_type": "string", "param_name": "goalUUID" }
+      ],
+      "returns": [{ "return_type": "bool", "return_name": "result" }]
+    },
+    "python_raw": "bool result = simROS2.actionServerActionIsCanceling(string actionServerHandle, string goalUUID)",
+    "lua": {
+      "params": [
+        { "param_type": "string", "param_name": "actionServerHandle" },
+        { "param_type": "string", "param_name": "goalUUID" }
+      ],
+      "returns": [{ "return_type": "bool", "return_name": "result" }]
+    },
+    "lua_raw": "bool result = simROS2.actionServerActionIsCanceling(string actionServerHandle, string goalUUID)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simROS2.htm?#actionServerActionIsCanceling"
+  },
+  {
+    "prefix": "simROS2",
+    "method": "actionServerActionIsExecuting",
+    "description": "Check if the goal is executing",
+    "python": {
+      "params": [
+        { "param_type": "string", "param_name": "actionServerHandle" },
+        { "param_type": "string", "param_name": "goalUUID" }
+      ],
+      "returns": [{ "return_type": "bool", "return_name": "result" }]
+    },
+    "python_raw": "bool result = simROS2.actionServerActionIsExecuting(string actionServerHandle, string goalUUID)",
+    "lua": {
+      "params": [
+        { "param_type": "string", "param_name": "actionServerHandle" },
+        { "param_type": "string", "param_name": "goalUUID" }
+      ],
+      "returns": [{ "return_type": "bool", "return_name": "result" }]
+    },
+    "lua_raw": "bool result = simROS2.actionServerActionIsExecuting(string actionServerHandle, string goalUUID)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simROS2.htm?#actionServerActionIsExecuting"
+  },
+  {
+    "prefix": "simROS2",
+    "method": "actionServerActionSucceed",
+    "description": "Indicate that a goal has succeeded. Only call this if the goal is executing and has reached the desired final state. This is a terminal state, no more methods should be called on a goal after this is called.",
+    "python": {
+      "params": [
+        { "param_type": "string", "param_name": "actionServerHandle" },
+        { "param_type": "string", "param_name": "goalUUID" },
+        { "param_type": "list", "param_name": "result" }
+      ],
+      "returns": []
+    },
+    "python_raw": "simROS2.actionServerActionSucceed(string actionServerHandle, string goalUUID, list result)",
+    "lua": {
+      "params": [
+        { "param_type": "string", "param_name": "actionServerHandle" },
+        { "param_type": "string", "param_name": "goalUUID" },
+        { "param_type": "table", "param_name": "result" }
+      ],
+      "returns": []
+    },
+    "lua_raw": "simROS2.actionServerActionSucceed(string actionServerHandle, string goalUUID, table result)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simROS2.htm?#actionServerActionSucceed"
+  },
+  {
+    "prefix": "simROS2",
+    "method": "actionServerPublishFeedback",
+    "description": "Send an update about the progress of this goal. This must be only called when the goal is executing. If execution of a goal is deferred then",
+    "python": {
+      "params": [
+        { "param_type": "string", "param_name": "actionServerHandle" },
+        { "param_type": "string", "param_name": "goalUUID" },
+        { "param_type": "list", "param_name": "feedback" }
+      ],
+      "returns": []
+    },
+    "python_raw": "simROS2.actionServerPublishFeedback(string actionServerHandle, string goalUUID, list feedback)",
+    "lua": {
+      "params": [
+        { "param_type": "string", "param_name": "actionServerHandle" },
+        { "param_type": "string", "param_name": "goalUUID" },
+        { "param_type": "table", "param_name": "feedback" }
+      ],
+      "returns": []
+    },
+    "lua_raw": "simROS2.actionServerPublishFeedback(string actionServerHandle, string goalUUID, table feedback)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simROS2.htm?#actionServerPublishFeedback"
+  },
+  {
+    "prefix": "simROS2",
+    "method": "actionServerTreatUInt8ArrayAsString",
+    "description": "After calling this function, this action server will treat uint8 arrays as string. Using strings should be in general much faster that using int arrays in Lua.",
+    "python": {
+      "params": [
+        { "param_type": "string", "param_name": "actionServerHandle" }
+      ],
+      "returns": []
+    },
+    "python_raw": "simROS2.actionServerTreatUInt8ArrayAsString(string actionServerHandle)",
+    "lua": {
+      "params": [
+        { "param_type": "string", "param_name": "actionServerHandle" }
+      ],
+      "returns": []
+    },
+    "lua_raw": "simROS2.actionServerTreatUInt8ArrayAsString(string actionServerHandle)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simROS2.htm?#actionServerTreatUInt8ArrayAsString"
+  },
+  {
+    "prefix": "simROS2",
+    "method": "call",
+    "description": "Call the service associated with this service client.",
+    "python": {
+      "params": [
+        { "param_type": "string", "param_name": "clientHandle" },
+        { "param_type": "list", "param_name": "request" }
+      ],
+      "returns": [{ "return_type": "list", "return_name": "result" }]
+    },
+    "python_raw": "list result = simROS2.call(string clientHandle, list request)",
+    "lua": {
+      "params": [
+        { "param_type": "string", "param_name": "clientHandle" },
+        { "param_type": "table", "param_name": "request" }
+      ],
+      "returns": [{ "return_type": "table", "return_name": "result" }]
+    },
+    "lua_raw": "table result = simROS2.call(string clientHandle, table request)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simROS2.htm?#call"
+  },
+  {
+    "prefix": "simROS2",
+    "method": "cancelLastGoal",
+    "description": "Cancel last submitted goal on the specified action client.",
+    "python": {
+      "params": [
+        { "param_type": "string", "param_name": "actionClientHandle" }
+      ],
+      "returns": [{ "return_type": "bool", "return_name": "success" }]
+    },
+    "python_raw": "bool success = simROS2.cancelLastGoal(string actionClientHandle)",
+    "lua": {
+      "params": [
+        { "param_type": "string", "param_name": "actionClientHandle" }
+      ],
+      "returns": [{ "return_type": "bool", "return_name": "success" }]
+    },
+    "lua_raw": "bool success = simROS2.cancelLastGoal(string actionClientHandle)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simROS2.htm?#cancelLastGoal"
+  },
+  {
+    "prefix": "simROS2",
+    "method": "clientTreatUInt8ArrayAsString",
+    "description": "After calling this function, this service client will treat uint8 arrays as string. Using strings should be in general much faster that using int arrays in Lua.",
+    "python": {
+      "params": [{ "param_type": "string", "param_name": "clientHandle" }],
+      "returns": []
+    },
+    "python_raw": "simROS2.clientTreatUInt8ArrayAsString(string clientHandle)",
+    "lua": {
+      "params": [{ "param_type": "string", "param_name": "clientHandle" }],
+      "returns": []
+    },
+    "lua_raw": "simROS2.clientTreatUInt8ArrayAsString(string clientHandle)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simROS2.htm?#clientTreatUInt8ArrayAsString"
+  },
+  {
+    "prefix": "simROS2",
+    "method": "createActionClient",
+    "description": "Create a action client.",
+    "python": {
+      "params": [
+        { "param_type": "string", "param_name": "actionName" },
+        { "param_type": "string", "param_name": "actionType" },
+        { "param_type": "func", "param_name": "goalResponseCallback" },
+        { "param_type": "func", "param_name": "feedbackCallback" },
+        { "param_type": "func", "param_name": "resultCallback" }
+      ],
+      "returns": [
+        { "return_type": "string", "return_name": "actionClientHandle" }
+      ]
+    },
+    "python_raw": "string actionClientHandle = simROS2.createActionClient(string actionName, string actionType, func goalResponseCallback, func feedbackCallback, func resultCallback)",
+    "lua": {
+      "params": [
+        { "param_type": "string", "param_name": "actionName" },
+        { "param_type": "string", "param_name": "actionType" },
+        { "param_type": "func", "param_name": "goalResponseCallback" },
+        { "param_type": "func", "param_name": "feedbackCallback" },
+        { "param_type": "func", "param_name": "resultCallback" }
+      ],
+      "returns": [
+        { "return_type": "string", "return_name": "actionClientHandle" }
+      ]
+    },
+    "lua_raw": "string actionClientHandle = simROS2.createActionClient(string actionName, string actionType, func goalResponseCallback, func feedbackCallback, func resultCallback)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simROS2.htm?#createActionClient"
+  },
+  {
+    "prefix": "simROS2",
+    "method": "createActionServer",
+    "description": "Create an action server.",
+    "python": {
+      "params": [
+        { "param_type": "string", "param_name": "actionName" },
+        { "param_type": "string", "param_name": "actionType" },
+        { "param_type": "func", "param_name": "handleGoalCallback" },
+        { "param_type": "func", "param_name": "handleCancelCallback" },
+        { "param_type": "func", "param_name": "handleAcceptedCallback" }
+      ],
+      "returns": [
+        { "return_type": "string", "return_name": "actionServerHandle" }
+      ]
+    },
+    "python_raw": "string actionServerHandle = simROS2.createActionServer(string actionName, string actionType, func handleGoalCallback, func handleCancelCallback, func handleAcceptedCallback)",
+    "lua": {
+      "params": [
+        { "param_type": "string", "param_name": "actionName" },
+        { "param_type": "string", "param_name": "actionType" },
+        { "param_type": "func", "param_name": "handleGoalCallback" },
+        { "param_type": "func", "param_name": "handleCancelCallback" },
+        { "param_type": "func", "param_name": "handleAcceptedCallback" }
+      ],
+      "returns": [
+        { "return_type": "string", "return_name": "actionServerHandle" }
+      ]
+    },
+    "lua_raw": "string actionServerHandle = simROS2.createActionServer(string actionName, string actionType, func handleGoalCallback, func handleCancelCallback, func handleAcceptedCallback)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simROS2.htm?#createActionServer"
+  },
+  {
+    "prefix": "simROS2",
+    "method": "createClient",
+    "description": "Create a service client.",
+    "python": {
+      "params": [
+        { "param_type": "string", "param_name": "serviceName" },
+        { "param_type": "string", "param_name": "serviceType" }
+      ],
+      "returns": [{ "return_type": "string", "return_name": "clientHandle" }]
+    },
+    "python_raw": "string clientHandle = simROS2.createClient(string serviceName, string serviceType)",
+    "lua": {
+      "params": [
+        { "param_type": "string", "param_name": "serviceName" },
+        { "param_type": "string", "param_name": "serviceType" }
+      ],
+      "returns": [{ "return_type": "string", "return_name": "clientHandle" }]
+    },
+    "lua_raw": "string clientHandle = simROS2.createClient(string serviceName, string serviceType)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simROS2.htm?#createClient"
+  },
+  {
+    "prefix": "simROS2",
+    "method": "createInterface",
+    "description": "Construct an interface of the specified type, initialized with the default values.",
+    "python": {
+      "params": [{ "param_type": "string", "param_name": "type" }],
+      "returns": [{ "return_type": "list", "return_name": "result" }]
+    },
+    "python_raw": "list result = simROS2.createInterface(string type)",
+    "lua": {
+      "params": [{ "param_type": "string", "param_name": "type" }],
+      "returns": [{ "return_type": "table", "return_name": "result" }]
+    },
+    "lua_raw": "table result = simROS2.createInterface(string type)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simROS2.htm?#createInterface"
+  },
+  {
+    "prefix": "simROS2",
+    "method": "createPublisher",
+    "description": "Create a topic publisher.",
+    "python": {
+      "params": [
+        { "param_type": "string", "param_name": "topicName" },
+        { "param_type": "string", "param_name": "topicType" },
+        { "param_type": "int", "param_name": "unused" },
+        { "param_type": "bool", "param_name": "unused2" },
+        { "param_type": "simros2_qos", "param_name": "qos" }
+      ],
+      "returns": [{ "return_type": "string", "return_name": "publisherHandle" }]
+    },
+    "python_raw": "string publisherHandle = simROS2.createPublisher(string topicName, string topicType, int unused=0, bool unused2=false, simros2_qos qos=nil)",
+    "lua": {
+      "params": [
+        { "param_type": "string", "param_name": "topicName" },
+        { "param_type": "string", "param_name": "topicType" },
+        { "param_type": "int", "param_name": "unused" },
+        { "param_type": "bool", "param_name": "unused2" },
+        { "param_type": "simros2_qos", "param_name": "qos" }
+      ],
+      "returns": [{ "return_type": "string", "return_name": "publisherHandle" }]
+    },
+    "lua_raw": "string publisherHandle = simROS2.createPublisher(string topicName, string topicType, int unused=0, bool unused2=false, simros2_qos qos=nil)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simROS2.htm?#createPublisher"
+  },
+  {
+    "prefix": "simROS2",
+    "method": "createService",
+    "description": "Create a service.",
+    "python": {
+      "params": [
+        { "param_type": "string", "param_name": "serviceName" },
+        { "param_type": "string", "param_name": "serviceType" },
+        { "param_type": "func", "param_name": "serviceCallback" }
+      ],
+      "returns": [{ "return_type": "string", "return_name": "serviceHandle" }]
+    },
+    "python_raw": "string serviceHandle = simROS2.createService(string serviceName, string serviceType, func serviceCallback)",
+    "lua": {
+      "params": [
+        { "param_type": "string", "param_name": "serviceName" },
+        { "param_type": "string", "param_name": "serviceType" },
+        { "param_type": "func", "param_name": "serviceCallback" }
+      ],
+      "returns": [{ "return_type": "string", "return_name": "serviceHandle" }]
+    },
+    "lua_raw": "string serviceHandle = simROS2.createService(string serviceName, string serviceType, func serviceCallback)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simROS2.htm?#createService"
+  },
+  {
+    "prefix": "simROS2",
+    "method": "createSubscription",
+    "description": "Create a subscription to a topic.",
+    "python": {
+      "params": [
+        { "param_type": "string", "param_name": "topicName" },
+        { "param_type": "string", "param_name": "topicType" },
+        { "param_type": "func", "param_name": "topicCallback" },
+        { "param_type": "int", "param_name": "unused" },
+        { "param_type": "simros2_qos", "param_name": "qos" }
+      ],
+      "returns": [
+        { "return_type": "string", "return_name": "subscriptionHandle" }
+      ]
+    },
+    "python_raw": "string subscriptionHandle = simROS2.createSubscription(string topicName, string topicType, func topicCallback, int unused=0, simros2_qos qos=nil)",
+    "lua": {
+      "params": [
+        { "param_type": "string", "param_name": "topicName" },
+        { "param_type": "string", "param_name": "topicType" },
+        { "param_type": "func", "param_name": "topicCallback" },
+        { "param_type": "int", "param_name": "unused" },
+        { "param_type": "simros2_qos", "param_name": "qos" }
+      ],
+      "returns": [
+        { "return_type": "string", "return_name": "subscriptionHandle" }
+      ]
+    },
+    "lua_raw": "string subscriptionHandle = simROS2.createSubscription(string topicName, string topicType, func topicCallback, int unused=0, simros2_qos qos=nil)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simROS2.htm?#createSubscription"
+  },
+  {
+    "prefix": "simROS2",
+    "method": "deleteParam",
+    "description": "Delete a parameter in the ROS Parameter Server.",
+    "python": {
+      "params": [{ "param_type": "string", "param_name": "name" }],
+      "returns": []
+    },
+    "python_raw": "simROS2.deleteParam(string name)",
+    "lua": {
+      "params": [{ "param_type": "string", "param_name": "name" }],
+      "returns": []
+    },
+    "lua_raw": "simROS2.deleteParam(string name)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simROS2.htm?#deleteParam"
+  },
+  {
+    "prefix": "simROS2",
+    "method": "getInterfaceConstants",
+    "description": "Get an object with the constants defined in the specified interface.",
+    "python": {
+      "params": [{ "param_type": "string", "param_name": "type" }],
+      "returns": [{ "return_type": "list", "return_name": "result" }]
+    },
+    "python_raw": "list result = simROS2.getInterfaceConstants(string type)",
+    "lua": {
+      "params": [{ "param_type": "string", "param_name": "type" }],
+      "returns": [{ "return_type": "table", "return_name": "result" }]
+    },
+    "lua_raw": "table result = simROS2.getInterfaceConstants(string type)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simROS2.htm?#getInterfaceConstants"
+  },
+  {
+    "prefix": "simROS2",
+    "method": "getParamBool",
+    "description": "Retrieve a boolean parameter from the ROS Parameter Server.",
+    "python": {
+      "params": [
+        { "param_type": "string", "param_name": "name" },
+        { "param_type": "bool", "param_name": "defaultValue" }
+      ],
+      "returns": [
+        { "return_type": "bool", "return_name": "exists" },
+        { "return_type": "bool", "return_name": "value" }
+      ]
+    },
+    "python_raw": "bool exists, bool value = simROS2.getParamBool(string name, bool defaultValue=false)",
+    "lua": {
+      "params": [
+        { "param_type": "string", "param_name": "name" },
+        { "param_type": "bool", "param_name": "defaultValue" }
+      ],
+      "returns": [
+        { "return_type": "bool", "return_name": "exists" },
+        { "return_type": "bool", "return_name": "value" }
+      ]
+    },
+    "lua_raw": "bool exists, bool value = simROS2.getParamBool(string name, bool defaultValue=false)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simROS2.htm?#getParamBool"
+  },
+  {
+    "prefix": "simROS2",
+    "method": "getParamDouble",
+    "description": "Retrieve a double parameter from the ROS Parameter Server.",
+    "python": {
+      "params": [
+        { "param_type": "string", "param_name": "name" },
+        { "param_type": "float", "param_name": "defaultValue" }
+      ],
+      "returns": [
+        { "return_type": "bool", "return_name": "exists" },
+        { "return_type": "float", "return_name": "value" }
+      ]
+    },
+    "python_raw": "bool exists, float value = simROS2.getParamDouble(string name, float defaultValue=0.0)",
+    "lua": {
+      "params": [
+        { "param_type": "string", "param_name": "name" },
+        { "param_type": "float", "param_name": "defaultValue" }
+      ],
+      "returns": [
+        { "return_type": "bool", "return_name": "exists" },
+        { "return_type": "float", "return_name": "value" }
+      ]
+    },
+    "lua_raw": "bool exists, float value = simROS2.getParamDouble(string name, float defaultValue=0.0)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simROS2.htm?#getParamDouble"
+  },
+  {
+    "prefix": "simROS2",
+    "method": "getParamInt",
+    "description": "Retrieve an integer parameter from the ROS Parameter Server.",
+    "python": {
+      "params": [
+        { "param_type": "string", "param_name": "name" },
+        { "param_type": "int", "param_name": "defaultValue" }
+      ],
+      "returns": [
+        { "return_type": "bool", "return_name": "exists" },
+        { "return_type": "int", "return_name": "value" }
+      ]
+    },
+    "python_raw": "bool exists, int value = simROS2.getParamInt(string name, int defaultValue=0)",
+    "lua": {
+      "params": [
+        { "param_type": "string", "param_name": "name" },
+        { "param_type": "int", "param_name": "defaultValue" }
+      ],
+      "returns": [
+        { "return_type": "bool", "return_name": "exists" },
+        { "return_type": "int", "return_name": "value" }
+      ]
+    },
+    "lua_raw": "bool exists, int value = simROS2.getParamInt(string name, int defaultValue=0)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simROS2.htm?#getParamInt"
+  },
+  {
+    "prefix": "simROS2",
+    "method": "getParamString",
+    "description": "Retrieve a string parameter from the ROS Parameter Server.",
+    "python": {
+      "params": [
+        { "param_type": "string", "param_name": "name" },
+        { "param_type": "string", "param_name": "defaultValue" }
+      ],
+      "returns": [
+        { "return_type": "bool", "return_name": "exists" },
+        { "return_type": "string", "return_name": "value" }
+      ]
+    },
+    "python_raw": "bool exists, string value = simROS2.getParamString(string name, string defaultValue=\"\")",
+    "lua": {
+      "params": [
+        { "param_type": "string", "param_name": "name" },
+        { "param_type": "string", "param_name": "defaultValue" }
+      ],
+      "returns": [
+        { "return_type": "bool", "return_name": "exists" },
+        { "return_type": "string", "return_name": "value" }
+      ]
+    },
+    "lua_raw": "bool exists, string value = simROS2.getParamString(string name, string defaultValue=\"\")",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simROS2.htm?#getParamString"
+  },
+  {
+    "prefix": "simROS2",
+    "method": "getSimulationTime",
+    "description": "",
+    "python": { "params": [], "returns": [] },
+    "python_raw": "simROS2.getSimulationTime()",
+    "lua": { "params": [], "returns": [] },
+    "lua_raw": "simROS2.getSimulationTime()",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simROS2.htm?#getSimulationTime"
+  },
+  {
+    "prefix": "simROS2",
+    "method": "getSystemTime",
+    "description": "",
+    "python": { "params": [], "returns": [] },
+    "python_raw": "simROS2.getSystemTime()",
+    "lua": { "params": [], "returns": [] },
+    "lua_raw": "simROS2.getSystemTime()",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simROS2.htm?#getSystemTime"
+  },
+  {
+    "prefix": "simROS2",
+    "method": "getTime",
+    "description": "Return the current time according to the specified clock.",
+    "python": {
+      "params": [{ "param_type": "int", "param_name": "clock_type" }],
+      "returns": [{ "return_type": "simros2_time", "return_name": "time" }]
+    },
+    "python_raw": "simros2_time time = simROS2.getTime(int clock_type=simros2_clock_ros)",
+    "lua": {
+      "params": [{ "param_type": "int", "param_name": "clock_type" }],
+      "returns": [{ "return_type": "simros2_time", "return_name": "time" }]
+    },
+    "lua_raw": "simros2_time time = simROS2.getTime(int clock_type=simros2_clock_ros)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simROS2.htm?#getTime"
+  },
+  {
+    "prefix": "simROS2",
+    "method": "hasParam",
+    "description": "Check wether a parameter exists in the ROS Parameter Server.",
+    "python": {
+      "params": [{ "param_type": "string", "param_name": "name" }],
+      "returns": [{ "return_type": "bool", "return_name": "exists" }]
+    },
+    "python_raw": "bool exists = simROS2.hasParam(string name)",
+    "lua": {
+      "params": [{ "param_type": "string", "param_name": "name" }],
+      "returns": [{ "return_type": "bool", "return_name": "exists" }]
+    },
+    "lua_raw": "bool exists = simROS2.hasParam(string name)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simROS2.htm?#hasParam"
+  },
+  {
+    "prefix": "simROS2",
+    "method": "imageTransportCreatePublisher",
+    "description": "Create a publisher using ImageTransport.",
+    "python": {
+      "params": [
+        { "param_type": "string", "param_name": "topicName" },
+        { "param_type": "int", "param_name": "queueSize" }
+      ],
+      "returns": [{ "return_type": "string", "return_name": "publisherHandle" }]
+    },
+    "python_raw": "string publisherHandle = simROS2.imageTransportCreatePublisher(string topicName, int queueSize=1)",
+    "lua": {
+      "params": [
+        { "param_type": "string", "param_name": "topicName" },
+        { "param_type": "int", "param_name": "queueSize" }
+      ],
+      "returns": [{ "return_type": "string", "return_name": "publisherHandle" }]
+    },
+    "lua_raw": "string publisherHandle = simROS2.imageTransportCreatePublisher(string topicName, int queueSize=1)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simROS2.htm?#imageTransportCreatePublisher"
+  },
+  {
+    "prefix": "simROS2",
+    "method": "imageTransportCreateSubscription",
+    "description": "Create a subscription using ImageTransport.",
+    "python": {
+      "params": [
+        { "param_type": "string", "param_name": "topicName" },
+        { "param_type": "func", "param_name": "topicCallback" },
+        { "param_type": "int", "param_name": "queueSize" }
+      ],
+      "returns": [
+        { "return_type": "string", "return_name": "subscriptionHandle" }
+      ]
+    },
+    "python_raw": "string subscriptionHandle = simROS2.imageTransportCreateSubscription(string topicName, func topicCallback, int queueSize=1)",
+    "lua": {
+      "params": [
+        { "param_type": "string", "param_name": "topicName" },
+        { "param_type": "func", "param_name": "topicCallback" },
+        { "param_type": "int", "param_name": "queueSize" }
+      ],
+      "returns": [
+        { "return_type": "string", "return_name": "subscriptionHandle" }
+      ]
+    },
+    "lua_raw": "string subscriptionHandle = simROS2.imageTransportCreateSubscription(string topicName, func topicCallback, int queueSize=1)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simROS2.htm?#imageTransportCreateSubscription"
+  },
+  {
+    "prefix": "simROS2",
+    "method": "imageTransportPublish",
+    "description": "Publish a message on the topic associated with this publisher using ImageTransport.",
+    "python": {
+      "params": [
+        { "param_type": "string", "param_name": "publisherHandle" },
+        { "param_type": "buffer", "param_name": "data" },
+        { "param_type": "int", "param_name": "width" },
+        { "param_type": "int", "param_name": "height" },
+        { "param_type": "string", "param_name": "frame_id" }
+      ],
+      "returns": []
+    },
+    "python_raw": "simROS2.imageTransportPublish(string publisherHandle, buffer data, int width, int height, string frame_id)",
+    "lua": {
+      "params": [
+        { "param_type": "string", "param_name": "publisherHandle" },
+        { "param_type": "buffer", "param_name": "data" },
+        { "param_type": "int", "param_name": "width" },
+        { "param_type": "int", "param_name": "height" },
+        { "param_type": "string", "param_name": "frame_id" }
+      ],
+      "returns": []
+    },
+    "lua_raw": "simROS2.imageTransportPublish(string publisherHandle, buffer data, int width, int height, string frame_id)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simROS2.htm?#imageTransportPublish"
+  },
+  {
+    "prefix": "simROS2",
+    "method": "imageTransportShutdownPublisher",
+    "description": "Shutdown the publisher using ImageTransport.",
+    "python": {
+      "params": [{ "param_type": "string", "param_name": "publisherHandle" }],
+      "returns": []
+    },
+    "python_raw": "simROS2.imageTransportShutdownPublisher(string publisherHandle)",
+    "lua": {
+      "params": [{ "param_type": "string", "param_name": "publisherHandle" }],
+      "returns": []
+    },
+    "lua_raw": "simROS2.imageTransportShutdownPublisher(string publisherHandle)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simROS2.htm?#imageTransportShutdownPublisher"
+  },
+  {
+    "prefix": "simROS2",
+    "method": "imageTransportShutdownSubscription",
+    "description": "Shutdown the subscription using ImageTransport.",
+    "python": {
+      "params": [
+        { "param_type": "string", "param_name": "subscriptionHandle" }
+      ],
+      "returns": []
+    },
+    "python_raw": "simROS2.imageTransportShutdownSubscription(string subscriptionHandle)",
+    "lua": {
+      "params": [
+        { "param_type": "string", "param_name": "subscriptionHandle" }
+      ],
+      "returns": []
+    },
+    "lua_raw": "simROS2.imageTransportShutdownSubscription(string subscriptionHandle)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simROS2.htm?#imageTransportShutdownSubscription"
+  },
+  {
+    "prefix": "simROS2",
+    "method": "importInterface",
+    "description": "",
+    "python": {
+      "params": [{ "param_type": "string", "param_name": "name" }],
+      "returns": []
+    },
+    "python_raw": "simROS2.importInterface(string name)",
+    "lua": {
+      "params": [{ "param_type": "string", "param_name": "name" }],
+      "returns": []
+    },
+    "lua_raw": "simROS2.importInterface(string name)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simROS2.htm?#importInterface"
+  },
+  {
+    "prefix": "simROS2",
+    "method": "publish",
+    "description": "Publish a message on the topic associated with this publisher.",
+    "python": {
+      "params": [
+        { "param_type": "string", "param_name": "publisherHandle" },
+        { "param_type": "list", "param_name": "message" }
+      ],
+      "returns": []
+    },
+    "python_raw": "simROS2.publish(string publisherHandle, list message)",
+    "lua": {
+      "params": [
+        { "param_type": "string", "param_name": "publisherHandle" },
+        { "param_type": "table", "param_name": "message" }
+      ],
+      "returns": []
+    },
+    "lua_raw": "simROS2.publish(string publisherHandle, table message)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simROS2.htm?#publish"
+  },
+  {
+    "prefix": "simROS2",
+    "method": "publisherTreatUInt8ArrayAsString",
+    "description": "After calling this function, this publisher will treat uint8 arrays as string. Using strings should be in general much faster that using int arrays in Lua.",
+    "python": {
+      "params": [{ "param_type": "string", "param_name": "publisherHandle" }],
+      "returns": []
+    },
+    "python_raw": "simROS2.publisherTreatUInt8ArrayAsString(string publisherHandle)",
+    "lua": {
+      "params": [{ "param_type": "string", "param_name": "publisherHandle" }],
+      "returns": []
+    },
+    "lua_raw": "simROS2.publisherTreatUInt8ArrayAsString(string publisherHandle)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simROS2.htm?#publisherTreatUInt8ArrayAsString"
+  },
+  {
+    "prefix": "simROS2",
+    "method": "sendGoal",
+    "description": "Send a goal using the specified action client.",
+    "python": {
+      "params": [
+        { "param_type": "string", "param_name": "actionClientHandle" },
+        { "param_type": "list", "param_name": "goal" }
+      ],
+      "returns": [{ "return_type": "bool", "return_name": "success" }]
+    },
+    "python_raw": "bool success = simROS2.sendGoal(string actionClientHandle, list goal)",
+    "lua": {
+      "params": [
+        { "param_type": "string", "param_name": "actionClientHandle" },
+        { "param_type": "table", "param_name": "goal" }
+      ],
+      "returns": [{ "return_type": "bool", "return_name": "success" }]
+    },
+    "lua_raw": "bool success = simROS2.sendGoal(string actionClientHandle, table goal)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simROS2.htm?#sendGoal"
+  },
+  {
+    "prefix": "simROS2",
+    "method": "sendTransform",
+    "description": "Publish a TF transformation between frames.",
+    "python": {
+      "params": [{ "param_type": "list", "param_name": "transform" }],
+      "returns": []
+    },
+    "python_raw": "simROS2.sendTransform(list transform)",
+    "lua": {
+      "params": [{ "param_type": "table", "param_name": "transform" }],
+      "returns": []
+    },
+    "lua_raw": "simROS2.sendTransform(table transform)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simROS2.htm?#sendTransform"
+  },
+  {
+    "prefix": "simROS2",
+    "method": "sendTransforms",
+    "description": "Publish several TF transformations between frames.",
+    "python": {
+      "params": [{ "param_type": "list", "param_name": "transforms" }],
+      "returns": []
+    },
+    "python_raw": "simROS2.sendTransforms(list transforms)",
+    "lua": {
+      "params": [{ "param_type": "table", "param_name": "transforms" }],
+      "returns": []
+    },
+    "lua_raw": "simROS2.sendTransforms(table transforms)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simROS2.htm?#sendTransforms"
+  },
+  {
+    "prefix": "simROS2",
+    "method": "serviceTreatUInt8ArrayAsString",
+    "description": "After calling this function, this service will treat uint8 arrays as string. Using strings should be in general much faster that using int arrays in Lua.",
+    "python": {
+      "params": [{ "param_type": "string", "param_name": "serviceHandle" }],
+      "returns": []
+    },
+    "python_raw": "simROS2.serviceTreatUInt8ArrayAsString(string serviceHandle)",
+    "lua": {
+      "params": [{ "param_type": "string", "param_name": "serviceHandle" }],
+      "returns": []
+    },
+    "lua_raw": "simROS2.serviceTreatUInt8ArrayAsString(string serviceHandle)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simROS2.htm?#serviceTreatUInt8ArrayAsString"
+  },
+  {
+    "prefix": "simROS2",
+    "method": "setParamBool",
+    "description": "Set a boolean parameter in the ROS Parameter Server.",
+    "python": {
+      "params": [
+        { "param_type": "string", "param_name": "name" },
+        { "param_type": "bool", "param_name": "value" }
+      ],
+      "returns": []
+    },
+    "python_raw": "simROS2.setParamBool(string name, bool value)",
+    "lua": {
+      "params": [
+        { "param_type": "string", "param_name": "name" },
+        { "param_type": "bool", "param_name": "value" }
+      ],
+      "returns": []
+    },
+    "lua_raw": "simROS2.setParamBool(string name, bool value)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simROS2.htm?#setParamBool"
+  },
+  {
+    "prefix": "simROS2",
+    "method": "setParamDouble",
+    "description": "Set a double parameter in the ROS Parameter Server.",
+    "python": {
+      "params": [
+        { "param_type": "string", "param_name": "name" },
+        { "param_type": "float", "param_name": "value" }
+      ],
+      "returns": []
+    },
+    "python_raw": "simROS2.setParamDouble(string name, float value)",
+    "lua": {
+      "params": [
+        { "param_type": "string", "param_name": "name" },
+        { "param_type": "float", "param_name": "value" }
+      ],
+      "returns": []
+    },
+    "lua_raw": "simROS2.setParamDouble(string name, float value)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simROS2.htm?#setParamDouble"
+  },
+  {
+    "prefix": "simROS2",
+    "method": "setParamInt",
+    "description": "Set a integer parameter in the ROS Parameter Server.",
+    "python": {
+      "params": [
+        { "param_type": "string", "param_name": "name" },
+        { "param_type": "int", "param_name": "value" }
+      ],
+      "returns": []
+    },
+    "python_raw": "simROS2.setParamInt(string name, int value)",
+    "lua": {
+      "params": [
+        { "param_type": "string", "param_name": "name" },
+        { "param_type": "int", "param_name": "value" }
+      ],
+      "returns": []
+    },
+    "lua_raw": "simROS2.setParamInt(string name, int value)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simROS2.htm?#setParamInt"
+  },
+  {
+    "prefix": "simROS2",
+    "method": "setParamString",
+    "description": "Set a string parameter in the ROS Parameter Server.",
+    "python": {
+      "params": [
+        { "param_type": "string", "param_name": "name" },
+        { "param_type": "string", "param_name": "value" }
+      ],
+      "returns": []
+    },
+    "python_raw": "simROS2.setParamString(string name, string value)",
+    "lua": {
+      "params": [
+        { "param_type": "string", "param_name": "name" },
+        { "param_type": "string", "param_name": "value" }
+      ],
+      "returns": []
+    },
+    "lua_raw": "simROS2.setParamString(string name, string value)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simROS2.htm?#setParamString"
+  },
+  {
+    "prefix": "simROS2",
+    "method": "shutdownActionClient",
+    "description": "Shutdown the action client.",
+    "python": {
+      "params": [
+        { "param_type": "string", "param_name": "actionClientHandle" }
+      ],
+      "returns": []
+    },
+    "python_raw": "simROS2.shutdownActionClient(string actionClientHandle)",
+    "lua": {
+      "params": [
+        { "param_type": "string", "param_name": "actionClientHandle" }
+      ],
+      "returns": []
+    },
+    "lua_raw": "simROS2.shutdownActionClient(string actionClientHandle)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simROS2.htm?#shutdownActionClient"
+  },
+  {
+    "prefix": "simROS2",
+    "method": "shutdownActionServer",
+    "description": "Shutdown the action server.",
+    "python": {
+      "params": [
+        { "param_type": "string", "param_name": "actionServerHandle" }
+      ],
+      "returns": []
+    },
+    "python_raw": "simROS2.shutdownActionServer(string actionServerHandle)",
+    "lua": {
+      "params": [
+        { "param_type": "string", "param_name": "actionServerHandle" }
+      ],
+      "returns": []
+    },
+    "lua_raw": "simROS2.shutdownActionServer(string actionServerHandle)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simROS2.htm?#shutdownActionServer"
+  },
+  {
+    "prefix": "simROS2",
+    "method": "shutdownClient",
+    "description": "Shutdown the service client.",
+    "python": {
+      "params": [{ "param_type": "string", "param_name": "clientHandle" }],
+      "returns": []
+    },
+    "python_raw": "simROS2.shutdownClient(string clientHandle)",
+    "lua": {
+      "params": [{ "param_type": "string", "param_name": "clientHandle" }],
+      "returns": []
+    },
+    "lua_raw": "simROS2.shutdownClient(string clientHandle)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simROS2.htm?#shutdownClient"
+  },
+  {
+    "prefix": "simROS2",
+    "method": "shutdownPublisher",
+    "description": "Shutdown the specified publisher.",
+    "python": {
+      "params": [{ "param_type": "string", "param_name": "publisherHandle" }],
+      "returns": []
+    },
+    "python_raw": "simROS2.shutdownPublisher(string publisherHandle)",
+    "lua": {
+      "params": [{ "param_type": "string", "param_name": "publisherHandle" }],
+      "returns": []
+    },
+    "lua_raw": "simROS2.shutdownPublisher(string publisherHandle)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simROS2.htm?#shutdownPublisher"
+  },
+  {
+    "prefix": "simROS2",
+    "method": "shutdownService",
+    "description": "Shutdown the service.",
+    "python": {
+      "params": [{ "param_type": "string", "param_name": "serviceHandle" }],
+      "returns": []
+    },
+    "python_raw": "simROS2.shutdownService(string serviceHandle)",
+    "lua": {
+      "params": [{ "param_type": "string", "param_name": "serviceHandle" }],
+      "returns": []
+    },
+    "lua_raw": "simROS2.shutdownService(string serviceHandle)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simROS2.htm?#shutdownService"
+  },
+  {
+    "prefix": "simROS2",
+    "method": "shutdownSubscription",
+    "description": "Shutdown the subscription.",
+    "python": {
+      "params": [
+        { "param_type": "string", "param_name": "subscriptionHandle" }
+      ],
+      "returns": []
+    },
+    "python_raw": "simROS2.shutdownSubscription(string subscriptionHandle)",
+    "lua": {
+      "params": [
+        { "param_type": "string", "param_name": "subscriptionHandle" }
+      ],
+      "returns": []
+    },
+    "lua_raw": "simROS2.shutdownSubscription(string subscriptionHandle)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simROS2.htm?#shutdownSubscription"
+  },
+  {
+    "prefix": "simROS2",
+    "method": "spinSome",
+    "description": "Calls spin_some(node).",
+    "python": { "params": [], "returns": [] },
+    "python_raw": "simROS2.spinSome()",
+    "lua": { "params": [], "returns": [] },
+    "lua_raw": "simROS2.spinSome()",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simROS2.htm?#spinSome"
+  },
+  {
+    "prefix": "simROS2",
+    "method": "subscriptionTreatUInt8ArrayAsString",
+    "description": "After calling this function, this subscription will treat uint8 arrays as string. Using strings should be in general much faster that using int arrays in Lua.",
+    "python": {
+      "params": [
+        { "param_type": "string", "param_name": "subscriptionHandle" }
+      ],
+      "returns": []
+    },
+    "python_raw": "simROS2.subscriptionTreatUInt8ArrayAsString(string subscriptionHandle)",
+    "lua": {
+      "params": [
+        { "param_type": "string", "param_name": "subscriptionHandle" }
+      ],
+      "returns": []
+    },
+    "lua_raw": "simROS2.subscriptionTreatUInt8ArrayAsString(string subscriptionHandle)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simROS2.htm?#subscriptionTreatUInt8ArrayAsString"
+  },
+  {
+    "prefix": "simROS2",
+    "method": "supportedInterfaces",
+    "description": "Retrieve a list of supported interfaces.",
+    "python": {
+      "params": [],
+      "returns": [{ "return_type": "list", "return_name": "result" }]
+    },
+    "python_raw": "list result = simROS2.supportedInterfaces()",
+    "lua": {
+      "params": [],
+      "returns": [{ "return_type": "string[]", "return_name": "result" }]
+    },
+    "lua_raw": "string[] result = simROS2.supportedInterfaces()",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simROS2.htm?#supportedInterfaces"
+  },
+  {
+    "prefix": "simROS2",
+    "method": "timeFromFloat",
+    "description": "",
+    "python": {
+      "params": [{ "param_type": "float", "param_name": "t" }],
+      "returns": []
+    },
+    "python_raw": "simROS2.timeFromFloat(float t)",
+    "lua": {
+      "params": [{ "param_type": "float", "param_name": "t" }],
+      "returns": []
+    },
+    "lua_raw": "simROS2.timeFromFloat(float t)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simROS2.htm?#timeFromFloat"
+  },
+  {
+    "prefix": "simROS2",
+    "method": "timeToFloat",
+    "description": "",
+    "python": {
+      "params": [{ "param_type": "list", "param_name": "t" }],
+      "returns": []
+    },
+    "python_raw": "simROS2.timeToFloat(list t)",
+    "lua": {
+      "params": [{ "param_type": "table", "param_name": "t" }],
+      "returns": []
+    },
+    "lua_raw": "simROS2.timeToFloat(table t)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simROS2.htm?#timeToFloat"
+  },
+  {
+    "prefix": "simROS2",
+    "method": "waitForService",
+    "description": "Wait for the service associated with this service client.",
+    "python": {
+      "params": [
+        { "param_type": "string", "param_name": "clientHandle" },
+        { "param_type": "float", "param_name": "timeout" }
+      ],
+      "returns": [{ "return_type": "bool", "return_name": "result" }]
+    },
+    "python_raw": "bool result = simROS2.waitForService(string clientHandle, float timeout)",
+    "lua": {
+      "params": [
+        { "param_type": "string", "param_name": "clientHandle" },
+        { "param_type": "float", "param_name": "timeout" }
+      ],
+      "returns": [{ "return_type": "bool", "return_name": "result" }]
+    },
+    "lua_raw": "bool result = simROS2.waitForService(string clientHandle, float timeout)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simROS2.htm?#waitForService"
+  },
+  {
+    "prefix": "simROS2",
+    "method": "subscriptionCallback",
+    "description": "Callback for ROS subscription.",
+    "python": {
+      "params": [{ "param_type": "list", "param_name": "message" }],
+      "returns": []
+    },
+    "python_raw": "simROS2.subscriptionCallback(list message)",
+    "lua": {
+      "params": [{ "param_type": "table", "param_name": "message" }],
+      "returns": []
+    },
+    "lua_raw": "simROS2.subscriptionCallback(table message)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simROS2.htm?#subscriptionCallback"
+  },
+  {
+    "prefix": "simROS2",
+    "method": "imageTransportCallback",
+    "description": "Callback for ROS ImageTransport subscription.",
+    "python": {
+      "params": [
+        { "param_type": "buffer", "param_name": "data" },
+        { "param_type": "int", "param_name": "width" },
+        { "param_type": "int", "param_name": "height" }
+      ],
+      "returns": []
+    },
+    "python_raw": "simROS2.imageTransportCallback(buffer data, int width, int height)",
+    "lua": {
+      "params": [
+        { "param_type": "buffer", "param_name": "data" },
+        { "param_type": "int", "param_name": "width" },
+        { "param_type": "int", "param_name": "height" }
+      ],
+      "returns": []
+    },
+    "lua_raw": "simROS2.imageTransportCallback(buffer data, int width, int height)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simROS2.htm?#imageTransportCallback"
+  },
+  {
+    "prefix": "simROS2",
+    "method": "actionGoalResponseCallback",
+    "description": "Callback for action client goal response.",
+    "python": {
+      "params": [
+        { "param_type": "string", "param_name": "goalID" },
+        { "param_type": "bool", "param_name": "accepted" }
+      ],
+      "returns": []
+    },
+    "python_raw": "simROS2.actionGoalResponseCallback(string goalID, bool accepted)",
+    "lua": {
+      "params": [
+        { "param_type": "string", "param_name": "goalID" },
+        { "param_type": "bool", "param_name": "accepted" }
+      ],
+      "returns": []
+    },
+    "lua_raw": "simROS2.actionGoalResponseCallback(string goalID, bool accepted)",
+    "url": "https://www.coppeliarobotics.com/helpFiles/en/simROS2.htm?#actionGoalResponseCallback"
+  }
+]
