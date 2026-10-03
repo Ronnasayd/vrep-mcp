@@ -82,12 +82,14 @@ T8 → T9 → T10
 
 **Done when**:
 
-- [ ] `uv sync --locked` succeeds with the new `uv.lock` committed
-- [ ] `uv run pytest --markers` lists `model` and `sim`
-- [ ] Gate check passes: `uv sync --locked && uv run python -m compileall -q src && uv run pytest -q -m "not model and not sim"`
+- [x] `uv sync --locked` succeeds with the new `uv.lock` committed
+- [x] `uv run pytest --markers` lists `model` and `sim`
+- [x] Gate check passes: `uv sync --locked && uv run python -m compileall -q src && uv run pytest -q -m "not model and not sim"`
 
 **Tests**: none
 **Gate**: build
+
+**Status**: done
 
 **Commit**: `build(deps): add fastembed, numpy and pytest markers`
 
