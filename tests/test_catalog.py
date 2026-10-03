@@ -230,3 +230,28 @@ def test_to_positional_rejects_null_for_typed_param():
             "sim.setJointTargetPosition", {"objectHandle": None, "targetPosition": 1.0}
         )
     assert str(exc.value) == "Argument 'objectHandle' expected integer, got null"
+
+
+def test_schema_signature_of_regular_function_is_its_python_raw():
+    assert catalog.schema("sim.getObject")["signature"] == (
+        "int objectHandle = sim.getObject(string objectPath, dict options = {})"
+    )
+
+
+@pytest.mark.parametrize(
+    "name, param, vrep_type, json_type",
+    [
+        ("sim.setJointTargetPosition", "objectHandle", "int", "integer"),
+        ("sim.getReferencedHandles", "tag", "string", "string"),
+        ("sim.setStepping", "enable", "bool", "boolean"),
+        ("sim.packTable", "aTable", "dict", "object"),
+        ("sim.copyTable", "original", "map", "object"),
+    ],
+)
+def test_schema_maps_doc_types_to_json_types_and_keeps_x_vrep_type(
+    name, param, vrep_type, json_type
+):
+    prop = _input_schema(name)["properties"][param]
+
+    assert prop["x-vrep-type"] == vrep_type
+    assert prop["type"] == json_type
